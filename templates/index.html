@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Ebay</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="banner">
+        <div class="banner__container container">
+            <div class="banner__title">eBay Auctions</div>
+            <div class="banner__subtitle">Fast, safe, profitable trade</div>
+            <div class="banner__input">
+                <input type="text" placeholder="Promocode">
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="products__container container">
+            <div class="product">
+                <div class="product__info">
+                    <div class="product__img">
+                        <img src="{% static 'img/product.png' %}" alt="">
+                    </div>
+                    <div class="product__title">Jordan 4 Retro Mid White Oreo</div>
+                    <div class="product__time">Remaining time: - <span>10s</span></div>
+                    <div class="product__lastBid">Last bid by Ava P</div>
+                </div>
+
+                <div class="product__prices">
+                    <div class="product__highBid">Highest bid: - <span>85€</span></div>
+                    <div class="product__increment">Increment 500€</div>
+                    <button class="product__btn">Bid 500€</button>
+
+                </div>
+            </div>
+            <div class="product">
+                <div class="product__info">
+                    <div class="product__img">
+                        <img src="{% static 'img/product.png' %}" alt="">
+                    </div>
+                    <div class="product__title">Jordan 4 Retro Mid White Oreo</div>
+                    <div class="product__time">Remaining time: - <span>10s</span></div>
+                    <div class="product__lastBid">Last bid by Ava P</div>
+                </div>
+
+                <div class="product__prices">
+                    <div class="product__highBid">Highest bid: - <span>85€</span></div>
+                    <div class="product__increment">Increment 500€</div>
+                    <button class="product__btn">Bid 500€</button>
+
+                </div>
+            </div>
+            <div class="product">
+                <div class="product__info">
+                    <div class="product__img">
+                        <img src="{% static 'img/product.png' %}" alt="">
+                    </div>
+                    <div class="product__title">Jordan 4 Retro Mid White Oreo</div>
+                    <div class="product__time">Remaining time: - <span>10s</span></div>
+                    <div class="product__lastBid">Last bid by Ava P</div>
+                </div>
+
+                <div class="product__prices">
+                    <div class="product__highBid">Highest bid: - <span>85€</span></div>
+                    <div class="product__increment">Increment 500€</div>
+                    <button class="product__btn">Bid 500€</button>
+
+                </div>
+            </div>
+            <div class="product">
+                <div class="product__info">
+                    <div class="product__img">
+                        <img src="{% static 'img/product.png' %}" alt="">
+                    </div>
+                    <div class="product__title">Jordan 4 Retro Mid White Oreo</div>
+                    <div class="product__time">Remaining time: - <span>10s</span></div>
+                    <div class="product__lastBid">Last bid by Ava P</div>
+                </div>
+
+                <div class="product__prices">
+                    <div class="product__highBid">Highest bid: - <span>85€</span></div>
+                    <div class="product__increment">Increment 500€</div>
+                    <button class="product__btn">Bid 500€</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

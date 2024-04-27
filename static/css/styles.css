@@ -1,0 +1,251 @@
+body{
+    margin: 0;
+}
+.container{
+    max-width: 1720px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* ============================HEADER===================================== */
+
+header {
+    border-bottom: 1px solid #000;
+}
+.header__container {
+
+}
+.header__items {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__item {
+    display: flex;
+    align-items: center;
+  
+}
+.header__link{
+    text-decoration: none;
+}
+.header__link:not(:last-child) {
+    margin-right: 20px;
+}
+
+.intro {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.intro__logo img{
+    max-width: 100%;
+    width: 300px;
+}
+.intro__balance {
+    font-size: 32px;
+}
+
+@media (max-width: 768px) {
+    .header__link{
+        display: none;
+    }
+    .header__lang{
+        display: block;
+    }
+    .header-link{
+        display: block;
+    }
+    .intro__balance {
+        font-size: 24px;
+    }
+}
+@media (max-width: 425px) {
+    .header__intro{
+        flex-direction: column;
+    }
+}
+
+/*===============banner==================*/
+.banner {
+    background: url(../img/header/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    margin-bottom: 5rem;
+}
+.banner__container{
+    padding-bottom: 20px;
+}
+.banner__title {
+    margin-bottom: 10px;
+    font-size: 62px;
+}
+.banner__subtitle {
+    margin-bottom: 20px;
+    font-size: 42px;
+}
+.banner__input input{
+    background: #EAEAEA;
+    border: none;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    padding: 5px 0;
+}
+@media (max-width: 768px) {
+    .banner__title {
+        font-size: 48px;
+    }
+    .banner__subtitle {
+        font-size: 36px;
+    }
+}
+@media (max-width: 425px) {
+    .banner__title {
+        font-size: 36px;
+    }
+    .banner__subtitle {
+        font-size: 24px;
+    }
+}
+
+/*====================PRODUCT========================*/
+
+.products {
+  margin-bottom: 5rem;
+}
+.products__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container {
+    margin: 10px;
+}
+.product {
+    flex: 0 0 23%;
+    border: 1px solid #3665F3;
+    max-width: 100%;
+    width: 300px;
+}
+@media (max-width: 992px) {
+    .product {
+        flex: 0 0 48%;
+        margin-bottom: 2%;
+    }
+}  
+@media (max-width: 425px) {
+    .product {
+        flex: 0 0 100%;
+        margin-bottom: 5%;
+    }
+}    
+.product__info{
+    padding: 10px;
+}
+.product__img img{
+    max-width: 100%;
+    width: 300px;
+}
+.product__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.product__time {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.product__lastBid {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.product__prices {
+    background: #ECECEC;
+    padding: 5px 10px;
+}
+.product__highBid {
+    text-align: right;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.product__increment {
+    text-align: right;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.product__btn {
+    width: 100%;
+    background: #3264F2;
+    padding: 8px 0px;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+}
+
+/*=============footer=============*/
+.footer {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    border-top: 1px solid #767676;
+}
+.footer__container {
+}
+.footer__items {
+   
+}
+.footer__item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.footer__item:first-child {
+   margin-bottom: 50px;
+}
+.footer__link {
+    color: #767676;
+    text-decoration: none;
+}
+.footer__link:not(:last-child){
+    margin-right: 20px;
+}
+.footer__copy {
+    margin-right: 10px;
+}
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer__linkTwo {
+    color: #767676;
+}
+.footer__linkTwo:not(:last-child){
+    margin-right: 5px;
+}
+@media (max-width: 768px) {
+    .footer__item{
+        display: flex;
+        align-items: center;
+    }
+    .footer__link{
+        flex: 0 0 25%;
+    }
+    .footer__linkTwo{
+        flex: 0 0 50%;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width: 600px) {
+    .footer__link{
+        flex: 0 0 33%;
+    }
+}
