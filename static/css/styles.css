@@ -95,6 +95,7 @@ header {
     font-weight: 300;
     text-align: center;
     padding: 5px 0;
+    outline: none;
 }
 @media (max-width: 768px) {
     .banner__title {
@@ -131,6 +132,9 @@ header {
     border: 1px solid #3665F3;
     max-width: 100%;
     width: 300px;
+}
+.product:not(:last-child){
+    margin-right: 2%;
 }
 @media (max-width: 992px) {
     .product {
@@ -248,4 +252,29 @@ header {
     .footer__link{
         flex: 0 0 33%;
     }
+}
+
+
+/*===========TABS==========*/
+.tabcontent {
+    display: none;
+}
+
+/* Стилизация кнопок табов */
+.tablink {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 24px;
+}
+.tablink:first-child{
+    margin-right: 20px;
+}
+/* Стилизация активного таба */
+.tablink.active {
+    border-bottom: 2px solid #3264EE;
 }
