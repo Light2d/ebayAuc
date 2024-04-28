@@ -24,9 +24,11 @@
         </div>
     </header>
     <div class="header__intro intro container">
-        <div class="intro__logo">
-            <img src="{% static 'img/header/logo.svg' %}" alt="">
-        </div>
+        <a href="{% url 'index' %}">
+            <div class="intro__logo">
+                <img src="{% static 'img/header/logo.svg' %}" alt="">
+            </div>
+        </a>
         <div class="intro__balance">
             Balance: 0$
         </div>

@@ -16,3 +16,7 @@ function openTab(tabName) {
 // Открыть первый таб по умолчанию
 document.getElementById("active").style.display = "block";
 document.getElementsByClassName("tablink")[0].classList.add("active");
+
+
+
+

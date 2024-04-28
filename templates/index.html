@@ -10,68 +10,71 @@
 </head>
 <body>
     {% include 'header.html' %}
-
-    <div class="banner">
-        <div class="banner__container container">
-            <div class="banner__title">eBay Auctions</div>
-            <div class="banner__subtitle">Fast, safe, profitable trade</div>
-            <div class="banner__input">
-                <input type="text" placeholder="Promocode">
-            </div>
-        </div>
-    </div>
-
-    <div class="tabs container">
-        <button class="tablink" onclick="openTab('active')">Active auctions</button>
-        <button class="tablink" onclick="openTab('completed')">Completed auctions</button>
-        <div id="active" class="tabcontent">
-            <div class="products">
-                <div class="products__container">
-                    {% for product in active_products %}
-                    <div class="product">
-                        <div class="product__info">
-                            <div class="product__img">
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </div>
-                            <div class="product__title">{{ product.name }}</div>
-                            <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}</span></div>
-                            <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
-                        </div>
-                        <div class="product__prices">
-                            <div class="product__highBid">Highest bid: - <span>{{ product.highest_bid }}</span></div>
-                            <div class="product__increment">Increment 500€</div>
-                            <button class="product__btn">Bid {{ product.bid }}</button>
-                        </div>
-                    </div>
-                    {% endfor %}
+    <main>
+        <div class="banner">
+            <div class="banner__container container">
+                <div class="banner__title">eBay Auctions</div>
+                <div class="banner__subtitle">Fast, safe, profitable trade</div>
+                <div class="banner__input">
+                    <input type="text" placeholder="Promocode">
                 </div>
             </div>
-            
         </div>
-        <div id="completed" class="tabcontent">
-            <div class="products">
-                <div class="products__container">
-                    {% for product in completed_products %}
-                    <div class="product">
-                        <div class="product__info">
-                            <div class="product__img">
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+        <div class="tabs container">
+            <button class="tablink" onclick="openTab('active')">Active auctions</button>
+            <button class="tablink" onclick="openTab('completed')">Completed auctions</button>
+            <div id="active" class="tabcontent">
+                <div class="products">
+                    <div class="products__container">
+                        {% for product in active_products %}
+                        <a href="{% url 'product' product_id=product.id %}">
+                        <div class="product">
+                            <div class="product__info">
+                                <div class="product__img">
+                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+                                </div>
+                                <div class="product__title">{{ product.name }}</div>
+                                <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}</span></div>
+                                <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
                             </div>
-                            <div class="product__title">{{ product.name }}</div>
-                            <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}</span></div>
-                            <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
+                            <div class="product__prices">
+                                <div class="product__highBid">Highest bid: - <span>{{ product.highest_bid }}</span></div>
+                                <div class="product__increment">Increment 500€</div>
+                                <button class="product__btn">Bid {{ product.bid }}</button>
+                            </div>
                         </div>
-                        <div class="product__prices">
-                            <div class="product__highBid">Sale has ended</span></div>
-                            <button class="product__btn">Sale has ended</button>
-                        </div>
+                    </a>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
+                
             </div>
-            
+            <div id="completed" class="tabcontent">
+                <div class="products">
+                    <div class="products__container">
+                        {% for product in completed_products %}
+                        <div class="product">
+                            <div class="product__info">
+                                <div class="product__img">
+                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+                                </div>
+                                <div class="product__title">{{ product.name }}</div>
+                                <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}</span></div>
+                                <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
+                            </div>
+                            <div class="product__prices">
+                                <div class="product__highBid">Sale has ended</span></div>
+                                <button class="product__btn">Sale has ended</button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </div>
+    </main>
     {% include 'footer.html' %}
 
 
