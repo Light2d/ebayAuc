@@ -1,0 +1,21 @@
+<div class="products">
+    <div class="products__container">
+        {% for product in active_products %}
+        <div class="product">
+            <div class="product__info">
+                <div class="product__img">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </div>
+                <div class="product__title">{{ product.name }}</div>
+                <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}</span></div>
+                <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
+            </div>
+            <div class="product__prices">
+                <div class="product__highBid">Highest bid: - <span>{{ product.highest_bid }}</span></div>
+                <div class="product__increment">Increment 500€</div>
+                <button class="product__btn">Bid {{ product.bid }}</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

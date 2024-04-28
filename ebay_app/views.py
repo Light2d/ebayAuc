@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from .models import Product
 
-from django.shortcuts import render
 
 def index(request):
-    return render(request, 'index.html')
+    active_products = Product.objects.filter(active=True)
+    completed_products = Product.objects.filter(completed=True)
+    return render(request, 'index.html', {'active_products': active_products, 'completed_products': completed_products})
