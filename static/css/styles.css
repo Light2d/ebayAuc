@@ -1,8 +1,8 @@
 body{
     margin: 0;
     min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .container{
     max-width: 1720px;
@@ -205,9 +205,13 @@ header {
     border: 1px solid #3665F3;
     max-width: 100%;
     width: 300px;
-}
-.product{
+    display: flex;
+    flex-direction: column;
     margin-right: 20px;
+}
+.product a{
+    color: #000;
+    text-decoration: none;
 }
 @media (max-width: 992px) {
     .product {
@@ -223,6 +227,8 @@ header {
 }    
 .product__info{
     padding: 10px;
+}
+.product__info a{
     color: #000;
     text-decoration: none;
 }
@@ -246,6 +252,7 @@ header {
     margin-bottom: 10px;
 }
 .product__prices {
+    margin-top: auto;
     background: #ECECEC;
     padding: 5px 10px;
     color: #000;
@@ -271,6 +278,7 @@ header {
     font-weight: 600;
     font-size: 18px;
     color: #fff;
+    cursor: pointer;
 }
 
 /*=============footer=============*/

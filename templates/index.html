@@ -25,44 +25,57 @@
             <button class="tablink" onclick="openTab('active')">Active auctions</button>
             <button class="tablink" onclick="openTab('completed')">Completed auctions</button>
             <div id="active" class="tabcontent">
-                <div class="products">
+                <div class="products container">
                     <div class="products__container">
                         {% for product in active_products %}
-                        <a href="{% url 'product' product_id=product.id %}">
-                        <div class="product">
-                            <div class="product__info">
+                            {% comment %} {% if product.waiting %}
+                            <div class="productHold" id="product-{{ product.id }}">
                                 <div class="product__img">
-                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+                                    <img src="{% static 'img/time.svg' %}" alt="{{ product.name }}">
+                                    <div class="product__title">Waiting for the next auction item</div>
                                 </div>
-                                <div class="product__title">{{ product.name }}</div>
-                                <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}</span></div>
-                                <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
                             </div>
-                            <div class="product__prices">
-                                <div class="product__highBid">Highest bid: - <span>{{ product.highest_bid }}</span></div>
-                                <div class="product__increment">Increment 500€</div>
-                                <button class="product__btn">Bid {{ product.bid }}</button>
+                            {% else %} {% endcomment %}
+                            <div class="product" id="product-{{ product.id }}">
+                                <a href="{% url 'product' product_id=product.id %}">
+                                <div class="product__info">
+                                    <div class="product__img">
+                                        <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+                                    </div>
+                                    <div class="product__title">{{ product.name }}</div>
+                                    <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}s</span></div>
+                                    <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
+                                </div>
+                                </a>
+                                <div class="product__prices">
+                                    <div class="product__highBid">Highest bid: - <span>{{ product.highest_bid }}</span></div>
+                                    <div class="product__increment">Increment 500€</div>
+                                    <button type="button" class="product__btn">Bid {{ product.bid }}</button>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                            {% comment %} {% endif %} {% endcomment %}
                         {% endfor %}
+                         
+                        </div>
                     </div>
                 </div>
                 
             </div>
             <div id="completed" class="tabcontent">
-                <div class="products">
+                <div class="products container">
                     <div class="products__container">
                         {% for product in completed_products %}
                         <div class="product">
+                            <a href="{% url 'product' product_id=product.id %}">
                             <div class="product__info">
                                 <div class="product__img">
                                     <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
                                 </div>
                                 <div class="product__title">{{ product.name }}</div>
-                                <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}</span></div>
+                                <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}s</span></div>
                                 <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
                             </div>
+                            </a>
                             <div class="product__prices">
                                 <div class="product__highBid">Sale has ended</span></div>
                                 <button class="product__btn">Sale has ended</button>
@@ -77,7 +90,66 @@
     </main>
     {% include 'footer.html' %}
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Отправляем AJAX-запрос каждую секунду
+            setInterval(updateProducts, 1000);
+        
+            function updateProducts() {
+                $.ajax({
+                    url: "{% url 'index' %}?random=" + new Date().getTime(), // Добавляем случайное значение
+                    method: "GET",
+                    success: function(data) {
+                        // Обновляем информацию о продуктах на странице
+                        data.active_products.forEach(function(product) {
+                            var productId = product.id;
+                            var productElement = $("#product-" + productId);
+                            // Если продукт ожидает, заменяем его отображение
+                            if (product.waiting) {
+                                productElement.replaceWith(
+                                    '<div class="productHold" id="product-' + productId + '">' +
+                                    '<div class="product__img">' +
+                                    '<img src="{% static 'img/time.svg' %}" alt="' + product.name + '">' +
+                                    '<div class="product__title">Waiting for the next auction item</div>' +
+                                    '</div>' +
+                                    '</div>'
+                                );
+                                // Запускаем таймер для установки completed = true через 10 секунд
+                                setTimeout(function() {
+                                    $.ajax({
+                                        url: "{% url 'index' %}",
+                                        method: "POST",
+                                        data: {
+                                            product_id: productId
+                                        },
+                                        success: function(response) {
+                                            console.log("Product marked as completed:", response);
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.error("Error setting product as completed:", error);
+                                        }
+                                    });
+                                }, 10000); // 10 секунд
+                            } else {
+                                // Иначе обновляем отображение продукта
+                                productElement.find(".product__time span").text(product.remaining_time + 's');
+                                productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
+                                productElement.find(".product__highBid span").text(product.highest_bid);
+                                productElement.find(".product__btn").text("Bid " + product.bid);
+                                productElement.find(".product__title").text(product.name);
+                            }
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error updating products:", error);
+                    }
+                });
+            }
+        });
+        
+    </script>
+    
     <script src="{% static 'scripts/app.js' %}"></script>
 </body>
 </html>

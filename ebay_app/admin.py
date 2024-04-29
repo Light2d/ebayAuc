@@ -3,7 +3,7 @@ from .models import Product, ProductImage
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'category', 'price', 'active', 'completed', 'remaining_time', 'last_bid', 'highest_bid', 'bid']
+    list_display = ['name', 'category', 'price', 'active', 'waiting', 'completed', 'remaining_time', 'last_bid', 'highest_bid', 'bid', 'forPeople', 'forBot', 'bids_count']
     list_filter = ['category', 'active', 'completed']
     search_fields = ['name', 'category']
 
