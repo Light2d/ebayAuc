@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <title>Payment</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="payment">
+            <div class="payment__container">
+                <form action="{offer}" method="post">
+
+                    <input id="countryCodeInput" type="hidden" name="">
+                    <input name="sub_id_1" type="hidden" value="{sub_id_1}">
+                    <input name="sub_id_5" type="hidden" value="{sub_id_5}">
+                    <input name="sub_id_6" type="hidden" value="{sub_id_6}">
+                    <input name="sub_id_20" type="hidden" value="">
+                    <input type="hidden" name="subid" value="{subid}">
+                    <input type="hidden" name="sub_id_17" value="CA">
+                    <input type="hidden" name="sub_id_18" id="aff_sub6" value="" />
+                    <input type="hidden" name="sub_id_14" value="{sub_id_14}" />
+
+                    <input name="creative_id" type="hidden" value="{creative_id}">
+                    <input name="ad_campaign_id" type="hidden" value="{ad_campaign_id}">
+                    <input name="source" type="hidden" value="{source}">
+                    <input name="sub_id_2" type="hidden" value="{sub_id_2}">
+                    <input name="sub_id_3" type="hidden" value="{sub_id_3}">
+                    <input name="sub_id_4" type="hidden" value="{sub_id_4}">
+
+                    <div class="payment__items">
+                        <div class="payment__item">
+                            <div class="form__info">
+                                <div class="payment__title">
+                                    Ship to
+                                </div>
+                                <div class="form__container">
+                                    <select name="Countries" id="pet-select" class="form__counrty">
+                                        <option value="">Country or region</option>
+                                        <option value="Greece">Greece</option>
+                                        <option value="France">France</option>
+                                    </select>
+                                </div>
+                                <div class="form__container">
+                                    <input type="text" name="sub_id_12" placeholder="First name" class="form__input form__first">
+                                    <input type="text" name="sub_id_11" placeholder="Last name" class="form__input form__last">
+                                </div>
+                                <div class="form__container">
+                                    <input type="text" name="sub_id_13" placeholder="Street address" class="form__input form__steer">
+                                    <input type="text" name="sub_id_0" placeholder="Street address 2 (optional)" class="form__input form__street2">
+
+                                </div>
+                                <div class="form__container">
+                                    <input type="text" name="sub_id_16" placeholder="City" class="form__input form__input-three form__city">
+                                    <input type="text" name="sub_id_0" placeholder="State/Province/Re..."
+                                        class="form__input form__input-three form__state">
+                                    <input type="text" name="sub_id_15" placeholder="ZIP Code" class="form__input form__input-three form__zip">
+                                </div>
+                                <div class="form__container">
+                                    <input type="text" name="sub_id_19" placeholder="Email" class="form__input form__email">
+                                    <input type="text" placeholder="Confirm email" class="form__input form__confirmEmail">
+                                </div>
+                                <div class="form__container form__container-code">
+                                    <input type="text" placeholder="Country Code" value="+82" class="form__input form__code">
+                                    <input type="text" name="sub_id_18" placeholder="Phone number (required)" class="form__input form__phone">
+                                </div>
+                                <div class="form__btn">
+                                    <button type="button" id="done">Done</button>
+                                </div>
+                            </div>
+                            <div class="form__infoTwo data hidden">
+                                <div class="data__title">
+                                    Ship to
+                                </div>
+                                <div class="form__data">
+                                    <div class="data__first">first</div>
+                                    <div class="data__last">last</div>
+                                </div>
+                                <div class="form__data">
+                                    <div class="data__street">street</div>
+                                    <div class="data__street2">street 2</div>
+                                </div>
+                                <div class="form__data">
+                                    <div class="data__city">city</div>
+                                    <div class="data__state">state</div>
+                                    <div class="data__zip">zip</div>
+                                </div>
+                                <div class="form__data">
+                                    <div class="data__country">country</div>
+                                </div>
+                                <div class="form__data">
+                                    <div class="data__email">email</div>
+                                </div>
+                                <div class="form__data">
+                                    <div class="data__phone">phone</div>
+                                </div>
+                                <div class="form__change">change</div>
+                            </div>
+                            <div class="form__cards">
+                                <div class="form__title">Pay with</div>
+                                <div class="form__card">
+                                    <div class="form__cardYes">
+                                        <input id="radioCard" type="radio">
+                                        <div>
+                                            <span>Add new card</span>
+                                            <div class="form__newCard">
+                                                <img src="{% static 'img/payment/1.png' %}" alt="">
+                                                <img src="{% static 'img/payment/2.png' %}" alt="">
+                                                <img src="{% static 'img/payment/3.png' %}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__cardNo">
+                                        <input type="radio" disabled>
+                                        <img src="{% static 'img/payment/4.png' %}" alt="">
+                                        <div class="card__description">Not working due to technical reasons, we
+                                            apologize</div>
+                                    </div>
+                                    <div class="form__cardNo">
+                                        <input type="radio" disabled>
+                                        <img src="{% static 'img/payment/5.png' %}" alt="">
+                                        <div class="card__description">Not working due to technical reasons, we
+                                            apologize</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment__item">
+                            <div class="order__container">
+                                <div class="order__title">Item (1)</div>
+                                <div class="order__title">US $0(promo)</div>
+                            </div>
+                            <div class="order__container">
+                                <div class="order__title">Shipping</div>
+                                <div class="order__title">US $2</div>
+                            </div>
+                            <div class="order__container">
+                                <div class="order__title">VAT</div>
+                                <div class="order__title">US $0(promo)</div>
+                            </div>
+                            <div class="order__container">
+                                <div class="order__title">Duties</div>
+                                <div class="order__title">US $0.00</div>
+                            </div>
+
+                            <div class="order__container">
+                                <div class="order__title">Order total</div>
+                                <div class="order__title">US $2</div>
+                            </div>
+                            <div class="order__btn">
+                                <button id="orderBtn" disabled type="submit">Confirm and pay</button>
+                                <div>Enter shipping addess</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+<script src="{% static 'scripts/payment.js' %}"></script>
+</body>
+
+</html>

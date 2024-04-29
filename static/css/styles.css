@@ -9,7 +9,9 @@ body{
     padding: 0 20px;
     margin: 0 auto;
 }
-
+.hidden {
+    display: none;
+}
 .header{
    
 }
@@ -683,4 +685,49 @@ header {
     }
     .order__btn div{
         text-align: center;
+    }
+
+    /*==============================INFO TWO==========================================*/
+    .form__infoTwo {
+   
+        border: 1px solid #E5E5E5;
+        padding: 15px;
+    }
+    .data {
+    }
+    .form__data {
+        display: FLEX;
+    }
+    .data__title{
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .data__first {
+        margin-right: 5px;
+    }
+    .data__last {
+    }
+    .data__street {
+        margin-right: 5px;
+    }
+    .data__street2 {
+    }
+    .data__city {
+        margin-right: 5px;
+    }
+    .data__state {
+        margin-right: 5px;
+    }
+    .data__zip {
+    }
+    .data__country {
+    }
+    .data__email {
+    }
+    .data__number {
+    }
+    .form__change {
+        color: #3665F3;
+        text-decoration: underline;
+        cursor: pointer;
     }

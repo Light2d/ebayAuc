@@ -13,5 +13,5 @@ def product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     return render(request, 'product.html', {'product': product, 'active_products': active_products})
 
-def first_payment(request):
-    return render(request, 'first_payment.html')
+def second_payment(request):
+    return render(request, 'second_payment.html')
