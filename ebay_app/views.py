@@ -15,3 +15,6 @@ def product(request, product_id):
 
 def second_payment(request):
     return render(request, 'second_payment.html')
+
+def first_payment(request):
+    return render(request, 'first_payment.html')

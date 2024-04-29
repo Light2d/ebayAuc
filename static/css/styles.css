@@ -12,12 +12,67 @@ body{
 .hidden {
     display: none;
 }
-.header{
-   
+.custom-select {
+    position: relative;
+    margin-bottom: 10px;
+
 }
-main{
-  
+
+.delivery__country, .form__country {
+    display: none; 
 }
+
+.custom-select .select-items {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #DDDDDD;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.custom-select .select-items div {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.custom-select .select-items div:hover {
+    background-color: #f2f2f2;
+}
+
+.custom-select .select-items.show {
+    display: block;
+}
+.form__countries .custom-select .selected-item{
+    width: 330px;
+    flex: 0 0 45%;
+    background: #F7F7F7;
+    border: 1px solid #E5E5E5;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.custom-select .selected-item {
+    display: block;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: 1px solid #DDDDDD;
+}
+
+.custom-select .selected-item:after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.custom-select .selected-item:hover {
+    background-color: #f2f2f2;
+}
+
+
 .footer{
     margin-top: auto;
 }
@@ -543,7 +598,7 @@ header {
         margin-bottom: 2rem;
     }
     .payment__item:first-child{
-        flex: 0 0 65%;
+        flex: 0 0 69%;
     }
     .payment__item:last-child{
         flex: 0 0 25%;
@@ -570,7 +625,7 @@ header {
         .payment__item:last-child{
         } 
     }
-    select{
+    .form__country{
         flex: 0 0 48%;
         background: #F7F7F7;
         border: 1px solid #E5E5E5;
@@ -731,3 +786,56 @@ header {
         text-decoration: underline;
         cursor: pointer;
     }
+
+
+/*==============================FIRST PAYMENT==========================================*/
+
+.delivery {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.delivery__container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+}
+.delivery__logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.delivery__country{
+    padding: 8px 15px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 15px;
+    font-size: 18px;
+    overflow-y: scroll;
+}
+.form__counrty {
+}
+.delivery__zip{
+    font-size: 16px;
+    color: #5489CF;
+    text-decoration: none;
+    margin-bottom: 5px;
+    margin-top: 5x;
+}
+.delivery__input {
+    padding: 8px 15px;
+    max-width: 100%;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.delivery__btn {
+    background: linear-gradient(180deg, rgba(0,121,188,1) 0%, rgba(0,77,156,1) 100%);
+    padding: 10px 0px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}

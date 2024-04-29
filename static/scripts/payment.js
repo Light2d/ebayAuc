@@ -90,3 +90,11 @@ document.addEventListener("DOMContentLoaded", function() {
 window.onbeforeunload = function() {
     return "Data will be lost if you leave the page, are you sure?";
   };
+
+  function formatPhoneNumber(input) {
+    let phoneNumber = input.value.replace(/\D/g, '');
+
+    phoneNumber = phoneNumber.replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '+$1 ($2) $3-$4');
+
+    input.value = phoneNumber;
+}
