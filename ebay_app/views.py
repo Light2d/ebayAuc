@@ -9,6 +9,7 @@ from threading import Timer
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.http import HttpResponseBadRequest
+from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
@@ -29,7 +30,6 @@ def index(request):
                     product.bid += product.increment
                     product.last_bid = generate_random_name()  # Замените на ваш генератор случайных имен
                     product.remaining_time = 20  # ставим время на 20 секунд
-                    product.bids_count += 1
 
                 product.save()  # Сохраняем изменения
                 
@@ -46,13 +46,9 @@ def index(request):
         # Получаем обновленные данные об активных продуктах
         active_products_data = []
         for product in active_products:
-            if product.forPeople:
-                remaining_time = ""
-                highest_bid = ""
-                # product.bid = product.bid + " €"
-            else:
-                remaining_time = product.remaining_time
-                highest_bid = product.highest_bid
+           
+            remaining_time = product.remaining_time
+            highest_bid = product.highest_bid
             
             active_products_data.append({
                 "id": product.id,
@@ -80,7 +76,6 @@ def update_product_state(product_id):
     product.active = False
     product.waiting = False
     product.save()
-    print("COMPLEEEEEEEEEEEETED")
 
     
 def update_product_state2(product_id):
@@ -112,3 +107,49 @@ def second_payment(request):
 def first_payment(request):
     return render(request, 'first_payment.html')
 
+
+@csrf_exempt
+def set_remaining_time(request):
+    if request.method == 'POST':
+        product_id = request.POST.get('product_id')
+        try:
+            product = Product.objects.get(id=product_id)
+            remaining_time = product.remaining_time
+
+            # Уменьшаем remaining_time на 1 секунду
+            if remaining_time > 0:
+                remaining_time -= 1
+                product.remaining_time = remaining_time
+                product.highest_bid = product.bid
+                product.last_bid = "you"
+                product.save()
+
+                for_people = product.forPeople
+
+                # Возвращаем JSON-ответ с успехом, remaining_time и forPeople
+                return JsonResponse({'success': True, 'remaining_time': remaining_time, 'for_people': for_people})
+            else:
+                # Если remaining_time достиг нуля, сбрасываем его и last_bid
+                product.remaining_time = 20
+                product.last_bid = ""
+                product.save()
+                return JsonResponse({'success': True, 'remaining_time': 20, 'for_people': product.forPeople})
+        except Product.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'Product not found'})
+    else:
+        return JsonResponse({'success': False, 'error': 'Invalid request'})
+    
+@csrf_exempt
+def reset_product_parameters(request):
+    if request.method == 'POST':
+        product_id = request.POST.get('product_id')
+        try:
+            product = Product.objects.get(id=product_id)
+            product.remaining_time = 20
+            product.last_bid = ""
+            product.save()
+            return JsonResponse({'success': True})
+        except Product.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'Product not found'})
+    else:
+        return JsonResponse({'success': False, 'error': 'Invalid request'})

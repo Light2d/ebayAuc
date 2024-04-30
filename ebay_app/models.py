@@ -17,7 +17,6 @@ class Product(models.Model):
     bid = models.IntegerField(default=0)
     forPeople = models.BooleanField(default=False)
     forBot = models.BooleanField(default=False)
-    bids_count = models.IntegerField(default=0)
 
     
     def __str__(self):

@@ -40,9 +40,9 @@
                                 </div>
                             </a>
                             <div class="product__prices">
-                                    <div class="product__highBid">Highest bid: - <span></span></div>
+                                    <div class="product__highBid">Highest bid: - <span>{{product.highest_bid}}€</div>
                                 <div class="product__increment">Increment {{product.increment}}€</div>
-                                <button type="button" class="product__btn">Bid {{ product.bid }} €  </button>
+                                <button type="button" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="product__btn" >Bid {{ product.bid }} €  </button>
                             </div>
                         </div>
                     {% endfor %}
@@ -126,8 +126,8 @@
                                 // Иначе обновляем отображение продукта
                                 productElement.find(".product__time span").text(product.remaining_time + 's');
                                 productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
-                                productElement.find(".product__highBid span").text(product.highest_bid);
-                                productElement.find(".product__btn").text("Bid " + product.bid);
+                                productElement.find(".product__highBid span").text(product.highest_bid + '€');
+                                productElement.find(".product__btn").text("Bid " + product.bid + '€');
                                 productElement.find(".product__title").text(product.name);
                             }
                         });
@@ -140,6 +140,97 @@
         });
         
     </script>
+    <script>
+        var productId = $('.product__btn').data('product-id');
+
+        $(document).ready(function() {
+            // Функция для обновления времени на фронтенде
+            function updateRemainingTime(productId, remainingTime) {
+                var $productElement = $('#product-' + productId);
+                var $remainingTimeElement = $productElement.find('.product__time span');
+                $remainingTimeElement.text(remainingTime + 's');
+            }
+        
+            // Функция для установки таймера
+            function setTimer(productId, remainingTime) {
+                var timerInterval = setInterval(function() {
+                    // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
+                    $.ajax({
+                        url: "{% url 'set_remaining_time' %}",
+                        method: "POST",
+                        data: {product_id: productId},
+                        success: function(response) {
+                            if (response.success) {
+                                // Обновляем отображаемое время
+                                updateRemainingTime(productId, response.remaining_time);
+                                // Если remaining_time достиг нуля, останавливаем таймер
+                                if (response.remaining_time <= 0) {
+                                    clearInterval(timerInterval);
+                                    window.location.href = "{% url 'first_payment' %}"; // Перенаправляем на страницу first_payment
+                                }
+                            } else {
+                                console.error("Error setting remaining time");
+                                clearInterval(timerInterval); // Останавливаем таймер в случае ошибки
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Error setting remaining time:", error);
+                            clearInterval(timerInterval); // Останавливаем таймер в случае ошибки
+                        }
+                    });
+                }, 1000); // Каждую секунду
+            }
+        
+            // Обработчик клика на кнопке "Bid" для каждого продукта
+            $('.product__btn').click(function() {
+                var productId = $(this).data('product-id'); // Получаем ID продукта
+        
+                // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
+                $.ajax({
+                    url: "{% url 'set_remaining_time' %}",
+                    method: "POST",
+                    data: {product_id: productId},
+                    success: function(response) {
+                        if (response.success) {
+                            // Если remaining_time достиг нуля, не вызываем setTimer,
+                            // а обновляем параметры на странице
+                            if (response.remaining_time <= 0) {
+                                updateRemainingTime(productId, response.remaining_time);
+                                window.location.href = "{% url 'first_payment' %}"; // Перенаправляем на страницу first_payment
+                            } else {
+                                // Иначе вызываем функцию установки таймера с полученным временем
+                                setTimer(productId, response.remaining_time);
+                            }
+                        } else {
+                            console.error("Error setting remaining time");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error setting remaining time:", error);
+                    }
+                });
+            });
+        });
+        $(document).ready(function() {
+            // Отправляем AJAX-запрос для сброса параметров продукта
+            $.ajax({
+                url: "{% url 'reset_product_parameters' %}", // Замените на URL, который сбрасывает параметры продукта
+                method: "POST",
+                data: {product_id: productId}, // Замените на соответствующий идентификатор продукта
+                success: function(response) {
+                    if (response.success) {
+                        // Параметры продукта успешно сброшены
+                    } else {
+                        console.error("Error resetting product parameters");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error resetting product parameters:", error);
+                }
+            });
+        });
+    </script>
+    
     
     <script src="{% static 'scripts/app.js' %}"></script>
 </body>
