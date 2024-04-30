@@ -45,7 +45,7 @@ const sliderThumbs = new Swiper(".slider__thumbs .swiper-container", {
       // условия для разных размеров окна браузера
       0: {
         // при 0px и выше
-        direction: "horizontal" // горизонтальная прокрутка
+        direction: "vertical" // горизонтальная прокрутка
       },
       768: {
         // при 768px и выше

@@ -208,6 +208,19 @@ header {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
+    margin-bottom: 20px;
+}
+.productHold{
+    text-align: center;
+    flex: 0 0 23%;
+    border: 1px solid #3665F3;
+    max-width: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 .product a{
     color: #000;
@@ -234,7 +247,6 @@ header {
 }
 .product__img img{
     max-width: 100%;
-    width: 300px;
 }
 .product__title {
     font-size: 20px;
@@ -552,6 +564,10 @@ header {
     }
     .other__items {
         display: flex;
+        flex-wrap: wrap;
+    }
+    @media (max-width:992) {
+        
     }
     .other__items a{
         text-decoration: none;

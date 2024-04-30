@@ -28,33 +28,24 @@
                 <div class="products container">
                     <div class="products__container">
                         {% for product in active_products %}
-                            {% comment %} {% if product.waiting %}
-                            <div class="productHold" id="product-{{ product.id }}">
-                                <div class="product__img">
-                                    <img src="{% static 'img/time.svg' %}" alt="{{ product.name }}">
-                                    <div class="product__title">Waiting for the next auction item</div>
-                                </div>
-                            </div>
-                            {% else %} {% endcomment %}
-                            <div class="product" id="product-{{ product.id }}">
-                                <a href="{% url 'product' product_id=product.id %}">
+                        <div class="product" id="product-{{ product.id }}">
+                            <a href="{% url 'product' product_id=product.id %}">
                                 <div class="product__info">
                                     <div class="product__img">
                                         <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
                                     </div>
                                     <div class="product__title">{{ product.name }}</div>
-                                    <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}s</span></div>
-                                    <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
+                                        <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}s</span></div>
+                                        <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
                                 </div>
-                                </a>
-                                <div class="product__prices">
-                                    <div class="product__highBid">Highest bid: - <span>{{ product.highest_bid }}</span></div>
-                                    <div class="product__increment">Increment 500€</div>
-                                    <button type="button" class="product__btn">Bid {{ product.bid }}</button>
-                                </div>
+                            </a>
+                            <div class="product__prices">
+                                    <div class="product__highBid">Highest bid: - <span></span></div>
+                                <div class="product__increment">Increment {{product.increment}}€</div>
+                                <button type="button" class="product__btn">Bid {{ product.bid }} €  </button>
                             </div>
-                            {% comment %} {% endif %} {% endcomment %}
-                        {% endfor %}
+                        </div>
+                    {% endfor %}
                          
                         </div>
                     </div>
