@@ -64,11 +64,11 @@
                         <a href="{% url 'product' product_id=product.id %}">
                         <div class="other__item otherItem">
                             <div class="otherItem__img">
-                                <img src="{{ product.images.first.image.url }}" alt="{{otherProduct.name}}" class="">
+                                <img src="{{ otherProduct.images.first.image.url }}" alt="{{otherProduct.name}}" class="">
                             </div>
                             <div class="otherItem__title">{{otherProduct.name}}</div>
                             <div class="otherItem__own">Pre-owned</div>
-                            <div class="otherItem__price">Eur - {{otherProduct.price}}</div>
+                            <div class="otherItem__price">Eur {{otherProduct.price}} €</div>
                             <div class="otherItem__deliery">Free shipping</div>
                         </div>
                      </a>
