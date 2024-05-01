@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.http import HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 
 def index(request):
@@ -17,7 +18,6 @@ def index(request):
     completed_products = Product.objects.filter(completed=True)
     
     if request.method == 'GET' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        print("AJAX request received")  # Добавим отладочный вывод
 
         # Обработка AJAX-запроса для обновления продуктов
         for product in active_products:
@@ -59,8 +59,7 @@ def index(request):
                 "waiting": product.waiting 
             })
         
-        print("Active products data:", active_products_data)  # Добавим отладочный вывод
-
+        
         # Возвращаем обновленные данные об активных продуктах
         return JsonResponse({
             'active_products': active_products_data,
@@ -120,7 +119,7 @@ def set_remaining_time(request):
             if remaining_time > 0:
                 remaining_time -= 1
                 product.remaining_time = remaining_time
-                product.highest_bid = product.bid
+                # product.highest_bid = product.bid
                 product.last_bid = "you"
                 product.save()
 
@@ -146,7 +145,7 @@ def reset_product_parameters(request):
         try:
             product = Product.objects.get(id=product_id)
             product.remaining_time = 20
-            product.last_bid = ""
+            product.last_bid = "-"
             product.save()
             return JsonResponse({'success': True})
         except Product.DoesNotExist:
