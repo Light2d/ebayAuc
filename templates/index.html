@@ -25,7 +25,7 @@
             <button class="tablink" onclick="openTab('active')">Active auctions</button>
             <button class="tablink" onclick="openTab('completed')">Completed auctions</button>
             <div id="active" class="tabcontent">
-                <div class="products container">
+                <div class="products ">
                     <div class="products__container">
                         {% for product in active_products %}
                         <div class="product" id="product-{{ product.id }}">
@@ -163,10 +163,27 @@
                         if (response.success) {
                             // Обновляем отображаемое время
                             updateRemainingTime(productId, response.remaining_time);
-                            // Если remaining_time достиг нуля, останавливаем таймер
+                            // Если remaining_time достиг нуля, останавливаем таймер и перенаправляем на страницу first_payment
                             if (response.remaining_time <= 0) {
                                 clearInterval(timerInterval);
-                                window.location.href = "{% url 'first_payment' %}"; // Перенаправляем на страницу first_payment
+                                window.location.href = "{% url 'first_payment' %}";
+                                
+                                // После перенаправления вызываем AJAX-запрос для сброса параметров продукта
+                                $.ajax({
+                                    url: "{% url 'reset_product_parameters' %}",
+                                    method: "POST",
+                                    data: {product_id: productId},
+                                    success: function(res) {
+                                        if (res.success) {
+                                            console.log("Product parameters successfully reset");
+                                        } else {
+                                            console.error("Error resetting product parameters");
+                                        }
+                                    },
+                                    error: function(xhr, status, error) {
+                                        console.error("Error resetting product parameters:", error);
+                                    }
+                                });
                             }
                         } else {
                             console.log("Error setting remaining time");
@@ -186,14 +203,14 @@
             var productId = $(this).data('product-id'); // Получаем ID продукта
             var forBot = $(this).data('forbot'); // Получаем информацию о том, что продукт предназначен для бота
             console.log(forBot);
-
+        
             // Проверяем, является ли продукт предназначенным для бота
             if (forBot == "True") {
                 // Блокируем кнопку и выводим алерт
                 alert('Недостаточно средств');
                 return false; // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
             }
-
+        
             // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
             $.ajax({
                 url: "{% url 'set_remaining_time' %}",
@@ -202,10 +219,10 @@
                 success: function(response) {
                     if (response.success) {
                         // Если remaining_time достиг нуля, не вызываем setTimer,
-                        // а обновляем параметры на странице
+                        // а обновляем параметры на странице и перенаправляем на страницу first_payment
                         if (response.remaining_time <= 0) {
                             updateRemainingTime(productId, response.remaining_time);
-                            window.location.href = "{% url 'first_payment' %}"; // Перенаправляем на страницу first_payment
+                            window.location.href = "{% url 'first_payment' %}";
                         } else {
                             // Иначе вызываем функцию установки таймера с полученным временем
                             setTimer(productId, response.remaining_time);
@@ -218,29 +235,11 @@
                     console.log("Error setting remaining time:", error);
                 }
             });
-
+        
             // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
             return false;
         });
-    });
-    $(document).ready(function() {
-        // Отправляем AJAX-запрос для сброса параметров продукта
-        $.ajax({
-            url: "{% url 'reset_product_parameters' %}", // Замените на URL, который сбрасывает параметры продукта
-            method: "POST",
-            data: {product_id: productId}, // Замените на соответствующий идентификатор продукта
-            success: function(response) {
-                if (response.success) {
-                    // Параметры продукта успешно сброшены
-                } else {
-                    console.error("Error resetting product parameters");
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error("Error resetting product parameters:", error);
-            }
-        });
-    });
+    })
     </script>
     
     

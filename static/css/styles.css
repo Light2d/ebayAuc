@@ -196,9 +196,10 @@ header {
 }
 .products__container a{
     text-decoration: none;
+    
 }
 .container {
-    margin: 10px;
+    
 }
 .product {
     flex: 0 0 23%;
@@ -228,12 +229,20 @@ header {
 }
 @media (max-width: 992px) {
     .product {
-        flex: 0 0 48%;
+        flex: 0 0 45%;
+        margin-bottom: 2%;
+    }
+    .productHold {
+        flex: 0 0 45%;
         margin-bottom: 2%;
     }
 }  
-@media (max-width: 425px) {
+@media (max-width: 500px) {
     .product {
+        flex: 0 0 100%;
+        margin-bottom: 5%;
+    }
+    .productHold {
         flex: 0 0 100%;
         margin-bottom: 5%;
     }
@@ -361,19 +370,24 @@ header {
 .tablink {
     background-color: transparent;
     border: none;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ddd;
+    margin-bottom: 40px;
+    border-bottom: 4px solid #ddd;
     outline: none;
     cursor: pointer;
     padding: 10px 15px;
     font-size: 24px;
 }
+@media (max-width: 992px) {
+    .tablink {
+        margin-bottom: 20px;
+    }
+}  
 .tablink:first-child{
     margin-right: 20px;
 }
 /* Стилизация активного таба */
 .tablink.active {
-    border-bottom: 2px solid #3264EE;
+    border-bottom: 4px solid #3264EE;
 }
 
 
