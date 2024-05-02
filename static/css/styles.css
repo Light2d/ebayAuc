@@ -285,6 +285,12 @@ header {
     font-size: 18px;
     margin-bottom: 5px;
 }
+.product__highBid-active{
+    text-align: right;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
 .product__increment {
     text-align: right;
     font-weight: 300;
@@ -401,6 +407,7 @@ header {
     }
     .productDetail__right{
         flex: 0 0 29%;
+        margin-bottom: 3rem;
     }
     @media (max-width: 992px) {
         .productDetail{
@@ -535,6 +542,7 @@ header {
     flex-direction: column;
     margin-bottom: 40px;
     }
+   
     .productDetail__btn {
     border-radius: 30px;
     color: #3665F3;
@@ -543,6 +551,20 @@ header {
     border: 1px solid #3665F3;
     background: transparent;
     cursor: pointer;
+    }
+    .product__btnAdd{
+        border-radius: 30px;
+        color: #3665F3;
+        border: 1px solid #3665F3;
+        font-size: 24px;
+        padding: 10px 0;
+        background: transparent;
+        cursor: pointer;
+    }
+    .product__btnAdd-active{
+        color: #fff;
+        background: #3665F3;
+
     }
     .productDetail__btn:first-child{
     margin-bottom: 20px;
@@ -589,6 +611,7 @@ header {
     }
     .other__item {
         width: 250px;
+        margin-bottom: 30px;
     }
     .other__item{
         margin-right: 20px;
@@ -876,4 +899,62 @@ header {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+}
+
+/*==================SPECIFICS=================*/
+
+.specifics {
+    margin-bottom: 3rem;
+}
+.specifics__about {
+    margin-left: 20px;
+    border: 1px solid #DDDDDD;
+    border-bottom: none;
+    background: #fff;
+    margin-top: 5px;
+    padding: 3px
+}
+.specifics__container{
+    border: 1px solid #DDDDDD;
+    margin-top: 1px;
+    padding: 10px;
+}
+.specifics__subtitle {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.specifics__list{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    flex-wrap: wrap;
+}
+.specifics__last {
+    margin-bottom: 20px;
+}
+.specifics__item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-bottom: 1rem;
+}
+
+.specifics__title {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 32px;
+}
+.product__name {
+    flex: 0 0 25%;
+    color: #767676;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.product__value {
+    flex: 0 0 25%;
+    color: #000;
+    font-size: 20px;
+    text-align: left;
 }

@@ -54,3 +54,15 @@ const sliderThumbs = new Swiper(".slider__thumbs .swiper-container", {
     }
   });
   
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.product__btnAdd');
+    
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            button.classList.toggle("product__btnAdd-active")
+
+        });
+    });
+});

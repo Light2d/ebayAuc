@@ -61,15 +61,15 @@
                     <div class="other__subtitle">Sponsered</div>
                     <div class="other__items">
                         {% for otherProduct in active_products %}
-                        <a href="{% url 'product' product_id=product.id %}">
+                        <a href="{% url 'product' product_id=otherProduct.id %}">
                         <div class="other__item otherItem">
                             <div class="otherItem__img">
                                 <img src="{{ otherProduct.images.first.image.url }}" alt="{{otherProduct.name}}" class="">
                             </div>
                             <div class="otherItem__title">{{otherProduct.name}}</div>
-                            <div class="otherItem__own">Pre-owned</div>
+                            <div class="otherItem__own">New</div>
                             <div class="otherItem__price">Eur {{otherProduct.price}} €</div>
-                            <div class="otherItem__deliery">Free shipping</div>
+                            <div class="otherItem__deliery">+2€ shipping</div>
                         </div>
                      </a>
                         {% endfor %}
@@ -84,7 +84,7 @@
                <div class="productDetail__time product__time">Remaning time: <span>{{product.remaining_time}}</span>s </div>
                <div class="productDetail__btns">
                     <button class="productDetail__btn">Bid {{product.bid}}</button>
-                    <button data-forBot="{{product.forBot}}" class="productDetail__btn">Add to watchlist</button>
+                    <button data-forBot="{{product.forBot}}" class="product__btnAdd">Add to watchlist</button>
                </div>
                <div class="productDetail__items">
                 <div class="productDetail__item">
@@ -118,6 +118,24 @@
                     </div>
                 </div>
                </div>
+            </div>
+        </div>
+        <span class="specifics__about">About this item</span>
+        <div class="specifics container">
+            <div class="specifics__container">
+                <div class="specifics__subtitle">Seller assumes all responsibility for this listing.</div>
+                <div class="specifics__last">Last updated on Apr 17, 2024 15:31:17 CST View all revisions</div>
+    
+                <div class="specifics__title">Item specifics</div>
+    
+                <ul class="specifics__list">
+                    {% for attribute in product.attributes.all %}
+                        <li class="specifics__item">
+                            <div class="product__name">{{ attribute.name }}</div>
+                            <div class="product__value">{{ attribute.value }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </main>

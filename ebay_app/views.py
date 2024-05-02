@@ -21,19 +21,21 @@ def index(request):
 
         # Обработка AJAX-запроса для обновления продуктов
         for product in active_products:
+            product.bid = product.increment
             if product.forBot:
                 # Уменьшаем время продукта на каждом обновлении
                 product.remaining_time -= 1
 
                 # Проверяем, нужно ли обновить ставку для данного товара
                 if 5 <= product.remaining_time <= 15:
-                    product.bid += product.increment
+                    product.bid = product.increment
+                    product.highest_bid = product.bid + product.increment
                     product.last_bid = generate_random_name()  # Замените на ваш генератор случайных имен
                     product.remaining_time = 20  # ставим время на 20 секунд
 
                 product.save()  # Сохраняем изменения
                 
-                if product.bid >= product.highest_bid:
+                if product.bid >= product.price:
                     product.waiting = True
                     product.save()
                     
@@ -83,6 +85,7 @@ def update_product_state2(product_id):
     product.completed = False
     product.active = True
     product.bid = product.initial_bid
+    product.highest_bid = 0
     product.save()
 
 def generate_random_name():

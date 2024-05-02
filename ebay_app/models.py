@@ -3,7 +3,7 @@ from django.db import models
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    price = models.CharField(max_length=10, default="-")
+    price = models.IntegerField(default=0)
     condition = models.TextField()
     category = models.CharField(max_length=50)
     active = models.BooleanField(default=True)
@@ -28,3 +28,8 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return self.product.name + ' Image'
+
+class ProductAttribute(models.Model):
+    product = models.ForeignKey(Product, related_name='attributes', on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    value = models.CharField(max_length=100)

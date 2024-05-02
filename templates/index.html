@@ -40,7 +40,7 @@
                                 </div>
                             </a>
                             <div class="product__prices">
-                                    <div class="product__highBid">Highest bid: - <span>{{product.highest_bid}}€</div>
+                                    <div class="product__highBid-active">Highest bid: - <span>{{product.highest_bid}}€</div>
                                 <div class="product__increment">Increment {{product.increment}}€</div>
                                 <button type="button" data-forBot="{{product.forBot}}" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="product__btn" >Bid {{ product.bid }} €  </button>
                             </div>
@@ -68,7 +68,7 @@
                             </div>
                             </a>
                             <div class="product__prices">
-                                <div class="product__highBid">Sale has ended</span></div>
+                                <div class="product__highBid"></div>
                                 <button class="product__btn">Sale has ended</button>
                             </div>
                         </div>
@@ -126,8 +126,8 @@
                                 // Иначе обновляем отображение продукта
                                 productElement.find(".product__time span").text(product.remaining_time + 's');
                                 productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
-                                productElement.find(".product__highBid span").text(product.highest_bid + '€');
-                                productElement.find(".product__btn").text("Bid " + product.bid + '€');
+                                productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
+                                productElement.find(".product__btn").text("Bid " + product.bid + ' €');
                                 productElement.find(".product__title").text(product.name);
                             }
                         });

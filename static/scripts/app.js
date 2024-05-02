@@ -16,9 +16,23 @@ function openTab(tabName) {
 // Открыть первый таб по умолчанию
 document.getElementById("active").style.display = "block";
 document.getElementsByClassName("tablink")[0].classList.add("active");
+document.addEventListener("DOMContentLoaded", function() {
+    setRandomHighBid();
+});
+function setRandomHighBid() {
+    var highBidElements = document.querySelectorAll('.product__highBid');
 
+        // Генерируем случайное число от 100 до 1000
+        // Вставляем случайное число в элемент
+        highBidElements.forEach(el => {
+            var randomBid = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
 
+            el.innerHTML = "Highest bid: - " + randomBid + " €";
 
+        });
+    
+}
 
+// setTimeout(() => setRandomHighBid(), 3000);
 
 
