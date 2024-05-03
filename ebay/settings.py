@@ -17,8 +17,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
 INSTALLED_APPS = [
     'ebay_app',
     'django.contrib.admin',
@@ -27,6 +25,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+AUTH_USER_MODEL = 'ebay_app.CustomUser'
+LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL = '/login/'  # URL страницы входа
+LOGIN_REDIRECT_URL = '/'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # Другие бэкенды аутентификации, если нужно
 ]
 
 MIDDLEWARE = [

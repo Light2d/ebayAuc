@@ -35,18 +35,21 @@
                                         <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
                                     </div>
                                     <div class="product__title">{{ product.name }}</div>
-                                        <div class="product__time">Remaining time: - <span>{{ product.remaining_time }}s</span></div>
+                                    {% if product.forBot %}
+                                        <div class="product__time">Remaining time: - {{ product.remaining_time }}s</span></div>
+                                    {% else %}
+                                        <div class="product__time">Remaining time: - {{ user_remaining_time }}s</span></div>
+                                    {% endif %}
                                         <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
                                 </div>
                             </a>
                             <div class="product__prices">
-                                    <div class="product__highBid-active">Highest bid: - <span>{{product.highest_bid}}€</div>
+                                    <div class="product__highBid-active">Highest bid: - {{ user_highest_bid }}€</div>
                                 <div class="product__increment">Increment {{product.increment}}€</div>
                                 <button type="button" data-forBot="{{product.forBot}}" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="product__btn" >Bid {{ product.bid }} €  </button>
                             </div>
                         </div>
-                    {% endfor %}
-                         
+                        {% endfor %}                         
                         </div>
                     </div>
                 </div>
@@ -94,7 +97,9 @@
                     success: function(data) {
                         // Обновляем информацию о продуктах на странице
                         data.active_products.forEach(function(product) {
-                            var productId = product.id;
+                            var productId = product.id; // Получаем ID продукта
+                            var forBotValue = $('#product-btn-' + productId).data('forbot');
+
                             var productElement = $("#product-" + productId);
                             // Если продукт ожидает, заменяем его отображение
                             if (product.waiting) {
@@ -124,7 +129,14 @@
                                 }, 10000); // 10 секунд
                             } else {
                                 // Иначе обновляем отображение продукта
-                                productElement.find(".product__time span").text(product.remaining_time + 's');
+                                var forBotValue = $('#product-btn-' + productId).data('forbot');
+                                var user_remaining_time = product.user_remaining_time;
+                                
+                                if (forBotValue == "True"){
+                                    productElement.find(".product__time").text("Remaining time: - " + product.remaining_time + 's');
+                                } else {
+                                    productElement.find(".product__time").text("Remaining time: - " + user_remaining_time + 's');
+                                }
                                 productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
                                 productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
                                 productElement.find(".product__btn").text("Bid " + product.bid + ' €');
@@ -138,22 +150,78 @@
                 });
             }
         });
-        
     </script>
     <script>
         var productId = $('.product__btn').data('product-id');
-       
-    $(document).ready(function() {
-        // Функция для обновления времени на фронтенде
-        function updateRemainingTime(productId, remainingTime) {
-            var $productElement = $('#product-' + productId);
-            var $remainingTimeElement = $productElement.find('.product__time span');
-            $remainingTimeElement.text(remainingTime + 's');
-        }
-
-        // Функция для установки таймера
-        function setTimer(productId, remainingTime) {
-            var timerInterval = setInterval(function() {
+    
+        $(document).ready(function() {
+            // Функция для обновления времени на фронтенде
+            function updateRemainingTime(productId, remainingTime) {
+                var $productElement = $('#product-' + productId);
+                var $remainingTimeElement = $productElement.find('.product__time span');
+                $remainingTimeElement.text(remainingTime + 's');
+            }
+    
+            // Функция для установки таймера
+            function setTimer(productId, remainingTime) {
+                var timerInterval = setInterval(function() {
+                    // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
+                    $.ajax({
+                        url: "{% url 'set_remaining_time' %}",
+                        method: "POST",
+                        data: {product_id: productId},
+                        success: function(response) {
+                            if (response.success) {
+                                // Обновляем отображаемое время
+                                updateRemainingTime(productId, response.remaining_time);
+                                // Если remaining_time достиг нуля, останавливаем таймер и перенаправляем на страницу first_payment
+                                if (response.remaining_time <= 0) {
+                                    clearInterval(timerInterval);
+                                    window.location.href = "{% url 'first_payment' %}";
+    
+                                    // После перенаправления вызываем AJAX-запрос для сброса параметров продукта
+                                    $.ajax({
+                                        url: "{% url 'reset_product_parameters' %}",
+                                        method: "POST",
+                                        data: {product_id: productId},
+                                        success: function(res) {
+                                            if (res.success) {
+                                                console.log("Product parameters successfully reset");
+                                            } else {
+                                                console.error("Error resetting product parameters");
+                                            }
+                                        },
+                                        error: function(xhr, status, error) {
+                                            console.error("Error resetting product parameters:", error);
+                                        }
+                                    });
+                                }
+                            } else {
+                                console.log("Error setting remaining time");
+                                clearInterval(timerInterval); // Останавливаем таймер в случае ошибки
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.log("Error setting remaining time:", error);
+                            clearInterval(timerInterval); // Останавливаем таймер в случае ошибки
+                        }
+                    });
+                }, 1000); // Каждую секунду
+            }
+    
+            // Обработчик клика на кнопке "Bid" для каждого продукта
+            $('.product__btn').click(function() {
+                var productId = $(this).data('product-id'); // Получаем ID продукта
+                var forBot = $(this).data('forbot'); // Получаем информацию о том, что продукт предназначен для бота
+                console.log(forBot);
+            
+                // Проверяем, является ли продукт предназначенным для бота
+                if (forBot == "True") {
+                    // Блокируем кнопку и выводим алерт
+                    alert('Недостаточно средств');
+                    return false; // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
+                }
+            
                 // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
                 $.ajax({
                     url: "{% url 'set_remaining_time' %}",
@@ -161,85 +229,28 @@
                     data: {product_id: productId},
                     success: function(response) {
                         if (response.success) {
-                            // Обновляем отображаемое время
-                            updateRemainingTime(productId, response.remaining_time);
-                            // Если remaining_time достиг нуля, останавливаем таймер и перенаправляем на страницу first_payment
+                            // Если remaining_time достиг нуля, не вызываем setTimer,
+                            // а обновляем параметры на странице и перенаправляем на страницу first_payment
                             if (response.remaining_time <= 0) {
-                                clearInterval(timerInterval);
+                                updateRemainingTime(productId, response.remaining_time);
                                 window.location.href = "{% url 'first_payment' %}";
-                                
-                                // После перенаправления вызываем AJAX-запрос для сброса параметров продукта
-                                $.ajax({
-                                    url: "{% url 'reset_product_parameters' %}",
-                                    method: "POST",
-                                    data: {product_id: productId},
-                                    success: function(res) {
-                                        if (res.success) {
-                                            console.log("Product parameters successfully reset");
-                                        } else {
-                                            console.error("Error resetting product parameters");
-                                        }
-                                    },
-                                    error: function(xhr, status, error) {
-                                        console.error("Error resetting product parameters:", error);
-                                    }
-                                });
+                            } else {
+                                // Иначе вызываем функцию установки таймера с полученным временем
+                                setTimer(productId, response.remaining_time);
                             }
                         } else {
                             console.log("Error setting remaining time");
-                            clearInterval(timerInterval); // Останавливаем таймер в случае ошибки
                         }
                     },
                     error: function(xhr, status, error) {
                         console.log("Error setting remaining time:", error);
-                        clearInterval(timerInterval); // Останавливаем таймер в случае ошибки
                     }
                 });
-            }, 1000); // Каждую секунду
-        }
-
-        // Обработчик клика на кнопке "Bid" для каждого продукта
-        $('.product__btn').click(function() {
-            var productId = $(this).data('product-id'); // Получаем ID продукта
-            var forBot = $(this).data('forbot'); // Получаем информацию о том, что продукт предназначен для бота
-            console.log(forBot);
-        
-            // Проверяем, является ли продукт предназначенным для бота
-            if (forBot == "True") {
-                // Блокируем кнопку и выводим алерт
-                alert('Недостаточно средств');
-                return false; // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
-            }
-        
-            // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
-            $.ajax({
-                url: "{% url 'set_remaining_time' %}",
-                method: "POST",
-                data: {product_id: productId},
-                success: function(response) {
-                    if (response.success) {
-                        // Если remaining_time достиг нуля, не вызываем setTimer,
-                        // а обновляем параметры на странице и перенаправляем на страницу first_payment
-                        if (response.remaining_time <= 0) {
-                            updateRemainingTime(productId, response.remaining_time);
-                            window.location.href = "{% url 'first_payment' %}";
-                        } else {
-                            // Иначе вызываем функцию установки таймера с полученным временем
-                            setTimer(productId, response.remaining_time);
-                        }
-                    } else {
-                        console.log("Error setting remaining time");
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error setting remaining time:", error);
-                }
+            
+                // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
+                return false;
             });
-        
-            // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
-            return false;
-        });
-    })
+        })
     </script>
     
     
