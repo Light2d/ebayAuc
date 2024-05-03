@@ -1,0 +1,64 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+<h1 class="signOut__title">{% trans "Sign Out" %}</h1>
+
+<div class="signOut__suptitle">{% trans 'Are you sure you want to sign out?' %}</div>
+<div class="log">
+  <div class="login">
+    <form class="google__form" method="post" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+      {% endif %}
+      <button type="submit">{% trans 'Sign Out' %}</button>
+    </form>
+  </div>
+</div>
+
+
+
+<style>
+  .log{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login{
+    text-align: center;
+    width: 350px;
+  }
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  .google__form button{
+    width: 100%;
+    color: #fff;
+    background: #3665F3;
+    padding: 15px 0;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+.signOut__suptitle{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.signOut__title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+</style>
+{% endblock %}

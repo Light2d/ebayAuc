@@ -4,14 +4,18 @@ from django.contrib.auth.forms import AuthenticationForm
 
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Username'}))
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'password']
+        fields = ['username']
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'Password'}),
+        }
         
 
 class UserLoginForm(AuthenticationForm):
-    class Meta:
-        model = CustomUser
+    username = forms.CharField(widget=forms.TextInput(attrs={'autofocus': True, 'placeholder': 'Username'}))
+    password = forms.CharField(label=("Password"), strip=False, widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'placeholder': 'Password'}))
+
 

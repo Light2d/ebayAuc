@@ -1,21 +1,26 @@
 {% load socialaccount %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
-    <link rel="stylesheet" type="text/css" href="https://accounts.google.com/gsi/style.css">
-
-</head>
-<body>
-    <h2>User Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-    <a href="{% provider_login_url 'google' %}">Войти через Google</a>
-</body>
-</html>
+<div class="login__header">
+    <img src="{% static 'img/logo.png' %}" alt="">
+</div>
+<div class="log">
+    <div class="login">
+        <div class="login__title">Hi</div>
+        <div class="login__register">
+            Sign in to eBay or <a href="{% url 'register' %}">create an account</a>
+        </div>
+    
+        <form class="login__form" method="post">
+            {% csrf_token %}
+                {{ form.username }}
+                {{ form.password }}
+            <button type="submit">Login</button>
+        </form>
+        <a class="login__btn" href="{% provider_login_url 'google' %}">Continue with Google</a>
+    
+    </div>
+    
+    
+</div>
