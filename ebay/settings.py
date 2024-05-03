@@ -18,6 +18,12 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    
+    
     'ebay_app',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,16 +31,32 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 AUTH_USER_MODEL = 'ebay_app.CustomUser'
 LOGIN_REDIRECT_URL = '/'
 
-LOGIN_URL = '/login/'  # URL страницы входа
+LOGIN_URL = '/login/'  
 LOGIN_REDIRECT_URL = '/'
+
+SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '764768997499-qd34e6l4kr6856fovrbik9f3rbhma1gj.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    # Другие бэкенды аутентификации, если нужно
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 MIDDLEWARE = [
