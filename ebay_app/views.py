@@ -93,7 +93,7 @@ def index(request):
                     product.save()
                     
                     # Запускаем таймер для изменения состояния на completed через 10 секунд
-                    Timer(5, update_product_state, args=(product.id,)).start()
+                    Timer(3, update_product_state, args=(product.id,)).start()
                     
                     # Запускаем таймер для изменения состояния на active через 15 секунд
                     Timer(5, update_product_state2, args=(product.id,)).start()
@@ -127,7 +127,32 @@ def index(request):
     # Если это обычный GET-запрос, просто отобразите страницу index
     return render(request, 'index.html', {'active_products': active_products, 'completed_products': completed_products, 'user_remaining_time': user_remaining_time, 'user_highest_bid': user_highest_bid})
 
+def update_active_products():
+    active_products = Product.objects.filter(active=True)
+    for product in active_products:
+        if product.forBot:
+            # Уменьшаем время продукта на каждом обновлении
+            product.remaining_time -= 1
 
+            # Проверяем, нужно ли обновить ставку для данного товара
+            if 5 <= product.remaining_time <= 15:
+                product.highest_bid = product.bid + product.increment
+                product.bid = product.highest_bid + product.increment
+                product.last_bid = generate_random_name()  # Замените на ваш генератор случайных имен
+                product.remaining_time = 20  # ставим время на 20 секунд
+
+            product.save()  # Сохраняем изменения
+
+            if product.bid >= product.price:
+                product.waiting = True
+                product.save()
+
+                # Запускаем таймер для изменения состояния на completed через 10 секунд
+                Timer(5, update_product_state, args=(product.id,)).start()
+
+                # Запускаем таймер для изменения состояния на active через 15 секунд
+                Timer(5, update_product_state2, args=(product.id,)).start()
+                
 def update_product_state(product_id):
     product = Product.objects.get(id=product_id)
     product.completed = True
@@ -141,8 +166,10 @@ def update_product_state2(product_id):
     product = Product.objects.get(id=product_id)
     product.completed = False
     product.active = True
+    product.remaining_time = 20
     product.bid = 0
     product.save()
+  
 
 def generate_random_name():
     # Список возможных имен

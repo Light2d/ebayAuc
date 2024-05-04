@@ -28,6 +28,9 @@
                 <div class="products ">
                     <div class="products__container">
                         {% for product in active_products %}
+                        <input type="hidden" id="product-name-{{ product.id }}" value="{{ product.name }}">
+                        <input type="hidden" id="product-increment-{{ product.id }}" value="{{ product.increment }}">
+                        <input type="hidden" id="product-image-url-{{ product.id }}" value="{{ product.images.first.image.url }}">
                         <div class="product" id="product-{{ product.id }}">
                             <a href="{% url 'product' product_id=product.id %}">
                                 <div class="product__info">
@@ -36,9 +39,9 @@
                                     </div>
                                     <div class="product__title">{{ product.name }}</div>
                                     {% if product.forBot %}
-                                        <div class="product__time">Remaining time: - {{ product.remaining_time }}s</span></div>
+                                        <div class="product__time">Remaining time: - {{ product.remaining_time }}s</div>
                                     {% else %}
-                                        <div class="product__time">Remaining time: - {{ user_remaining_time }}s</span></div>
+                                        <div class="product__time user__time">Remaining time: - {{ user_remaining_time }}s</div>
                                     {% endif %}
                                         <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
                                 </div>
@@ -89,29 +92,30 @@
         $(document).ready(function() {
             // Отправляем AJAX-запрос каждую секунду
             setInterval(updateProducts, 1000);
+            setInterval(updateUserTime, 1000);
+            var productElement = $("#product-" + productId);
         
             function updateProducts() {
                 $.ajax({
-                    url: "{% url 'index' %}?random=" + new Date().getTime(), // Добавляем случайное значение
+                    url: "{% url 'index' %}?random=" + new Date().getTime(),
                     method: "GET",
                     success: function(data) {
-                        // Обновляем информацию о продуктах на странице
                         data.active_products.forEach(function(product) {
-                            var productId = product.id; // Получаем ID продукта
-                            var forBotValue = $('#product-btn-' + productId).data('forbot');
-
+                            var productId = product.id;
                             var productElement = $("#product-" + productId);
-                            // Если продукт ожидает, заменяем его отображение
+                          
+
+
                             if (product.waiting) {
                                 productElement.replaceWith(
-                                    '<div class="productHold" id="product-' + productId + '">' +
+                                    '<div class="product productHold" id="product-' + productId + '">' +
                                     '<div class="product__img">' +
                                     '<img src="{% static 'img/time.svg' %}" alt="' + product.name + '">' +
                                     '<div class="product__title">Waiting for the next auction item</div>' +
                                     '</div>' +
                                     '</div>'
                                 );
-                                // Запускаем таймер для установки completed = true через 10 секунд
+            
                                 setTimeout(function() {
                                     $.ajax({
                                         url: "{% url 'index' %}",
@@ -126,21 +130,15 @@
                                             console.log("Error setting product as completed:", error);
                                         }
                                     });
-                                }, 10000); // 10 секунд
+                                    
+                                    // Обновление отображения продукта обратно через 5 секунд
+                                    setTimeout(function() {
+                                        updateProductView(productId);
+                                    }, 6000);
+                                }, 10000);
                             } else {
                                 // Иначе обновляем отображение продукта
-                                var forBotValue = $('#product-btn-' + productId).data('forbot');
-                                var user_remaining_time = product.user_remaining_time;
-                                
-                                if (forBotValue == "True"){
-                                    productElement.find(".product__time").text("Remaining time: - " + product.remaining_time + 's');
-                                } else {
-                                    productElement.find(".product__time").text("Remaining time: - " + user_remaining_time + 's');
-                                }
-                                productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
-                                productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
-                                productElement.find(".product__btn").text("Bid " + product.bid + ' €');
-                                productElement.find(".product__title").text(product.name);
+                                updateProductView(productId, product);
                             }
                         });
                     },
@@ -149,6 +147,62 @@
                     }
                 });
             }
+            function updateUserTime(productId, product = null){
+                var productElement = $("#product-" + productId);
+                var forBotValue = $('#product-btn-' + productId).data('forbot');
+                var user_remaining_time = product ? product.user_remaining_time : null;
+                var userTimeElement = productElement.find(".user_remaining_time");
+                if (forBotValue == "False"){
+                    userTimeElement.text("Remaining time: - " + user_remaining_time + 's');
+                }
+
+            }
+               
+            
+            function updateProductView(productId, product = null) {
+                console.log(productId)
+                var productElement = $("#product-" + productId);
+                var forBotValue = $('#product-btn-' + productId).data('forbot');
+                var producTimeElement = productElement.find(".product__time");
+                var userTimeElement = productElement.find(".user_remaining_time");
+
+                producTimeElement.text("Remaining time: - " + product.remaining_time + 's');
+            
+                productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
+                productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
+                productElement.find(".product__btn").text("Bid " + product.bid + ' €');
+                productElement.find(".product__title").text(product.name);
+            
+                if (productElement.hasClass("productHold")) {
+                    var productName = document.getElementById('product-name-' + productId).value;
+                    var productImageUrl = document.getElementById('product-image-url-' + productId).value;
+                    var productIncrement = document.getElementById('product-increment-' + productId).value;
+            
+                    var productHtml = '<div class="product" id="product-' + productId + '">' +
+                        '<a href="/product/' + productId + '">' +
+                        '<div class="product__info">' +
+                        '<div class="product__img">' +
+                        '<img src="' + productImageUrl + '" alt="' + productName + '">' +
+                        '</div>' +
+                        '<div class="product__title">' + productName + '</div>' +
+                        (product.forBot ?
+                            '<div class="product__time">Remaining time: - ' + product.remaining_time + 's</div>' :
+                            '<div class="product__time">Remaining time: - ' + product.remaining_time + 's</div>') +
+                        '<div class="product__lastBid">Last bid by ' + product.last_bid + '</div>' +
+                        '</div>' +
+                        '</a>' +
+                        '<div class="product__prices">' +
+                        '<div class="product__highBid-active">Highest bid: - ' + product.highest_bid + '€</div>' +
+                        '<div class="product__increment">Increment ' + productIncrement + '€</div>' +
+                        '<button type="button" data-forBot="' + product.forBot + '" data-product-id="' + productId + '" id="product-btn-' + productId + '" class="product__btn">Bid ' + product.bid + ' €</button>' +
+                        '</div>' +
+                        '</div>';
+            
+                    productElement.replaceWith(productHtml);
+                }
+            }
+            
+        
         });
     </script>
     <script>
@@ -158,8 +212,8 @@
             // Функция для обновления времени на фронтенде
             function updateRemainingTime(productId, remainingTime) {
                 var $productElement = $('#product-' + productId);
-                var $remainingTimeElement = $productElement.find('.product__time span');
-                $remainingTimeElement.text(remainingTime + 's');
+                var $remainingTimeElement = $productElement.find('.product__time');
+                $remainingTimeElement.text("Remaining time: - " + remainingTime + 's');
             }
     
             // Функция для установки таймера
