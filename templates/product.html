@@ -17,7 +17,8 @@
     <main>
         <div class="productDetail container">
             <div class="productDetail__left">
-                <section class="slider">
+
+                {% comment %} <section class="slider">
                     <div class="slider__flex">
                       <div class="slider__col">
                   
@@ -54,7 +55,45 @@
                       </div>
                   
                     </div>
-                </section>
+                </section> {% endcomment %}
+                <section class="slider">
+                    <div class="">
+                      <div class="slider__flex">
+                        <div class="slider__col">
+              
+                          <div class="slider__prev"><img src="{% static 'img/arrowU.svg' %}" alt=""></div> <!-- Кнопка для переключения на предыдущий слайд -->
+              
+                          <div class="slider__thumbs">
+                            <div class="swiper-container"> <!-- Слайдер с превью -->
+                              <div class="swiper-wrapper">
+                                {% for image in product.images.all %}
+                                <div class="swiper-slide swiper-slide-img">
+                                    <div class="slider__image"><img src="{{ image.image.url }}" alt=""/></div>
+                                </div>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="slider__next"><img src="{% static 'img/arrowD.svg' %}" alt=""></div> <!-- Кнопка для переключения на следующий слайд -->
+              
+                        </div>
+              
+                        <div class="slider__images">
+                          <div class="swiper-container"> <!-- Слайдер с изображениями -->
+                            <div class="swiper-wrapper">
+                              {% for image in product.images.all %}
+                              <div class="swiper-slide">
+                                  <div class="slider__image slider-img"><img src="{{ image.image.url }}" alt=""/></div>
+                              </div>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </div>
+              
+                      </div>
+                    </div>
+                  </section>
 
                 <div class="other">
                     <div class="other__title">Other auctions</div>
@@ -120,8 +159,9 @@
                </div>
             </div>
         </div>
-        <span class="specifics__about">About this item</span>
         <div class="specifics container">
+            <span class="specifics__about">About this item</span>
+
             <div class="specifics__container">
                 <div class="specifics__subtitle">Seller assumes all responsibility for this listing.</div>
                 <div class="specifics__last">Last updated on Apr 17, 2024 15:31:17 CST View all revisions</div>

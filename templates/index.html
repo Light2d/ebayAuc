@@ -16,7 +16,7 @@
                 <div class="banner__title">eBay Auctions</div>
                 <div class="banner__subtitle">Fast, safe, profitable trade</div>
                 <div class="banner__input">
-                    <input type="text" placeholder="Promocode">
+                    <button>Promocode</button>
                 </div>
             </div>
         </div>
@@ -213,15 +213,14 @@
             $('.product__btn').click(function() {
                 var productId = $(this).data('product-id'); // Получаем ID продукта
                 var forBot = $(this).data('forbot'); // Получаем информацию о том, что продукт предназначен для бота
-                console.log(forBot);
-            
+                
                 // Проверяем, является ли продукт предназначенным для бота
                 if (forBot == "True") {
                     // Блокируем кнопку и выводим алерт
                     alert('Недостаточно средств');
                     return false; // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
                 }
-            
+                this.style.background = "#ccc"
                 // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
                 $.ajax({
                     url: "{% url 'set_remaining_time' %}",

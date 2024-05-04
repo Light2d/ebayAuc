@@ -2,14 +2,14 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-<div class="login__header">
+<a href="{% url 'login' %}" class="login__header">
     <img src="{% static 'img/logo.png' %}" alt="">
-</div>
+</a>
 <div class="log">
     <div class="login">
         <div class="login__title">Hi</div>
         <div class="login__register">
-            Sign in to eBay or <a href="{% url 'register' %}">create an account</a>
+            Sign in to eBay Auctions or <a href="{% url 'register' %}">create an account</a>
         </div>
     
         <form class="login__form" method="post">
@@ -18,7 +18,7 @@
                 {{ form.password }}
             <button type="submit">Login</button>
         </form>
-        <a class="login__btn" href="{% provider_login_url 'google' %}">Continue with Google</a>
+        <a style="width: 91%;" class="login__btn" href="{% provider_login_url 'google' %}">Continue with Google</a>
     
     </div>
     

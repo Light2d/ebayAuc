@@ -4,13 +4,13 @@ from django.contrib.auth.forms import AuthenticationForm
 
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
 
     class Meta:
         model = CustomUser
         fields = ['username']
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Password'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Username'}),
         }
         
 
