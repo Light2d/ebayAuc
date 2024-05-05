@@ -165,7 +165,7 @@
             function updateUserTime(productId, product = null){
                 var productElement = $("#product-" + productId);
                 var forBotValue = $('#product-btn-' + productId).data('forbot');
-                var user_remaining_time = product ? product.user_remaining_time : null;
+                var user_remaining_time = product ? user_remaining_time : null;
                 var userTimeElement = productElement.find(".user_remaining_time");
                 if (forBotValue == "False"){
                     userTimeElement.text("Remaining time: - " + user_remaining_time + 's');
@@ -179,8 +179,13 @@
                 var forBotValue = $('#product-btn-' + productId).data('forbot');
                 var producTimeElement = productElement.find(".product__time");
                 var userTimeElement = productElement.find(".user_remaining_time");
+                var user_remaining_time = product ? user_remaining_time : null;
+                if (forBotValue == "True"){
+                    producTimeElement.text("Remaining time: - " + product.remaining_time + 's');
+                } else{
+                    userTimeElement.text("Remaining time: - " + user_remaining_time + 's');
 
-                producTimeElement.text("Remaining time: - " + product.remaining_time + 's');
+                }
             
                 productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
                 productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
