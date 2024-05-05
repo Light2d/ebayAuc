@@ -79,7 +79,7 @@ def index(request):
                 product.remaining_time -= 1
 
                 # Проверяем, нужно ли обновить ставку для данного товара
-                if 5 <= product.remaining_time <= 15:
+                if 1 <= product.remaining_time <= 5:
                     product.highest_bid = product.bid + product.increment
 
                     product.bid = product.highest_bid + product.increment
@@ -153,7 +153,7 @@ def update_active_products():
             product.remaining_time -= 1
 
             # Проверяем, нужно ли обновить ставку для данного товара
-            if 5 <= product.remaining_time <= 15:
+            if 1 <= product.remaining_time <= 5:
                 product.highest_bid = product.bid + product.increment
                 product.bid = product.highest_bid + product.increment
                 product.last_bid = generate_random_name()  # Замените на ваш генератор случайных имен
@@ -191,7 +191,7 @@ def update_product_state2(product_id):
 
 def generate_random_name():
     # Список возможных имен
-    names = ['John', 'Alice', 'Bob', 'Emma', 'James', 'Olivia', 'Michael', 'Sophia', 'William', 'Isabella']
+    names = ['John', 'Alice', 'Bob', 'Emma', 'James', 'Olivia', 'Michael', 'Sophia', 'William', 'Isabella', 'Liam', 'Ava', 'Noah', 'Mia', 'Ethan', 'Charlotte', 'Mason', 'Amelia', 'Logan', 'Harper', 'Lucas', 'Evelyn', 'Henry', 'Abigail', 'Alexander', 'Emily', 'Jackson', 'Elizabeth', 'Sebastian', 'Sofia']
     
     # Выбираем случайное имя из списка
     random_name = random.choice(names)

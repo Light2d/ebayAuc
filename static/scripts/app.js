@@ -36,6 +36,7 @@ function setRandomHighBid() {
 // setTimeout(() => setRandomHighBid(), 3000);
 
 
+var promo = document.querySelector('.promoInput')
 
 document.getElementById('promo').addEventListener('click', function() {
     var promoValue = document.querySelector('.promoInput').value.trim(); // Получаем значение из инпута и удаляем пробелы в начале и конце строки
@@ -45,11 +46,13 @@ document.getElementById('promo').addEventListener('click', function() {
       document.getElementById('incorrectModal').style.display = 'block'; // Показываем модальное окно с сообщением об ошибке
     }
   });
-
+  promo.value = ""
   document.getElementById('useBtn').addEventListener('click', function() {
     document.getElementById('modal').style.display = 'none';
+    promo.value = ""
   });
 
   document.getElementById('useBtnIncorrect').addEventListener('click', function() {
     document.getElementById('incorrectModal').style.display = 'none';
+    promo.value = ""
   });
