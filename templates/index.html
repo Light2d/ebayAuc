@@ -16,7 +16,22 @@
                 <div class="banner__title">eBay Auctions</div>
                 <div class="banner__subtitle">Fast, safe, profitable trade</div>
                 <div class="banner__input">
-                    <button>Promocode</button>
+                    <input placeholder="Promocode" class="promoInput" type="text">
+                    <button id="promo">Promocode</button>
+
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                          <h2>You have successfully applied the promo code for 2€!</h2>
+                          <button id="useBtn">Ok</button>
+                        </div>
+                      </div>
+                      <div id="incorrectModal" class="modal">
+                        <div class="modal-content">
+                          <h2>This promo code does not exist or has already expired</h2>
+                          <button id="useBtnIncorrect">Ok</button>
+                        </div>
+                      </div>
+                      
                 </div>
             </div>
         </div>
@@ -160,7 +175,6 @@
                
             
             function updateProductView(productId, product = null) {
-                console.log(productId)
                 var productElement = $("#product-" + productId);
                 var forBotValue = $('#product-btn-' + productId).data('forbot');
                 var producTimeElement = productElement.find(".product__time");

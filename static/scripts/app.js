@@ -36,3 +36,20 @@ function setRandomHighBid() {
 // setTimeout(() => setRandomHighBid(), 3000);
 
 
+
+document.getElementById('promo').addEventListener('click', function() {
+    var promoValue = document.querySelector('.promoInput').value.trim(); // Получаем значение из инпута и удаляем пробелы в начале и конце строки
+    if (promoValue == "MAY2" || promoValue == "may2") {
+      document.getElementById('modal').style.display = 'block'; // Показываем модальное окно об успешном применении промокода
+    } else {
+      document.getElementById('incorrectModal').style.display = 'block'; // Показываем модальное окно с сообщением об ошибке
+    }
+  });
+
+  document.getElementById('useBtn').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+  });
+
+  document.getElementById('useBtnIncorrect').addEventListener('click', function() {
+    document.getElementById('incorrectModal').style.display = 'none';
+  });

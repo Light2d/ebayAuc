@@ -69,6 +69,7 @@ def index(request):
     user_remaining_time = user.user_remaining_time
     user_highest_bid = user.user_highest_bid
     
+    
     if request.method == 'GET' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 
         # Обработка AJAX-запроса для обновления продуктов
@@ -127,6 +128,23 @@ def index(request):
     # Если это обычный GET-запрос, просто отобразите страницу index
     return render(request, 'index.html', {'active_products': active_products, 'completed_products': completed_products, 'user_remaining_time': user_remaining_time, 'user_highest_bid': user_highest_bid})
 
+
+def product(request, product_id):
+    active_products = Product.objects.filter(active=True)
+    product = get_object_or_404(Product, pk=product_id)
+    
+    user_remaining_time = request.user.user_remaining_time
+    
+    # Проверяем, является ли запрос AJAX-запросом
+    if request.is_ajax():
+        # Возвращаем JSON-ответ
+        return JsonResponse({
+            'user_remaining_time': user_remaining_time,
+        })
+    else:
+        # Рендерим HTML-страницу
+        return render(request, 'product.html', {'product': product, 'active_products': active_products, 'user_remaining_time': user_remaining_time})
+
 def update_active_products():
     active_products = Product.objects.filter(active=True)
     for product in active_products:
@@ -181,10 +199,6 @@ def generate_random_name():
 
 
 
-def product(request, product_id):
-    active_products = Product.objects.filter(active=True)
-    product = get_object_or_404(Product, pk=product_id)
-    return render(request, 'product.html', {'product': product, 'active_products': active_products})
 
 def second_payment(request):
     return render(request, 'second_payment.html')

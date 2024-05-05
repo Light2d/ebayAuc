@@ -116,14 +116,19 @@
                 </div>
             </div>
             <div class="productDetail__right">
-              <input type="hidden" name="" id="{{ product.id }}">
-              <div class="productDetail__title" id="productTitle-{{ product.id }}">{{ product.name }}</div>
+              <input class="product__id" type="hidden" name="" id="{{ product.id }}">
+              <div class="productDetail__title" id="productTitle-{{ product.id }}">{{ product }}</div>
+              
               <div class="productDetail__price">{{product.price}} €</div>
                <div class="productDetail__condition">condition: {{product.condition}} </div>
-               <div class="productDetail__time product__time">Remaning time: <span>{{product.remaining_time}}</span>s </div>
+               {% if product.forBot %}
+                <div class="productDetail__time product__time">Remaining time - {{ product.remaining_time }}s </div>
+               {% else %}
+               <div class="productDetail__time product__time" data-user-remaining-time="{{ user_remaining_time }}">Remaining time - {{ user_remaining_time }}s </div>
+               {% endif %}
                <div class="productDetail__btns">
-                    <button class="productDetail__btn">Bid {{product.bid}}</button>
-                    <button data-forBot="{{product.forBot}}" class="product__btnAdd">Add to watchlist</button>
+                    <button data-forBot="{{product.forBot}}" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="productDetail__btn">Bid {{product.bid}}</button>
+                    <button class="product__btnAdd">Add to watchlist</button>
                </div>
                <div class="productDetail__items">
                 <div class="productDetail__item">
@@ -185,33 +190,49 @@
     <script src="{% static 'scripts/product.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      $(document).ready(function() {
-        // Отправляем AJAX-запрос каждую секунду
-        setInterval(updateProducts, 1000);
-
-        function updateProducts() {
-            $.ajax({
-                url: "{% url 'index' %}?random=" + new Date().getTime(),
-                method: "GET",
-                success: function(data) {
-                    data.active_products.forEach(function(product) {
-                        var productId = product.id;
-                        var productElement = $("#productTitle-" + productId).closest('.productDetail');
-
-                        if (productElement.length) {
-                            
-                            productElement.find(".productDetail__time span").text(product.remaining_time);
-                            productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Bid " + product.bid + ' €');
-                        }
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error updating products:", error);
+        $(document).ready(function() {
+            var productId = document.querySelector(".product__id").id;
+            setInterval(updateProducts, 1000);
+            setInterval(updateUserTime, 1000);
+            
+            function updateProducts() {
+                $.ajax({
+                    url: "{% url 'index' %}?random=" + new Date().getTime(),
+                    method: "GET",
+                    success: function(data) {
+                        data.active_products.forEach(function(product) {
+                            var productId = product.id;
+                            var productElement = $("#productTitle-" + productId).closest('.productDetail');
+                            var userRemainingTime = data.user_remaining_time;
+                            if (productElement.length) {
+                                productElement.find(".productDetail__time").text("Remaining time - " + product.remaining_time + 's');
+                                productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Bid " + product.bid + ' €');
+            
+                                updateUserTime(productId, product);
+                            }
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Error updating products:", error);
+                    }
+                });
+            }
+            
+            function updateUserTime(productId, product = null) {
+                var productElement = $("#productTitle-" + productId).closest('.productDetail');
+                var forBotValue = $('#product-btn-' + productId).data('forbot');
+                var user_remaining_time = product ? product.user_remaining_time : null;
+                var userTimeElement = productElement.find(".user_remaining_time");
+                
+                if (forBotValue == "False") {
+                    productElement.find(".productDetail__time").text("Remaining time - " + user_remaining_time + 's');
                 }
-            });
-        }
-    });
+            }
+            
+        });
     </script>
+        
+    
     <script>
       $(document).ready(function() {
           // Обработчик клика на кнопке "Bid" для каждого продукта
@@ -280,9 +301,10 @@
               });
           });
       });
+     
       function updateRemainingTime(productId, remainingTime) {
         var $productElement = $('#product-' + productId);
-        var $remainingTimeElement = $productElement.find('.product__time span');
+        var $remainingTimeElement = $productElement.find('.product__time');
         $remainingTimeElement.text(remainingTime + 's');
     }
       function setTimer(productId, remainingTime) {
