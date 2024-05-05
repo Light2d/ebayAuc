@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +12,7 @@
 
     <title>Delivery</title>
 </head>
+<input id="lang" type="hidden" value="{{ LANGUAGE_CODE }}" name="">
 
 <div class="delivery">
     <div class="delivery__container">
@@ -17,7 +20,7 @@
             <img src="{% static 'img/logo.png' %}" alt="">
         </div>
         <select name="Countries" id="pet-select" class="form__country">
-            <option value="">Country or region</option>
+            <option value="">{% trans 'Country or region' %}</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
@@ -216,14 +219,15 @@
         </select>
         
 
-        <input type="text" placeholder="City" class="delivery__input">
-        <input type="text" placeholder="Region" class="delivery__input">
-        <a class="delivery__zip" href="https://worldpostalcode.com/what-is-my-zip-code">Find your ZIP code</a>
-        <input type="text" placeholder="Zip Code" class="delivery__input">
-        <input type="text" placeholder="Adress" class="delivery__input">
-        <input type="text" placeholder="Additional information (optional)" class="delivery__input">
-        <input type="text" placeholder="Phone number" class="delivery__input" oninput="formatPhoneNumber(this)">
-        <a href="{% url 'second_payment' %}" class="delivery__btn">Go to checkout</a>
+        <input type="text" placeholder="{% trans 'City' %}" class="delivery__input">
+        <input type="text" placeholder="{% trans 'Region' %}" class="delivery__input">
+        <a class="delivery__zip" href="https://worldpostalcode.com/what-is-my-zip-code">{% trans 'Find your ZIP code' %}</a>
+        <input type="text" placeholder="{% trans 'ZIP Code' %}" class="delivery__input">
+        <input type="text" placeholder="{% trans 'Address' %}" class="delivery__input">
+        <input type="text" placeholder="{% trans 'Additional information (optional)' %}" class="delivery__input">
+        <input type="text" placeholder="{% trans 'Phone number' %}" class="delivery__input" oninput="formatPhoneNumber(this)">
+        
+        <a href="{% url 'second_payment' %}" class="delivery__btn">{% trans 'Go to checkout'%}</a>
     </div>
 </div>
 

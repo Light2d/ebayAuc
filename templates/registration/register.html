@@ -1,5 +1,7 @@
 {% load socialaccount %}
 {% load static %}
+{% load i18n %}
+
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 <a href="{% url 'register' %}" class="login__header">
@@ -7,20 +9,21 @@
 </a>
     <div class="log">
         <div class="login">
-            <div class="login__title">Hi</div>
+            <div class="login__title">{% trans 'Hi' %}</div>
             <div class="login__register">
-                Register on eBay Auctions or <a href="{% url 'login' %}">log in to your account</a>
+                {% trans 'Register on eBay Auctions or' %} <a href="{% url 'login' %}">{% trans 'log in to your account' %}</a>
             </div>
         
             <form class="login__form" method="post">
                 {% csrf_token %}
-                    {{ form.username }}
-                    {{ form.password }}
-                <button type="submit">Registration</button>
+                {{ form.username }}
+                {{ form.password }}
+                <button type="submit">{% trans 'Registration' %}</button>
             </form>
-            <a style="width: 91%;" class="login__btn" href="{% provider_login_url 'google' %}">Continue with Google</a>
+            <a style="width: 91%;" class="login__btn" href="{% provider_login_url 'google' %}">{% trans 'Continue with Google' %}</a>
         
         </div>
+        
         
         
     </div>

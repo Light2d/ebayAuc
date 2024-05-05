@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +14,7 @@
 </head>
 
 <body>
-
+    <input id="lang" type="hidden" value="{{ LANGUAGE_CODE }}" name="">
     <main>
         <div class="payment">
             <div class="payment__container">
@@ -39,11 +41,11 @@
                         <div class="payment__item">
                             <div class="form__info">
                                 <div class="payment__title">
-                                    Ship to
+                                    {% trans 'Ship to' %}
                                 </div>
                                 <div class="form__container form__countries">
                                     <select name="Countries" id="pet-select" class="form__country">
-                                        <option value="">Country or region</option>
+                                        <option value="">{% trans 'Country or region' %}</option>
                                         <option value="Afghanistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
                                         <option value="Algeria">Algeria</option>
@@ -243,67 +245,64 @@
                                     
                                 </div>
                                 <div class="form__container">
-                                    <input type="text" name="sub_id_12" placeholder="First name" class="form__input form__first">
-                                    <input type="text" name="sub_id_11" placeholder="Last name" class="form__input form__last">
+                                    <input type="text" name="sub_id_12" placeholder="{% trans 'First name' %}" class="form__input form__first">
+                                    <input type="text" name="sub_id_11" placeholder="{% trans 'Last name' %}" class="form__input form__last">
                                 </div>
                                 <div class="form__container">
-                                    <input type="text" name="sub_id_13" placeholder="Street address" class="form__input form__street">
-                                    <input type="text" name="sub_id_0" placeholder="Street address 2 (optional)" class="form__input form__street2">
-
+                                    <input type="text" name="sub_id_13" placeholder="{% trans 'Street address' %}" class="form__input form__street">
+                                    <input type="text" name="sub_id_0" placeholder="{% trans 'Street address 2 (optional)' %}" class="form__input form__street2">
                                 </div>
                                 <div class="form__container">
-                                    <input type="text" name="sub_id_16" placeholder="City" class="form__input form__input-three form__city">
-                                    <input type="text" name="sub_id_0" placeholder="State/Province/Re..."
-                                        class="form__input form__input-three form__state">
-                                    <input type="text" name="sub_id_15" placeholder="ZIP Code" class="form__input form__input-three form__zip">
+                                    <input type="text" name="sub_id_16" placeholder="{% trans 'City' %}" class="form__input form__input-three form__city">
+                                    <input type="text" name="sub_id_0" placeholder="{% trans 'State/Province/Re...' %}" class="form__input form__input-three form__state">
+                                    <input type="text" name="sub_id_15" placeholder="{% trans 'ZIP Code' %}" class="form__input form__input-three form__zip">
                                 </div>
                                 <div class="form__container">
-                                    <input type="text" name="sub_id_19" placeholder="Email" class="form__input form__email">
-                                    <input type="text" placeholder="Confirm email" class="form__input form__confirmEmail">
+                                    <input type="text" name="sub_id_19" placeholder="{% trans 'Email' %}" class="form__input form__email">
+                                    <input type="text" placeholder="{% trans 'Confirm email' %}" class="form__input form__confirmEmail">
                                 </div>
                                 <div class="form__container form__container-code">
-                                    <input type="text" placeholder="Country Code" value="+82" class="form__input form__code">
-                                    <input type="text" name="sub_id_18" placeholder="Phone number (required)" class="form__input form__phone">
+                                    <input type="text" placeholder="{% trans 'Country Code' %}" value="+" class="form__input form__code">
+                                    <input type="text" name="sub_id_18" placeholder="{% trans 'Phone number (required)' %}" class="form__input form__phone">
                                 </div>
                                 <div class="form__btn">
-                                    <button type="button" id="done">Done</button>
+                                    <button type="button" id="done">{% trans 'Done' %}</button>
                                 </div>
+                                
                             </div>
                             <div class="form__infoTwo data hidden">
-                                <div class="data__title">
-                                    Ship to
+                                <div class="data__title">{% trans 'Ship to' %}</div>
+                                <div class="form__data">
+                                    <div class="data__first">{% trans 'first' %}</div>
+                                    <div class="data__last">{% trans 'last' %}</div>
                                 </div>
                                 <div class="form__data">
-                                    <div class="data__first">first</div>
-                                    <div class="data__last">last</div>
+                                    <div class="data__street">{% trans 'street' %}</div>
+                                    <div class="data__street2">{% trans 'street 2' %}</div>
                                 </div>
                                 <div class="form__data">
-                                    <div class="data__street">street</div>
-                                    <div class="data__street2">street 2</div>
+                                    <div class="data__city">{% trans 'city' %}</div>
+                                    <div class="data__state">{% trans 'state' %}</div>
+                                    <div class="data__zip">{% trans 'zip' %}</div>
                                 </div>
                                 <div class="form__data">
-                                    <div class="data__city">city</div>
-                                    <div class="data__state">state</div>
-                                    <div class="data__zip">zip</div>
+                                    <div class="data__country">{% trans 'country' %}</div>
                                 </div>
                                 <div class="form__data">
-                                    <div class="data__country">country</div>
+                                    <div class="data__email">{% trans 'email' %}</div>
                                 </div>
                                 <div class="form__data">
-                                    <div class="data__email">email</div>
+                                    <div class="data__phone">{% trans 'phone' %}</div>
                                 </div>
-                                <div class="form__data">
-                                    <div class="data__phone">phone</div>
-                                </div>
-                                <div class="form__change">change</div>
+                                <div class="form__change">{% trans 'change' %}</div>
                             </div>
                             <div class="form__cards">
-                                <div class="form__title">Pay with</div>
+                                <div class="form__title">{% trans 'Pay with' %}</div>
                                 <div class="form__card">
                                     <div class="form__cardYes">
                                         <input id="radioCard" type="radio">
                                         <div>
-                                            <span>Add new card</span>
+                                            <span>{% trans 'Add new card' %}</span>
                                             <div class="form__newCard">
                                                 <img src="{% static 'img/payment/1.png' %}" alt="">
                                                 <img src="{% static 'img/payment/2.png' %}" alt="">
@@ -314,43 +313,44 @@
                                     <div class="form__cardNo">
                                         <input type="radio" disabled>
                                         <img src="{% static 'img/payment/4.png' %}" alt="">
-                                        <div class="card__description">Not working due to technical reasons</div>
+                                        <div class="card__description">{% trans 'Not working due to technical reasons' %}</div>
                                     </div>
                                     <div class="form__cardNo">
                                         <input type="radio" disabled>
                                         <img src="{% static 'img/payment/5.png' %}" alt="">
-                                        <div class="card__description">Not working due to technical reasons</div>
+                                        <div class="card__description">{% trans 'Not working due to technical reasons' %}</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="payment__item">
-                            <div class="order__container">
-                                <div class="order__title">Item (1)</div>
-                                <div class="order__title">US $0(promo)</div>
                             </div>
-                            <div class="order__container">
-                                <div class="order__title">Shipping</div>
-                                <div class="order__title">US $2</div>
+                            <div class="payment__item">
+                                <div class="order__container">
+                                    <div class="order__title">{% trans 'Item (1)' %}</div>
+                                    <div class="order__title">US $0(promo)</div>
+                                </div>
+                                <div class="order__container">
+                                    <div class="order__title">{% trans 'Shipping' %}</div>
+                                    <div class="order__title">US $2</div>
+                                </div>
+                                <div class="order__container">
+                                    <div class="order__title">{% trans 'VAT' %}</div>
+                                    <div class="order__title">US $0(promo)</div>
+                                </div>
+                                <div class="order__container">
+                                    <div class="order__title">{% trans 'Duties' %}</div>
+                                    <div class="order__title">US $0.00</div>
+                                </div>
+                            
+                                <div class="order__container">
+                                    <div class="order__title">{% trans 'Order total' %}</div>
+                                    <div class="order__title">US $2</div>
+                                </div>
+                                <div class="order__btn">
+                                    <button id="orderBtn" disabled type="submit">{% trans 'Confirm and pay' %}</button>
+                                    <div>{% trans 'Enter shipping address' %}</div>
+                                </div>
                             </div>
-                            <div class="order__container">
-                                <div class="order__title">VAT</div>
-                                <div class="order__title">US $0(promo)</div>
-                            </div>
-                            <div class="order__container">
-                                <div class="order__title">Duties</div>
-                                <div class="order__title">US $0.00</div>
-                            </div>
-
-                            <div class="order__container">
-                                <div class="order__title">Order total</div>
-                                <div class="order__title">US $2</div>
-                            </div>
-                            <div class="order__btn">
-                                <button id="orderBtn" disabled type="submit">Confirm and pay</button>
-                                <div>Enter shipping addess</div>
-                            </div>
-                        </div>
+                            
                     </div>
                 </form>
             </div>

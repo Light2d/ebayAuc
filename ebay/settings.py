@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -67,6 +68,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+
 ]
 
 ROOT_URLCONF = 'ebay.urls'
@@ -82,9 +85,37 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
+]
+
+LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'el'
+LANGUAGE_CODE = 'de'
+LANGUAGE_CODE = 'fr'
+LANGUAGE_CODE = 'nl'
+LANGUAGE_CODE = 'sk'
+LANGUAGE_CODE = 'lb'
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
+
+
+USE_I18N = True
+
+LANGUAGES = [
+   ('de', _('German')),
+   ('en', _('English')),
+   ('fr', _('French')),
+   ('pt', _('Portuguese')),
+   ('el', _('Greek')),
+   ('nl', _('Dutch')),
+   ('sk', _('Slovak')),
+   ('lb', _('Luxembourgish')),
 ]
 
 WSGI_APPLICATION = 'ebay.wsgi.application'

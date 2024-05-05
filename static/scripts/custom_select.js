@@ -2,6 +2,7 @@ function formatPhoneNumber(input) {
     let phoneNumber = input.value.replace(/\D/g, '');
     input.value = "+" + phoneNumber;
 }
+var currentLanguage = document.getElementById("lang").value
 document.addEventListener('DOMContentLoaded', function () {
     let select = document.getElementById('pet-select');
 
@@ -10,7 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let selectedItem = document.createElement('div');
     selectedItem.setAttribute('class', 'selected-item');
-    selectedItem.innerHTML = 'Country or region';
+    if (currentLanguage == "en"){
+        selectedItem.innerHTML = 'Country or region'
+    } else if (currentLanguage == "el"){
+        selectedItem.innerHTML = 'Χώρα ή περιοχή'
+
+    }
 
     let itemsContainer = document.createElement('div');
     itemsContainer.setAttribute('class', 'select-items');

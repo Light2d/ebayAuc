@@ -1,0 +1,995 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-05 21:39+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\ebay\settings.py:106
+msgid "German"
+msgstr "Γερμανικά"
+
+#: .\ebay\settings.py:107 .\templates\header.html:35
+msgid "English"
+msgstr "Αγγλικά"
+
+#: .\ebay\settings.py:108
+msgid "French"
+msgstr "Γαλλικά"
+
+#: .\ebay\settings.py:109
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+#: .\ebay\settings.py:110
+msgid "Portuguese"
+msgstr "Πορτογαλικά"
+
+#: .\ebay\settings.py:111
+msgid "Greek"
+msgstr "Ελληνικά"
+
+#: .\templates\account\account_inactive.html:5
+#: .\templates\account\account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Ανενεργός Λογαριασμός"
+
+#: .\templates\account\account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Αυτός ο λογαριασμός είναι ανενεργός."
+
+#: .\templates\account\email.html:5 .\templates\account\email.html:8
+msgid "E-mail Addresses"
+msgstr "Διευθύνσεις Ηλεκτρονικού Ταχυδρομείου"
+
+#: .\templates\account\email.html:10
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "Οι παρακάτω διευθύνσεις ηλεκτρονικού ταχυδρομείου σχετίζονται με τον λογαριασμό σας:"
+
+#: .\templates\account\email.html:24
+msgid "Verified"
+msgstr "Επαληθευμένο"
+
+#: .\templates\account\email.html:26
+msgid "Unverified"
+msgstr "Μη επαληθευμένο"
+
+#: .\templates\account\email.html:28
+msgid "Primary"
+msgstr "Κύριο"
+
+#: .\templates\account\email.html:34
+msgid "Make Primary"
+msgstr "Κάντε Κύριο"
+
+#: .\templates\account\email.html:35
+msgid "Re-send Verification"
+msgstr "Επαναποστολή Επαλήθευσης"
+
+#: .\templates\account\email.html:36
+#: .\templates\socialaccount\connections.html:35
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#: .\templates\account\email.html:43
+msgid "Warning:"
+msgstr "Προειδοποίηση:"
+
+#: .\templates\account\email.html:43
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Αυτή τη στιγμή δεν έχετε καμία διεύθυνση email εγκατεστημένη. Πρέπει "
+"πραγματικά να προσθέσετε μια διεύθυνση email ώστε να μπορείτε να "
+"λαμβάνετε ειδοποιήσεις, να επαναφέρετε τον κωδικό πρόσβασής σας, κλπ."
+
+#: .\templates\account\email.html:48
+msgid "Add E-mail Address"
+msgstr "Προσθήκη Διεύθυνσης Ηλεκτρονικού Ταχυδρομείου"
+
+#: .\templates\account\email.html:53
+msgid "Add E-mail"
+msgstr "Προσθήκη Email"
+
+#: .\templates\account\email.html:63
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Θέλετε πραγματικά να αφαιρέσετε την επιλεγμένη διεύθυνση email;"
+
+#: .\templates\account\email\base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr "Γεια σας από το %(site_name)s!"
+
+#: .\templates\account\email\base_message.txt:5
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"Σας ευχαριστούμε που χρησιμοποιήσατε το %(site_name)s!\n"
+"%(site_domain)s"
+
+#: .\templates\account\email\email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"You're receiving this e-mail because user %(user_display)s has given your e-"
+"mail address to register an account on %(site_domain)s.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s"
+msgstr ""
+"Λαμβάνετε αυτό το email επειδή ο χρήστης %(user_display)s έχει δώσει την "
+"διεύθυνση email σας για να εγγραφεί σε λογαριασμό στο %(site_domain)s.\n"
+"\n"
+"Για να επιβεβαιώσετε ότι είναι σωστό, μεταβείτε στο %(activate_url)s"
+
+#: .\templates\account\email\email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr "Παρακαλώ Επιβεβαιώστε τη Διεύθυνση Ηλεκτρονικού Ταχυδρομείου σας"
+
+#: .\templates\account\email\password_reset_key_message.txt:4
+msgid ""
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.txt:9
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr "Σε περίπτωση που το ξεχάσατε, το όνομά σας χρήστη είναι %(username)s."
+
+#: .\templates\account\email\password_reset_key_subject.txt:3
+#: .\templates\account\email\unknown_account_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr "Επαναφορά Κωδικού Ηλεκτρονικού Ταχυδρομείου"
+
+#: .\templates\account\email\unknown_account_message.txt:4
+#, python-format
+msgid ""
+"You are receiving this e-mail because you or someone else has requested a\n"
+"password for your user account. However, we do not have any record of a "
+"user\n"
+"with email %(email)s in our database.\n"
+"\n"
+"This mail can be safely ignored if you did not request a password reset.\n"
+"\n"
+"If it was you, you can sign up for an account using the link below."
+msgstr ""
+"Λαμβάνετε αυτό το ηλεκτρονικό μήνυμα επειδή εσείς ή κάποιος άλλος ζήτησε\n"
+"έναν κωδικό πρόσβασης για τον λογαριασμό χρήστη σας. Ωστόσο, δεν έχουμε "
+"καμία εγγραφή\n"
+"χρήστη με το ηλεκτρονικό ταχυδρομείο %(email)s στη βάση δεδομένων μας.\n"
+"\n"
+"Αυτό το μήνυμα μπορεί να αγνοηθεί αν δεν ζητήσατε επαναφορά κωδικού.\n"
+"\n"
+"Αν ήταν εσείς, μπορείτε να εγγραφείτε για ένα λογαριασμό χρησιμοποιώντας "
+"τον σύνδεσμο παρακάτω."
+
+#: .\templates\account\email_confirm.html:6
+#: .\templates\account\email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "Επιβεβαιώστε τη Διεύθυνση Ηλεκτρονικού Ταχυδρομείου"
+
+#: .\templates\account\email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Παρακαλούμε επιβεβαιώστε ότι το <a href=\"mailto:%(email)s\">%(email)s</"
+"a> είναι μια διεύθυνση ηλεκτρονικού ταχυδρομείου για τον χρήστη %(user_display)s."
+
+#: .\templates\account\email_confirm.html:20
+msgid "Confirm"
+msgstr "Επιβεβαίωση"
+
+#: .\templates\account\email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Ο σύνδεσμος επιβεβαίωσης ηλεκτρονικού ταχυδρομείου έχει λήξει ή είναι "
+"άκυρος. Παρακαλώ <a href=\"%(email_url)s\">εκδόστε ένα νέο αίτημα επιβεβαίωσης "
+"ηλεκτρονικού ταχυδρομείου</a>."
+
+#: .\templates\account\login.html:5 .\templates\account\login.html:9
+#: .\templates\account\login.html:42
+msgid "Sign In"
+msgstr "Είσοδος"
+
+#: .\templates\account\login.html:14
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+"Παρακαλούμε συνδεθείτε με ένα\n"
+"από τους υπάρχοντες λογαριασμούς τρίτων. Ή, <a href=\"%(signup_url)s\">"
+"εγγραφείτε</a>\n"
+"για ένα λογαριασμό %(site_name)s και συνδεθείτε παρακάτω:"
+
+#: .\templates\account\login.html:24
+msgid "or"
+msgstr "ή"
+
+#: .\templates\account\login.html:31
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+"Αν δεν έχετε δημιουργήσει ακόμα λογαριασμό, τότε παρακαλώ\n"
+"<a href=\"%(signup_url)s\">εγγραφείτε</a> πρώτα."
+
+#: .\templates\account\login.html:41
+#: .\templates\account\password_change.html:14
+msgid "Forgot Password?"
+msgstr "Ξεχάσατε τον Κωδικό;"
+
+#: .\templates\account\logout.html:5 .\templates\account\logout.html:8
+#: .\templates\account\logout.html:18
+msgid "Sign Out"
+msgstr "Αποσύνδεση"
+
+#: .\templates\account\logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr "Είστε σίγουρος ότι θέλετε να αποσυνδεθείτε;"
+
+#: .\templates\account\messages\cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr "Δεν μπορείτε να αφαιρέσετε την κύρια διεύθυνση ηλεκτρονικού ταχυδρομείου σας (%(email)s)."
+
+#: .\templates\account\messages\email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr "Το ηλεκτρονικό μήνυμα επιβεβαίωσης εστάλη στο %(email)s."
+
+#: .\templates\account\messages\email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr "Επιβεβαιώσατε το %(email)s."
+
+#: .\templates\account\messages\email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr "Αφαιρέθηκε η διεύθυνση ηλεκτρονικού ταχυδρομείου %(email)s."
+
+#: .\templates\account\messages\logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr "Επιτυχής σύνδεση ως %(name)s."
+
+#: .\templates\account\messages\logged_out.txt:2
+msgid "You have signed out."
+msgstr "Αποσυνδεθήκατε."
+
+#: .\templates\account\messages\password_changed.txt:2
+msgid "Password successfully changed."
+msgstr "Ο κωδικός άλλαξε επιτυχώς."
+
+#: .\templates\account\messages\password_set.txt:2
+msgid "Password successfully set."
+msgstr "Ο κωδικός ορίστηκε με επιτυχία."
+
+#: .\templates\account\messages\primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr "Ορίστηκε η κύρια διεύθυνση ηλεκτρονικού ταχυδρομείου."
+
+#: .\templates\account\messages\unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr "Η κύρια σας διεύθυνση ηλεκτρονικού ταχυδρομείου πρέπει να επιβεβαιωθεί."
+
+#: .\templates\account\password_change.html:5
+#: .\templates\account\password_change.html:8
+#: .\templates\account\password_change.html:13
+#: .\templates\account\password_reset_from_key.html:4
+#: .\templates\account\password_reset_from_key.html:7
+#: .\templates\account\password_reset_from_key_done.html:4
+#: .\templates\account\password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr "Αλλαγή Κωδικού"
+
+#: .\templates\account\password_reset.html:6
+#: .\templates\account\password_reset.html:10
+#: .\templates\account\password_reset_done.html:6
+#: .\templates\account\password_reset_done.html:9
+msgid "Password Reset"
+msgstr "Επαναφορά Κωδικού"
+
+#: .\templates\account\password_reset.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+"Ξεχάσατε τον κωδικό σας; Εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου "
+"σας παρακάτω, και θα σας στείλουμε ένα ηλεκτρονικό μήνυμα που θα σας "
+"επιτρέψει να τον επαναφέρετε."
+
+#: .\templates\account\password_reset.html:20
+msgid "Reset My Password"
+msgstr "Επαναφορά του Κωδικού Μου"
+
+#: .\templates\account\password_reset.html:23
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Παρακαλούμε επικοινωνήστε μαζί μας αν αντιμετωπίζετε προβλήματα κατά την επαναφορά του κωδικού σας."
+
+#: .\templates\account\password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. If you have not received it please check your "
+"spam folder. Otherwise contact us if you do not receive it in a few minutes."
+msgstr ""
+"Σας έχουμε στείλει ένα ηλεκτρονικό μήνυμα. Εάν δεν το λάβετε, παρακαλούμε "
+"ελέγξτε το φάκελο ανεπιθύμητης αλληλογραφίας σας. Διαφορετικά επικοινωνήστε μαζί μας εάν δεν το λάβετε μέσα σε λίγα λεπτά."
+
+#: .\templates\account\password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr "Άκυρο Διακριτικό"
+
+#: .\templates\account\password_reset_from_key.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"Ο σύνδεσμος επαναφοράς κωδικού ήταν άκυρος, πιθανώς επειδή έχει ήδη "
+"χρησιμοποιηθεί. Παρακαλώ ζητήστε ένα <a href=\"%(passwd_reset_url)s\">νέο αίτημα "
+"επαναφοράς κωδικού</a>."
+
+#: .\templates\account\password_reset_from_key.html:16
+msgid "change password"
+msgstr "αλλαγή κωδικού"
+
+#: .\templates\account\password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr "Ο κωδικός σας άλλαξε τώρα."
+
+#: .\templates\account\password_set.html:5
+#: .\templates\account\password_set.html:8
+#: .\templates\account\password_set.html:13
+msgid "Set Password"
+msgstr "Ορισμός Κωδικού"
+
+#: .\templates\account\signup.html:5 .\templates\socialaccount\signup.html:4
+msgid "Signup"
+msgstr "Εγγραφή"
+
+#: .\templates\account\signup.html:8 .\templates\account\signup.html:18
+#: .\templates\socialaccount\signup.html:7
+#: .\templates\socialaccount\signup.html:18
+msgid "Sign Up"
+msgstr "Εγγραφή"
+
+#: .\templates\account\signup.html:10
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Έχετε ήδη λογαριασμό; Τότε παρακαλώ <a href=\"%(login_url)s\">συνδεθείτε</a>."
+
+#: .\templates\account\signup_closed.html:5
+#: .\templates\account\signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "Εγγραφή Κλειστή"
+
+#: .\templates\account\signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Λυπούμαστε, αλλά η εγγραφή είναι προσωρινά κλειστή."
+
+#: .\templates\account\snippets\already_logged_in.html:5
+msgid "Note"
+msgstr "Σημείωση"
+
+#: .\templates\account\snippets\already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr "είστε ήδη συνδεδεμένος ως %(user_display)s."
+
+#: .\templates\account\verification_sent.html:5
+#: .\templates\account\verification_sent.html:8
+#: .\templates\account\verified_email_required.html:5
+#: .\templates\account\verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "Επιβεβαιώστε τη Διεύθυνση Ηλεκτρονικού Ταχυδρομείου σας"
+
+
+#: .\templates\account\verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. If you do not see the verification e-mail in "
+"your main inbox, check your spam folder. Please contact us if you do not "
+"receive the verification e-mail within a few minutes."
+msgstr ""
+"Σας έχουμε στείλει ένα ηλεκτρονικό μήνυμα για επιβεβαίωση. Ακολουθήστε τον σύνδεσμο που παρέχεται για να ολοκληρώσετε τη διαδικασία εγγραφής. Εάν δεν βλέπετε το ηλεκτρονικό μήνυμα επιβεβαίωσης στον κύριο φάκελο εισερχομένων σας, ελέγξτε το φάκελο ανεπιθύμητης αλληλογραφίας σας. Παρακαλούμε επικοινωνήστε μαζί μας εάν δεν λάβετε το ηλεκτρονικό μήνυμα επιβεβαίωσης μέσα σε λίγα λεπτά."
+
+#: .\templates\account\verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Αυτό το τμήμα του ιστότοπου απαιτεί να επιβεβαιώσουμε ότι\n"
+"είστε αυτό που ισχυρίζεστε ότι είστε. Για το σκοπό αυτό, απαιτούμε να\n"
+"επιβεβαιώσετε την κυριότητα της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας."
+
+#: .\templates\account\verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside that e-mail. If you do not see "
+"the verification e-mail in your main inbox, check your spam folder. "
+"Otherwise\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Σας έχουμε στείλει ένα ηλεκτρονικό μήνυμα για\n"
+"επιβεβαίωση. Κάντε κλικ στον σύνδεσμο μέσα σε αυτό το ηλεκτρονικό μήνυμα. Εάν δεν βλέπετε "
+"το ηλεκτρονικό μήνυμα επιβεβαίωσης στον κύριο φάκελο εισερχομένων σας, ελέγξτε το φάκελο "
+"ανεπιθύμητης αλληλογραφίας σας. Διαφορετικά\n"
+"επικοινωνήστε μαζί μας εάν δεν το λάβετε μέσα σε λίγα λεπτά."
+
+#: .\templates\account\verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Σημείωση:</strong> μπορείτε ακόμα <a href=\"%(email_url)s\">να αλλάξετε τη διεύθυνση "
+"ηλεκτρονικού ταχυδρομείου</a> σας."
+
+#: .\templates\first_payment.html:223
+msgid "Find your ZIP code"
+msgstr "Βρείτε τον ταχυδρομικό σας κώδικα"
+
+#: .\templates\first_payment.html:228
+msgid "Go to checkout"
+msgstr "Πηγαίνετε στο ταμείο"
+
+#: .\templates\footer.html:8
+msgid "About eBay"
+msgstr "Σχετικά με το eBay"
+
+#: .\templates\footer.html:9
+msgid "Announcements"
+msgstr "Ανακοινώσεις"
+
+#: .\templates\footer.html:10
+msgid "Community"
+msgstr "Κοινότητα"
+
+#: .\templates\footer.html:11
+msgid "Security information"
+msgstr "Πληροφορίες ασφαλείας"
+
+#: .\templates\footer.html:12
+msgid "Seller information center"
+msgstr "Κέντρο πληροφοριών πωλητή"
+
+#: .\templates\footer.html:13
+msgid "Policies"
+msgstr "Πολιτικές"
+
+#: .\templates\footer.html:14
+msgid "Affiliates"
+msgstr "Συνεργάτες"
+
+#: .\templates\footer.html:15 .\templates\header.html:10
+msgid "Help & Contact"
+msgstr "Βοήθεια & Επικοινωνία"
+
+#: .\templates\footer.html:16
+msgid "Site Map"
+msgstr "Χάρτης ιστότοπου"
+
+#: .\templates\footer.html:20
+msgid "Copyright © 1995-2024 eBay Inc. All Rights Reserved."
+msgstr "Πνευματικά δικαιώματα © 1995-2024 eBay Inc. Με επιφύλαξη παντός δικαιώματος."
+
+#: .\templates\footer.html:21
+msgid "User Agreement,"
+msgstr "Συμφωνία χρήστη,"
+
+#: .\templates\footer.html:22
+msgid "Privacy,"
+msgstr "Απορρήτου,"
+
+#: .\templates\footer.html:23
+msgid "Payments Terms of Use,"
+msgstr "Όροι χρήσης πληρωμών,"
+
+#: .\templates\footer.html:24
+msgid "Cookies and AdChoice"
+msgstr "Cookies και AdChoice"
+
+#: .\templates\header.html:9
+msgid "Daiy Deals"
+msgstr "Καθημερινές προσφορές"
+
+#: .\templates\header.html:27
+msgid "SignOut"
+msgstr "Αποσύνδεση"
+
+#: .\templates\header.html:30
+msgid "SignIn"
+msgstr "Σύνδεση"
+
+#: .\templates\header.html:34 .\templates\second_payment.html:275
+msgid "Ship to"
+msgstr "Αποστολή προς"
+
+#: .\templates\header.html:36
+msgid "Sell"
+msgstr "Πώληση"
+
+#: .\templates\header.html:37
+msgid "Watchlist"
+msgstr "Λίστα επιτήρησης"
+
+#: .\templates\header.html:38
+msgid "My eBay"
+msgstr "Ο λογαριασμός μου στο eBay"
+
+#: .\templates\index.html:18
+msgid "eBay Auctions"
+msgstr "Δημοπρασίες eBay"
+
+#: .\templates\index.html:19
+msgid "Fast, safe, profitable trade"
+msgstr "Γρήγορο, ασφαλές, κερδοφόρο εμπόριο"
+
+#: .\templates\index.html:21
+msgid "Promocode"
+msgstr "Κωδικός προσφοράς"
+
+#: .\templates\index.html:22 .\templates\index.html:27
+#: .\templates\index.html:33
+msgid "Ok"
+msgstr "Εντάξει"
+
+#: .\templates\index.html:26
+msgid "You have successfully applied the promo code for 2€!"
+msgstr "Επιτυχής εφαρμογή του προωθητικού κωδικού για 2€!"
+
+#: .\templates\index.html:32
+msgid "This promo code does not exist or has already expired"
+msgstr "Αυτός ο κωδικός προσφοράς δεν υπάρχει ή έχει ήδη λήξει"
+
+#: .\templates\index.html:42
+msgid "Active auctions"
+msgstr "Ενεργές δημοπρασίες"
+
+#: .\templates\index.html:43
+msgid "Completed auctions"
+msgstr "Ολοκληρωμένες δημοπρασίες"
+
+#: .\templates\index.html:59 .\templates\index.html:61
+#: .\templates\index.html:88
+msgid "Remaining time:"
+msgstr "Υπολειπόμενος χρόνος:"
+
+#: .\templates\index.html:63 .\templates\index.html:89
+msgid "Last bid by"
+msgstr "Τελευταία προσφορά από"
+
+#: .\templates\index.html:67
+msgid "Highest bid:"
+msgstr "Υψηλότερη προσφορά:"
+
+#: .\templates\index.html:68
+msgid "Increment"
+msgstr "Αύξηση"
+
+#: .\templates\index.html:69 .\templates\product.html:94
+msgid "Bid"
+msgstr "Προσφορά"
+
+#: .\templates\index.html:94
+msgid "Sale has ended"
+msgstr "Η πώληση έχει λήξει"
+
+#: .\templates\openid\login.html:9
+msgid "OpenID Sign In"
+msgstr "Σύνδεση με OpenID"
+
+#: .\templates\product.html:35 .\templates\product.html:51
+msgid "Image"
+msgstr "Εικόνα"
+
+#: .\templates\product.html:63
+msgid "Other auctions"
+msgstr "Άλλες δημοπρασίες"
+
+#: .\templates\product.html:64
+msgid "Sponsered"
+msgstr "Χορηγημένο"
+
+#: .\templates\product.html:73
+msgid "New"
+msgstr "Καινούργιο"
+
+#: .\templates\product.html:75
+msgid "shipping"
+msgstr "αποστολή"
+
+#: .\templates\product.html:87
+msgid "Condition:"
+msgstr "Κατάσταση:"
+
+#: .\templates\product.html:89 .\templates\product.html:91
+msgid "Remaining time -"
+msgstr "Υπολειπόμενος χρόνος -"
+
+#: .\templates\product.html:95
+msgid "Add to watchlist"
+msgstr "Προσθήκη στη λίστα παρακολούθησης"
+
+#: .\templates\product.html:99
+msgid "Shipping:"
+msgstr "Αποστολή:"
+
+#: .\templates\product.html:101
+msgid "Free SpeedPAK Standard. See details"
+msgstr "Δωρεάν αποστολή SpeedPAK Standard. Δείτε λεπτομέρειες"
+
+#: .\templates\product.html:102
+msgid ""
+"International shipment of items may be subject to customs processing and "
+"additional charges."
+msgstr ""
+"Η διεθνής αποστολή αντικειμένων ενδέχεται να υπόκειται σε δασμολογική επεξεργασία και "
+"επιπλέον χρεώσεις."
+
+#: .\templates\product.html:103
+msgid "Located in: {City, Country}"
+msgstr "Βρίσκεται στο: {Πόλη, Χώρα}"
+
+#: .\templates\product.html:107
+msgid "Delivery:"
+msgstr "Παράδοση:"
+
+#: .\templates\product.html:109
+msgid "Estimated between Thu, May 16 and Mon, Jun 3"
+msgstr "Εκτιμώμενο ανάμεσα στις Πέμπτη, 16 Μαΐου και Δευτέρα, 3 Ιουνίου"
+
+#: .\templates\product.html:110
+msgid "to 568745"
+msgstr "σε 568745"
+
+#: .\templates\product.html:111
+msgid "Please note the delivery estimate is greater than 15 business days."
+msgstr "Σημειώστε ότι η εκτίμηση παράδοσης είναι μεγαλύτερη από 15 εργάσιμες ημέρες."
+
+#: .\templates\product.html:112
+msgid ""
+"Please allow additional time if international delivery is subject to customs "
+"processing."
+msgstr ""
+"Παρακαλούμε επιτρέψτε επιπλέον χρόνο εάν η διεθνής παράδοση υπόκειται σε δασμολογική "
+"επεξεργασία."
+
+#: .\templates\product.html:116
+msgid "Returns:"
+msgstr "Επιστροφές:"
+
+#: .\templates\product.html:118
+msgid "Seller does not accept returns. See details"
+msgstr "Ο πωλητής δεν αποδέχεται επιστροφές. Δείτε λεπτομέρειες"
+
+#: .\templates\product.html:122
+msgid "Payments:"
+msgstr "Πληρωμές:"
+
+#: .\templates\product.html:124
+msgid "cards"
+msgstr "κάρτες"
+
+#: .\templates\product.html:131
+msgid "About this item"
+msgstr "Σχετικά με αυτό το αντικείμενο"
+
+#: .\templates\product.html:134
+msgid "Seller assumes all responsibility for this listing."
+msgstr "Ο πωλητής φέρει όλη την ευθύνη για αυτήν την καταχώρηση."
+
+#: .\templates\product.html:135
+msgid "Last updated on"
+msgstr "Τελευταία ενημέρωση στις"
+
+#: .\templates\product.html:135
+msgid "View all revisions"
+msgstr "Προβολή όλων των αναθεωρήσεων"
+
+#: .\templates\product.html:137
+msgid "Item specifics"
+msgstr "Συγκεκριμένα αντικειμένου"
+
+#: .\templates\registration\login.html:12
+#: .\templates\registration\register.html:12
+msgid "Hi"
+msgstr "Γεια"
+
+#: .\templates\registration\login.html:14
+msgid "Sign in to eBay Auctions or"
+msgstr "Συνδεθείτε στις Δημοπρασίες eBay ή"
+
+#: .\templates\registration\login.html:14
+msgid "create an account"
+msgstr "δημιουργήστε ένα λογαριασμό"
+
+#: .\templates\registration\login.html:21
+msgid "Login"
+msgstr "Σύνδεση"
+
+#: .\templates\registration\login.html:23
+#: .\templates\registration\register.html:23
+msgid "Continue with Google"
+msgstr "Συνέχεια με Google"
+
+#: .\templates\registration\register.html:14
+msgid "Register on eBay Auctions or"
+msgstr "Εγγραφείτε στις Δημοπρασίες eBay ή"
+
+#: .\templates\registration\register.html:14
+msgid "log in to your account"
+msgstr "συνδεθείτε στον λογαριασμό σας"
+
+#: .\templates\registration\register.html:21
+msgid "Registration"
+msgstr "Εγγραφή"
+
+#: .\templates\second_payment.html:44
+msgid "Ship"
+msgstr "Αποστολή"
+
+#: .\templates\second_payment.html:271
+msgid "Done"
+msgstr "Ολοκληρώθηκε"
+
+#: .\templates\second_payment.html:277
+msgid "first"
+msgstr "πρώτο"
+
+#: .\templates\second_payment.html:278
+msgid "last"
+msgstr "τελευταίο"
+
+#: .\templates\second_payment.html:281
+msgid "street"
+msgstr "δρόμος"
+
+#: .\templates\second_payment.html:282
+msgid "street 2"
+msgstr "δρόμος 2"
+
+#: .\templates\second_payment.html:285
+msgid "city"
+msgstr "πόλη"
+
+#: .\templates\second_payment.html:286
+msgid "state"
+msgstr "πολιτεία"
+
+#: .\templates\second_payment.html:287
+msgid "zip"
+msgstr "ταχυδρομικός κώδικας"
+
+#: .\templates\second_payment.html:290
+msgid "country"
+msgstr "χώρα"
+
+#: .\templates\second_payment.html:293
+msgid "email"
+msgstr "ηλ. ταχυδρομείο"
+
+#: .\templates\second_payment.html:296
+msgid "phone"
+msgstr "τηλέφωνο"
+
+#: .\templates\second_payment.html:298
+msgid "change"
+msgstr "αλλαγή"
+
+#: .\templates\second_payment.html:301
+msgid "Pay with"
+msgstr "Πληρώστε με"
+
+#: .\templates\second_payment.html:306
+msgid "Add new card"
+msgstr "Προσθήκη νέας κάρτας"
+
+#: .\templates\second_payment.html:317 .\templates\second_payment.html:322
+msgid "Not working due to technical reasons"
+msgstr "Δεν λειτουργεί λόγω τεχνικών αιτιών"
+
+#: .\templates\second_payment.html:329
+msgid "Item (1)"
+msgstr "Αντικείμενο (1)"
+
+#: .\templates\second_payment.html:333
+msgid "Shipping"
+msgstr "Αποστολή"
+
+#: .\templates\second_payment.html:337
+msgid "VAT"
+msgstr "ΦΠΑ"
+
+#: .\templates\second_payment.html:341
+msgid "Duties"
+msgstr "Τέλη"
+
+#: .\templates\second_payment.html:346
+msgid "Order total"
+msgstr "Συνολικό ποσό παραγγελίας"
+
+#: .\templates\second_payment.html:350
+msgid "Confirm and pay"
+msgstr "Επιβεβαιώστε και πληρώστε"
+
+#: .\templates\second_payment.html:351
+msgid "Enter shipping address"
+msgstr "Εισαγάγετε διεύθυνση αποστολής"
+
+#: .\templates\socialaccount\authentication_error.html:5
+#: .\templates\socialaccount\authentication_error.html:8
+msgid "Social Network Login Failure"
+msgstr "Αποτυχία σύνδεσης μέσω κοινωνικού δικτύου"
+
+#: .\templates\socialaccount\authentication_error.html:10
+msgid ""
+"An error occurred while attempting to login via your social network account."
+msgstr ""
+"Παρουσιάστηκε σφάλμα κατά την προσπάθεια σύνδεσης μέσω του λογαριασμού σας στο "
+"κοινωνικό δίκτυο."
+
+#: .\templates\socialaccount\connections.html:5
+#: .\templates\socialaccount\connections.html:8
+msgid "Account Connections"
+msgstr "Συνδέσεις λογαριασμού"
+
+#: .\templates\socialaccount\connections.html:11
+msgid ""
+"You can sign in to your account using any of the following third party "
+"accounts:"
+msgstr ""
+"Μπορείτε να συνδεθείτε στον λογαριασμό σας χρησιμοποιώντας οποιονδήποτε από τους "
+"ακόλουθους λογαριασμούς τρίτων:"
+
+#: .\templates\socialaccount\connections.html:43
+msgid ""
+"You currently have no social network accounts connected to this account."
+msgstr ""
+"Αυτή τη στιγμή δεν έχετε συνδέσει κοινωνικού δικτύου λογαριασμούς σε αυτόν τον "
+"λογαριασμό."
+
+#: .\templates\socialaccount\connections.html:46
+msgid "Add a 3rd Party Account"
+msgstr "Προσθήκη λογαριασμού τρίτου μέρους"
+
+#: .\templates\socialaccount\login.html:11
+#, python-format
+msgid "Connect %(provider)s"
+msgstr "Σύνδεση %(provider)s"
+
+#: .\templates\socialaccount\login.html:13
+#, python-format
+msgid "You are about to connect a new third party account from %(provider)s."
+msgstr ""
+"Ετοιμάζεστε να συνδέσετε ένα νέο λογαριασμό τρίτου μέρους από το %(provider)s."
+
+#: .\templates\socialaccount\login.html:15
+#, python-format
+msgid "Sign In Via %(provider)s"
+msgstr "Σύνδεση μέσω %(provider)s"
+
+#: .\templates\socialaccount\login.html:17
+#, python-format
+msgid "You are about to sign in using a third party account from %(provider)s."
+msgstr ""
+"Ετοιμάζεστε να συνδεθείτε χρησιμοποιώντας ένα λογαριασμό τρίτου μέρους από το "
+"%(provider)s."
+
+#: .\templates\socialaccount\login.html:22
+msgid "Continue"
+msgstr "Συνέχεια"
+
+#: .\templates\socialaccount\login_cancelled.html:5
+#: .\templates\socialaccount\login_cancelled.html:9
+msgid "Login Cancelled"
+msgstr "Ακύρωση σύνδεσης"
+
+#: .\templates\socialaccount\login_cancelled.html:13
+#, python-format
+msgid ""
+"You decided to cancel logging in to our site using one of your existing "
+"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
+"\">sign in</a>."
+msgstr ""
+"Αποφασίσατε να ακυρώσετε την είσοδο στον ιστότοπό μας χρησιμοποιώντας έναν από τους "
+"υπάρχοντες λογαριασμούς σας. Εάν πρόκειται για λάθος, παρακαλούμε προχωρήστε στην "
+"<a href=\"%(login_url)s\">σύνδεση</a>."
+
+#: .\templates\socialaccount\messages\account_connected.txt:2
+msgid "The social account has been connected."
+msgstr "Ο κοινωνικός λογαριασμός συνδέθηκε επιτυχώς."
+
+#: .\templates\socialaccount\messages\account_connected_other.txt:2
+msgid "The social account is already connected to a different account."
+msgstr "Ο κοινωνικός λογαριασμός είναι ήδη συνδεδεμένος με διαφορετικό λογαριασμό."
+
+#: .\templates\socialaccount\messages\account_disconnected.txt:2
+msgid "The social account has been disconnected."
+msgstr "Ο κοινωνικός λογαριασμός αποσυνδέθηκε επιτυχώς."
+
+msgid "First name"
+msgstr "Όνομα"
+
+msgid "Last name"
+msgstr "Επώνυμο"
+
+msgid "Street address"
+msgstr "Διεύθυνση οδού"
+
+msgid "Street address 2 (optional)"
+msgstr "Διεύθυνση οδού 2 (προαιρετικό)"
+
+msgid "City"
+msgstr "Πόλη"
+
+msgid "Country or region"
+msgstr "Χώρα ή περιοχή"
+
+msgid "State/Province/Re..."
+msgstr "Πολιτεία/Επαρχία/Περιοχή..."
+
+msgid "ZIP Code"
+msgstr "Ταχυδρομικός Κώδικας"
+
+msgid "Email"
+msgstr "ηλεκτρονικού"
+
+msgid "Confirm email"
+msgstr "επιβεβαίωση ηλεκτρονικού ταχυδρομείου"
+
+msgid "Country Code"
+msgstr "Κωδικός Χώρας"
+
+msgid "Phone number (required)"
+msgstr "Τηλεφωνικός αριθμός (απαιτείται)"
+
+msgid "Region"
+msgstr "Περιοχή"
+
+msgid "Address"
+msgstr "Διεύθυνση"
+
+msgid "Additional information (optional)"
+msgstr "Πρόσθετες πληροφορίες (προαιρετικά)"
+
+msgid "Phone number"
+msgstr "Τηλεφώνου"
+
+
+
+#: .\templates\socialaccount\signup.html:9
+#, python-format
+msgid ""
+"You are about to use your %(provider_name)s account to login to\n"
+"%(site_name)s. As a final step, please complete the following form:"
+msgstr ""

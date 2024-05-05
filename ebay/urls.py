@@ -4,6 +4,7 @@ from django.urls import path, include
 from ebay_app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.i18n import set_language
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -17,4 +18,6 @@ urlpatterns = [
     path('reset_product_parameters/', views.reset_product_parameters, name='reset_product_parameters'),
     path('accounts/', include('allauth.urls')),    
     path('logout/', views.user_login, name='logout'),
+    path('set_language/', set_language, name='set_language'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

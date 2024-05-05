@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,35 +11,36 @@
 </head>
 <body>
     {% include 'header.html' %}
+
     <main>
         <div class="banner">
             <div class="banner__container container">
-                <div class="banner__title">eBay Auctions</div>
-                <div class="banner__subtitle">Fast, safe, profitable trade</div>
+                <div class="banner__title">{% trans "eBay Auctions" %}</div>
+                <div class="banner__subtitle">{% trans "Fast, safe, profitable trade" %}</div>
                 <div class="banner__input">
-                    <input placeholder="Promocode" class="promoInput" type="text">
-                    <button id="promo">Ok</button>
-
+                    <input placeholder="{% trans "Promocode" %}" class="promoInput" type="text">
+                    <button id="promo">{% trans "Ok" %}</button>
+    
                     <div id="modal" class="modal">
                         <div class="modal-content">
-                          <h2>You have successfully applied the promo code for 2€!</h2>
-                          <button id="useBtn">Ok</button>
+                            <h2>{% trans "You have successfully applied the promo code for 2€!" %}</h2>
+                            <button id="useBtn">{% trans "Ok" %}</button>
                         </div>
-                      </div>
-                      <div id="incorrectModal" class="modal">
+                    </div>
+                    <div id="incorrectModal" class="modal">
                         <div class="modal-content">
-                          <h2>This promo code does not exist or has already expired</h2>
-                          <button id="useBtnIncorrect">Ok</button>
+                            <h2>{% trans "This promo code does not exist or has already expired" %}</h2>
+                            <button id="useBtnIncorrect">{% trans "Ok" %}</button>
                         </div>
-                      </div>
-                      
+                    </div>
+    
                 </div>
             </div>
         </div>
-
+    
         <div class="tabs container">
-            <button class="tablink" onclick="openTab('active')">Active auctions</button>
-            <button class="tablink" onclick="openTab('completed')">Completed auctions</button>
+            <button class="tablink" onclick="openTab('active')">{% trans "Active auctions" %}</button>
+            <button class="tablink" onclick="openTab('completed')">{% trans "Completed auctions" %}</button>
             <div id="active" class="tabcontent">
                 <div class="products ">
                     <div class="products__container">
@@ -54,24 +56,30 @@
                                     </div>
                                     <div class="product__title">{{ product.name }}</div>
                                     {% if product.forBot %}
-                                        <div class="product__time">Remaining time: - {{ product.remaining_time }}s</div>
+                                        <div class="product__time">{% trans "Remaining time:" %} - {{ product.remaining_time }}s</div>
+                                        <div class="product__lastBid">{% trans "Last bid by" %} {{ product.last_bid }}</div>
                                     {% else %}
-                                        <div class="product__time user__time">Remaining time: - {{ user_remaining_time }}s</div>
+                                        <div class="product__time user__time">{% trans "Remaining time:" %} - {{ user_remaining_time }}s</div>
+
+                                        <div id="lastBid" class="product__lastBid">{% trans "Last bid by -" %}</div>
+
                                     {% endif %}
-                                        <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
                                 </div>
                             </a>
                             <div class="product__prices">
-                                    <div class="product__highBid-active">Highest bid: - {{ user_highest_bid }}€</div>
-                                <div class="product__increment">Increment {{product.increment}}€</div>
-                                <button type="button" data-forBot="{{product.forBot}}" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="product__btn" >Bid {{ product.bid }} €  </button>
+                                {% if product.forBot %}
+                                    <div class="product__highBid-active">{% trans "Highest bid:" %} - {{ user_highest_bid }}€</div>
+                                {% else %}
+                                    <div class="product__highBid-active">{% trans "Highest bid:" %} - €</div>
+                                {% endif %}
+                                <div class="product__increment">{% trans "Increment" %} {{product.increment}}€</div>
+                                <button type="button" data-forBot="{{product.forBot}}" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="product__btn" >{% trans "Bid" %} {{ product.bid }} €  </button>
                             </div>
                         </div>
-                        {% endfor %}                         
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                
+    
             </div>
             <div id="completed" class="tabcontent">
                 <div class="products container">
@@ -79,31 +87,39 @@
                         {% for product in completed_products %}
                         <div class="product">
                             <a href="{% url 'product' product_id=product.id %}">
-                            <div class="product__info">
-                                <div class="product__img">
-                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+                                <div class="product__info">
+                                    <div class="product__img">
+                                        <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+                                    </div>
+                                    <div class="product__title">{{ product.name }}</div>
+                                    <div class="product__time">{% trans "Remaining time:" %} - <span>0s</span></div>
+                                    <div class="product__lastBid">{% trans "Last bid by" %} {{ product.last_bid }}</div>
                                 </div>
-                                <div class="product__title">{{ product.name }}</div>
-                                <div class="product__time">Remaining time: - <span>0s</span></div>
-                                <div class="product__lastBid">Last bid by {{ product.last_bid }}</div>
-                            </div>
                             </a>
                             <div class="product__prices">
                                 <div class="product__highBid"></div>
-                                <button class="product__btn">Sale has ended</button>
+                                <button class="product__btn">{% trans "Sale has ended" %}</button>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
                 </div>
-                
+    
             </div>
         </div>
     </main>
+    
     {% include 'footer.html' %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        var currentLanguage = "{{ LANGUAGE_CODE }}";lastBid
+        if (currentLanguage === 'en') {
+           document.getElementById("lastBid").innerText = "Last bid by you"
+        } else if (currentLanguage === 'el') {
+            document.getElementById("lastBid").innerText = "Τελευταία προσφορά από"
+
+        }
         $(document).ready(function() {
             // Отправляем AJAX-запрос каждую секунду
             setInterval(updateProducts, 1000);
@@ -167,8 +183,14 @@
                 var forBotValue = $('#product-btn-' + productId).data('forbot');
                 var user_remaining_time = product ? user_remaining_time : null;
                 var userTimeElement = productElement.find(".user_remaining_time");
+                console.log(currentLanguage)
                 if (forBotValue == "False"){
-                    userTimeElement.text("Remaining time: - " + user_remaining_time + 's');
+                    
+                    if (currentLanguage === 'en') {
+                        userTimeElement.textContent = "Remaining time: - " + user_remaining_time + 's';
+                    } else if (currentLanguage === 'el') {
+                        userTimeElement.textContent = "Υπολειπόμενος χρόνος: - " + user_remaining_time + 's';
+                    }
                 }
 
             }
@@ -181,15 +203,30 @@
                 var userTimeElement = productElement.find(".user_remaining_time");
                 var user_remaining_time = product ? user_remaining_time : null;
                 if (forBotValue == "True"){
-                    producTimeElement.text("Remaining time: - " + product.remaining_time + 's');
-                } else{
-                    userTimeElement.text("Remaining time: - " + user_remaining_time + 's');
+                    if (currentLanguage === 'en'){
+                        producTimeElement.text("Remaining time: - " + product.remaining_time + 's');
 
+                        productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Bid " + product.bid + ' €');
+                    } else if (currentLanguage === 'el'){
+                        producTimeElement.text("Υπολειπόμενος χρόνος: - " + product.remaining_time + 's');
+                        productElement.find(".product__lastBid").text("Τελευταία προσφορά από " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("Υψηλότερη προσφορά: - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Προσφορά " + product.bid + ' €');
+                    }
+                } else {
+                    if (currentLanguage === 'en'){
+                        userTimeElement.text("Remaining time: - " + user_remaining_time + 's');
+                       
+                    } else if (currentLanguage === 'el'){
+                        userTimeElement.text("Υπολειπόμενος χρόνος: - " + user_remaining_time + 's');
+
+                    }
                 }
-            
-                productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
-                productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
-                productElement.find(".product__btn").text("Bid " + product.bid + ' €');
+
+              
+              
                 productElement.find(".product__title").text(product.name);
             
                 if (productElement.hasClass("productHold")) {
@@ -232,7 +269,19 @@
             function updateRemainingTime(productId, remainingTime) {
                 var $productElement = $('#product-' + productId);
                 var $remainingTimeElement = $productElement.find('.product__time');
+
                 $remainingTimeElement.text("Remaining time: - " + remainingTime + 's');
+
+                if (currentLanguage === 'en'){
+                    $remainingTimeElement.text("Remaining time: - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Τελευταία προσφορά από you");
+
+
+                } else if (currentLanguage === 'el'){
+                    $remainingTimeElement.text("Υπολειπόμενος χρόνος: - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Τελευταία προσφορά από εσάς");
+
+                }
             }
     
             // Функция для установки таймера
@@ -245,6 +294,7 @@
                         data: {product_id: productId},
                         success: function(response) {
                             if (response.success) {
+                                
                                 // Обновляем отображаемое время
                                 updateRemainingTime(productId, response.remaining_time);
                                 // Если remaining_time достиг нуля, останавливаем таймер и перенаправляем на страницу first_payment
@@ -286,14 +336,16 @@
             $('.product__btn').click(function() {
                 var productId = $(this).data('product-id'); // Получаем ID продукта
                 var forBot = $(this).data('forbot'); // Получаем информацию о том, что продукт предназначен для бота
-                
                 // Проверяем, является ли продукт предназначенным для бота
+                var productElement = $("#product-" + productId);
+
                 if (forBot == "True") {
                     // Блокируем кнопку и выводим алерт
-                    alert('Недостаточно средств');
+                    alert('Insufficient funds');
                     return false; // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
                 }
                 this.style.background = "#ccc"
+
                 // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
                 $.ajax({
                     url: "{% url 'set_remaining_time' %}",
@@ -301,6 +353,7 @@
                     data: {product_id: productId},
                     success: function(response) {
                         if (response.success) {
+                            
                             // Если remaining_time достиг нуля, не вызываем setTimer,
                             // а обновляем параметры на странице и перенаправляем на страницу first_payment
                             if (response.remaining_time <= 0) {
@@ -309,6 +362,7 @@
                             } else {
                                 // Иначе вызываем функцию установки таймера с полученным временем
                                 setTimer(productId, response.remaining_time);
+                                
                             }
                         } else {
                             console.log("Error setting remaining time");

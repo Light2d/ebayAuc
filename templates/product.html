@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,173 +19,135 @@
     <main>
         <div class="productDetail container">
             <div class="productDetail__left">
-
-                {% comment %} <section class="slider">
-                    <div class="slider__flex">
-                      <div class="slider__col">
-                  
-                        <div class="slider__prev">▲</div> <!-- Кнопка для переключения на предыдущий слайд -->
-                  
-                        <div class="slider__thumbs">
-                          <div class="swiper-container">
-                            <!-- Слайдер с превью -->
-                            <div class="swiper-wrapper">
-                                {% for image in product.images.all %}
-                                <div class="swiper-slide">
-                                  <div class="slider__image"><img class="slider__thumb" src="{{ image.image.url }}" alt="{{ product.name }}" /></div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                          </div>
-                        </div>
-                  
-                        <div class="slider__next">▼</div> <!-- Кнопка для переключения на следующий слайд -->
-                  
-                      </div>
-                  
-                      <div class="slider__images">
-                        <div class="swiper-container">
-                          <!-- Слайдер с изображениями -->
-                          <div class="swiper-wrapper">
-                            {% for image in product.images.all %}
-                            <div class="swiper-slide">
-                              <div class="slider__image"><img class="slider__img" src="{{ image.image.url }}" alt="{{ product.name }}" /></div>
-                            </div>
-                            {% endfor %}
-                          </div>
-                        </div>
-                      </div>
-                  
-                    </div>
-                </section> {% endcomment %}
+    
                 <section class="slider">
                     <div class="">
-                      <div class="slider__flex">
-                        <div class="slider__col">
-              
-                          <div class="slider__prev"><img src="{% static 'img/arrowU.svg' %}" alt=""></div> <!-- Кнопка для переключения на предыдущий слайд -->
-              
-                          <div class="slider__thumbs">
-                            <div class="swiper-container"> <!-- Слайдер с превью -->
-                              <div class="swiper-wrapper">
-                                {% for image in product.images.all %}
-                                <div class="swiper-slide swiper-slide-img">
-                                    <div class="slider__image"><img src="{{ image.image.url }}" alt=""/></div>
+                        <div class="slider__flex">
+                            <div class="slider__col">
+    
+                                <div class="slider__prev"><img src="{% static 'img/arrowU.svg' %}" alt=""></div> <!-- Кнопка для переключения на предыдущий слайд -->
+    
+                                <div class="slider__thumbs">
+                                    <div class="swiper-container"> <!-- Слайдер с превью -->
+                                        <div class="swiper-wrapper">
+                                            {% for image in product.images.all %}
+                                            <div class="swiper-slide swiper-slide-img">
+                                                <div class="slider__image"><img src="{{ image.image.url }}" alt="{% trans 'Image' %}"/></div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
                                 </div>
-                                {% endfor %}
-                              </div>
+    
+                                <div class="slider__next"><img src="{% static 'img/arrowD.svg' %}" alt=""></div> <!-- Кнопка для переключения на следующий слайд -->
+    
                             </div>
-                          </div>
-              
-                          <div class="slider__next"><img src="{% static 'img/arrowD.svg' %}" alt=""></div> <!-- Кнопка для переключения на следующий слайд -->
-              
-                        </div>
-              
-                        <div class="slider__images">
-                          <div class="swiper-container"> <!-- Слайдер с изображениями -->
-                            <div class="swiper-wrapper">
-                              {% for image in product.images.all %}
-                              <div class="swiper-slide">
-                                  <div class="slider__image slider-img"><img src="{{ image.image.url }}" alt=""/></div>
-                              </div>
-                              {% endfor %}
+    
+                            <div class="slider__images">
+                                <div class="swiper-container"> <!-- Слайдер с изображениями -->
+                                    <div class="swiper-wrapper">
+                                        {% for image in product.images.all %}
+                                        <div class="swiper-slide">
+                                            <div class="slider__image slider-img"><img src="{{ image.image.url }}" alt="{% trans 'Image' %}"/></div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+    
                         </div>
-              
-                      </div>
                     </div>
-                  </section>
-
+                </section>
+    
                 <div class="other">
-                    <div class="other__title">Other auctions</div>
-                    <div class="other__subtitle">Sponsered</div>
+                    <div class="other__title">{% trans 'Other auctions' %}</div>
+                    <div class="other__subtitle">{% trans 'Sponsered' %}</div>
                     <div class="other__items">
                         {% for otherProduct in active_products %}
                         <a href="{% url 'product' product_id=otherProduct.id %}">
-                        <div class="other__item otherItem">
-                            <div class="otherItem__img">
-                                <img src="{{ otherProduct.images.first.image.url }}" alt="{{otherProduct.name}}" class="">
+                            <div class="other__item otherItem">
+                                <div class="otherItem__img">
+                                    <img src="{{ otherProduct.images.first.image.url }}" alt="{{otherProduct.name}}" class="">
+                                </div>
+                                <div class="otherItem__title">{{otherProduct.name}}</div>
+                                <div class="otherItem__own">{% trans 'New' %}</div>
+                                <div class="otherItem__price">Eur {{otherProduct.price}} €</div>
+                                <div class="otherItem__deliery">+2€ {% trans 'shipping' %}</div>
                             </div>
-                            <div class="otherItem__title">{{otherProduct.name}}</div>
-                            <div class="otherItem__own">New</div>
-                            <div class="otherItem__price">Eur {{otherProduct.price}} €</div>
-                            <div class="otherItem__deliery">+2€ shipping</div>
-                        </div>
-                     </a>
+                        </a>
                         {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="productDetail__right">
-              <input class="product__id" type="hidden" name="" id="{{ product.id }}">
-              <div class="productDetail__title" id="productTitle-{{ product.id }}">{{ product }}</div>
-              
-              <div class="productDetail__price">{{product.price}} €</div>
-               <div class="productDetail__condition">condition: {{product.condition}} </div>
-               {% if product.forBot %}
-                <div class="productDetail__time product__time">Remaining time - {{ product.remaining_time }}s </div>
-               {% else %}
-               <div class="productDetail__time product__time" data-user-remaining-time="{{ user_remaining_time }}">Remaining time - {{ user_remaining_time }}s </div>
-               {% endif %}
-               <div class="productDetail__btns">
-                    <button data-forBot="{{product.forBot}}" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="productDetail__btn">Bid {{product.bid}}</button>
-                    <button class="product__btnAdd">Add to watchlist</button>
-               </div>
-               <div class="productDetail__items">
-                <div class="productDetail__item">
-                    <div>Shipping:</div>
-                    <div>
-                        Free SpeedPAK Standard. See details
-                        International shipment of items may be subject to
-                        customs processing and additional charges. <br>
-                        Located in: {Город, страна}
+                <input class="product__id" type="hidden" name="" id="{{ product.id }}">
+                <div class="productDetail__title" id="productTitle-{{ product.id }}">{{ product }}</div>
+    
+                <div class="productDetail__price">{{product.price}} €</div>
+                <div class="productDetail__condition">{% trans 'Condition:' %} {{product.condition}} </div>
+                {% if product.forBot %}
+                <div class="productDetail__time product__time">{% trans 'Remaining time -' %} {{ product.remaining_time }}s </div>
+                {% else %}
+                <div class="productDetail__time product__time" data-user-remaining-time="{{ user_remaining_time }}">{% trans 'Remaining time -' %} {{ user_remaining_time }}s </div>
+                {% endif %}
+                <div class="productDetail__btns">
+                    <button data-forBot="{{product.forBot}}" data-product-id="{{ product.id }}" id="product-btn-{{ product.id }}" class="productDetail__btn">{% trans 'Bid' %} {{product.bid}}</button>
+                    <button class="product__btnAdd">{% trans 'Add to watchlist' %}</button>
+                </div>
+                <div class="productDetail__items">
+                    <div class="productDetail__item">
+                        <div>{% trans 'Shipping:' %}</div>
+                        <div>
+                            {% trans 'Free SpeedPAK Standard. See details' %}
+                            {% trans 'International shipment of items may be subject to customs processing and additional charges.' %} <br>
+                            {% trans 'Located in: {City, Country}' %}
+                        </div>
                     </div>
-               </div>
-               <div class="productDetail__item">
-                    <div>Delivery:</div>
-                    <div>
-                        Estimated between Thu, May 16 and Mon, Jun 3
-                        to 568745 <br>
-                        Please note the delivery estimate is greater than 15 business days. <br>
-                        Please allow additional time if international delivery is subject to customs processing.
+                    <div class="productDetail__item">
+                        <div>{% trans 'Delivery:' %}</div>
+                        <div>
+                            {% trans 'Estimated between Thu, May 16 and Mon, Jun 3' %}
+                            {% trans 'to 568745' %} <br>
+                            {% trans 'Please note the delivery estimate is greater than 15 business days.' %} <br>
+                            {% trans 'Please allow additional time if international delivery is subject to customs processing.' %}
+                        </div>
+                    </div>
+                    <div class="productDetail__item">
+                        <div>{% trans 'Returns:' %}</div>
+                        <div>
+                            {% trans 'Seller does not accept returns. See details' %}
+                        </div>
+                    </div>
+                    <div class="productDetail__item">
+                        <div>{% trans 'Payments:' %}</div>
+                        <div>
+                            {% trans 'cards' %}
+                        </div>
                     </div>
                 </div>
-                <div class="productDetail__item">
-                    <div>Returns:</div>
-                    <div>
-                        Seller does not accept returns. See details
-                    </div>
-                </div>
-                <div class="productDetail__item">
-                    <div>Payments:</div>
-                    <div>
-                        cards
-                    </div>
-                </div>
-               </div>
             </div>
         </div>
         <div class="specifics container">
-            <span class="specifics__about">About this item</span>
-
-            <div class="specifics__container">
-                <div class="specifics__subtitle">Seller assumes all responsibility for this listing.</div>
-                <div class="specifics__last">Last updated on Apr 17, 2024 15:31:17 CST View all revisions</div>
+            <span class="specifics__about">{% trans 'About this item' %}</span>
     
-                <div class="specifics__title">Item specifics</div>
+            <div class="specifics__container">
+                <div class="specifics__subtitle">{% trans 'Seller assumes all responsibility for this listing.' %}</div>
+                <div class="specifics__last">{% trans 'Last updated on' %} Apr 17, 2024 15:31:17 CST {% trans 'View all revisions' %}</div>
+    
+                <div class="specifics__title">{% trans 'Item specifics' %}</div>
     
                 <ul class="specifics__list">
                     {% for attribute in product.attributes.all %}
-                        <li class="specifics__item">
-                            <div class="product__name">{{ attribute.name }}</div>
-                            <div class="product__value">{{ attribute.value }}</div>
-                        </li>
+                    <li class="specifics__item">
+                        <div class="product__name">{{ attribute.name }}</div>
+                        <div class="product__value">{{ attribute.value }}</div>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
     </main>
+    
     
     {% include 'footer.html' %}
 
@@ -205,8 +169,13 @@
                             var productElement = $("#productTitle-" + productId).closest('.productDetail');
                             var userRemainingTime = data.user_remaining_time;
                             if (productElement.length) {
-                                productElement.find(".productDetail__time").text("Remaining time - " + product.remaining_time + 's');
-                                productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Bid " + product.bid + ' €');
+                                if (currentLanguage === 'en'){
+                                    productElement.find(".productDetail__time").text("Remaining time - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Bid " + product.bid + ' €');
+                                } else if (currentLanguage === 'el'){
+                                    productElement.find(".productDetail__time").text("Υψηλότερη προσφορά - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Προσφορά " + product.bid + ' €');
+                                }
             
                                 updateUserTime(productId, product);
                             }
@@ -225,7 +194,11 @@
                 var userTimeElement = productElement.find(".user_remaining_time");
                 
                 if (forBotValue == "False") {
-                    productElement.find(".productDetail__time").text("Remaining time - " + user_remaining_time + 's');
+                    if (currentLanguage === 'en'){
+                        productElement.find(".productDetail__time").text("Remaining time - " + user_remaining_time + 's');
+                    } else if (currentLanguage === 'el'){
+                        productElement.find(".productDetail__time").text("Υψηλότερη προσφορά - " + user_remaining_time + 's');
+                    }
                 }
             }
             
@@ -234,6 +207,7 @@
         
     
     <script>
+        var currentLanguage = "{{ LANGUAGE_CODE }}";
       $(document).ready(function() {
           // Обработчик клика на кнопке "Bid" для каждого продукта
           $('.productDetail__btn').click(function() {
