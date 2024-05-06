@@ -15,6 +15,7 @@ body{
 .custom-select {
     position: relative;
     margin-bottom: 10px;
+    
 
 }
 
@@ -119,6 +120,20 @@ header {
     font-size: 32px;
 }
 
+#languageSelect{
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#languageSelect option{
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
 @media (max-width: 768px) {
     .header__link{
         display: none;

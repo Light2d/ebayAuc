@@ -215,12 +215,17 @@ def set_remaining_time(request):
             product = Product.objects.get(id=product_id)
             user = request.user
             user_remaining_time = user.user_remaining_time
+            user.user_remaining_time = user_remaining_time
+
 
             # Уменьшаем remaining_time на 1 секунду
             if user_remaining_time > 0:
                 user_remaining_time -= 1
                 user.user_remaining_time = user_remaining_time
                 product.last_bid = "you"
+                product.highest_bid = product.increment
+                product.bid = product.increment * 2
+                product.save()
                 user.save()
 
                 for_people = product.forPeople

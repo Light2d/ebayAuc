@@ -15,7 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedItem.innerHTML = 'Country or region'
     } else if (currentLanguage == "el"){
         selectedItem.innerHTML = 'Χώρα ή περιοχή'
-
+    } else if (currentLanguage == "de"){
+        selectedItem.innerHTML = 'Land oder Region'
+    } else if (currentLanguage == "fr"){
+        selectedItem.innerHTML = 'Pays ou région'
+    } else if (currentLanguage == "pt"){
+        selectedItem.innerHTML = 'País ou região'
+    } else if (currentLanguage == "nl"){
+        selectedItem.innerHTML = 'Land of regio'
+    } else if (currentLanguage == "sk"){
+        selectedItem.innerHTML = 'Krajina alebo región'
+    }  else if (currentLanguage == "lb"){
+        selectedItem.innerHTML = 'Land oder Regioun'
     }
 
     let itemsContainer = document.createElement('div');

@@ -1,0 +1,962 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-06 15:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\ebay\settings.py:111
+msgid "German"
+msgstr "Duits"
+
+#: .\ebay\settings.py:112 .\templates\header.html:35
+msgid "English"
+msgstr "Engels"
+
+#: .\ebay\settings.py:113
+msgid "French"
+msgstr "Frans"
+
+#: .\ebay\settings.py:114
+msgid "Portuguese"
+msgstr "Portugees"
+
+#: .\ebay\settings.py:115
+msgid "Greek"
+msgstr "Grieks"
+
+#: .\ebay\settings.py:116
+msgid "Dutch"
+msgstr "Nederlands"
+
+#: .\ebay\settings.py:117
+msgid "Slovak"
+msgstr "Slowaaks"
+
+#: .\ebay\settings.py:118
+msgid "Luxembourgish"
+msgstr "Luxemburgs"
+
+#: .\templates\account\account_inactive.html:5
+#: .\templates\account\account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Account Inactief"
+
+#: .\templates\account\account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Dit account is inactief."
+
+#: .\templates\account\email.html:5 .\templates\account\email.html:8
+msgid "E-mail Addresses"
+msgstr "E-mailadressen"
+
+#: .\templates\account\email.html:10
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "De volgende e-mailadressen zijn gekoppeld aan uw account:"
+
+#: .\templates\account\email.html:24
+msgid "Verified"
+msgstr "Geverifieerd"
+
+#: .\templates\account\email.html:26
+msgid "Unverified"
+msgstr "Niet geverifieerd"
+
+#: .\templates\account\email.html:28
+msgid "Primary"
+msgstr "Primair"
+
+#: .\templates\account\email.html:34
+msgid "Make Primary"
+msgstr "Maak Primair"
+
+#: .\templates\account\email.html:35
+msgid "Re-send Verification"
+msgstr "Verificatie Opnieuw Versturen"
+
+#: .\templates\account\email.html:36
+#: .\templates\socialaccount\connections.html:35
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: .\templates\account\email.html:43
+msgid "Warning:"
+msgstr "Waarschuwing:"
+
+#: .\templates\account\email.html:43
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"U heeft momenteel geen e-mailadres ingesteld. U moet echt een e-mailadres "
+"toevoegen zodat u meldingen kunt ontvangen, uw wachtwoord kunt resetten, "
+"enzovoort."
+
+#: .\templates\account\email.html:48
+msgid "Add E-mail Address"
+msgstr "Voeg E-mailadres Toe"
+
+#: .\templates\account\email.html:53
+msgid "Add E-mail"
+msgstr "Voeg E-mail Toe"
+
+#: .\templates\account\email.html:63
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Wilt u het geselecteerde e-mailadres echt verwijderen?"
+
+#: .\templates\account\email\base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr "Hallo van %(site_name)s!"
+
+#: .\templates\account\email\base_message.txt:5
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"Bedankt voor het gebruik van %(site_name)s!\n"
+"%(site_domain)s"
+
+#: .\templates\account\email\email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"You're receiving this e-mail because user %(user_display)s has given your e-"
+"mail address to register an account on %(site_domain)s.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s"
+msgstr ""
+"U ontvangt deze e-mail omdat gebruiker %(user_display)s uw e-mailadres heeft "
+"opgegeven om een account te registreren op %(site_domain)s.\n"
+"\n"
+"Om te bevestigen dat dit juist is, ga naar %(activate_url)s"
+
+#: .\templates\account\email\email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr "Bevestig alstublieft uw e-mailadres"
+
+#: .\templates\account\email\password_reset_key_message.txt:4
+msgid ""
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+"U ontvangt deze e-mail omdat u of iemand anders een wachtwoord heeft "
+"aangevraagd voor uw gebruikersaccount.\n"
+"U kunt deze e-mail veilig negeren als u geen wachtwoordreset heeft "
+"aangevraagd. Klik op de onderstaande link om uw wachtwoord te resetten."
+
+#: .\templates\account\email\password_reset_key_message.txt:9
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr "Als u het vergeten bent, is uw gebruikersnaam %(username)s."
+
+#: .\templates\account\email\password_reset_key_subject.txt:3
+#: .\templates\account\email\unknown_account_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr "Wachtwoordreset E-mail"
+
+#: .\templates\account\email\unknown_account_message.txt:4
+#, python-format
+msgid ""
+"You are receiving this e-mail because you or someone else has requested a\n"
+"password for your user account. However, we do not have any record of a "
+"user\n"
+"with email %(email)s in our database.\n"
+"\n"
+"This mail can be safely ignored if you did not request a password reset.\n"
+"\n"
+"If it was you, you can sign up for an account using the link below."
+msgstr ""
+"U ontvangt deze e-mail omdat u of iemand anders een wachtwoord heeft "
+"aangevraagd\n"
+"voor uw gebruikersaccount. We hebben echter geen gegevens van een gebruiker\n"
+"met e-mail %(email)s in onze database.\n"
+"\n"
+"Deze e-mail kan veilig worden genegeerd als u geen wachtwoordreset heeft "
+"aangevraagd.\n"
+"\n"
+"Als het wel van u was, kunt u zich registreren voor een account via de "
+"onderstaande link."
+
+#: .\templates\account\email_confirm.html:6
+#: .\templates\account\email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "Bevestig E-mailadres"
+
+#: .\templates\account\email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Bevestig alstublieft dat <a href=\"mailto:%(email)s\">%(email)s</a> een "
+"e-mailadres is voor gebruiker %(user_display)s."
+
+#: .\templates\account\email_confirm.html:20
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#: .\templates\account\email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Deze e-mailbevestigingslink is verlopen of ongeldig. <a href="
+"\"%(email_url)s\">Dien alstublieft een nieuw verzoek voor e-mailbevestiging "
+"in</a>."
+
+#: .\templates\account\login.html:5 .\templates\account\login.html:9
+#: .\templates\account\login.html:42
+msgid "Sign In"
+msgstr "Aanmelden"
+
+#: .\templates\account\login.html:14
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+"Meld u alstublieft aan met een van uw bestaande accounts van derden. Of, <a "
+"href=\"%(signup_url)s\">meld u aan</a> voor een %(site_name)s account en meld "
+"u hieronder aan:"
+
+#: .\templates\account\login.html:24
+msgid "or"
+msgstr "of"
+
+#: .\templates\account\login.html:31
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+"Als u nog geen account heeft aangemaakt, meld u dan alstublieft eerst <a "
+"href=\"%(signup_url)s\">aan</a>."
+
+#: .\templates\account\login.html:41
+#: .\templates\account\password_change.html:14
+msgid "Forgot Password?"
+msgstr "Wachtwoord Vergeten?"
+
+#: .\templates\account\logout.html:5 .\templates\account\logout.html:8
+#: .\templates\account\logout.html:18
+msgid "Sign Out"
+msgstr "Afmelden"
+
+#: .\templates\account\logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr "Weet u zeker dat u zich wilt afmelden?"
+
+#: .\templates\account\messages\cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr "U kunt uw primaire e-mailadres (%(email)s) niet verwijderen."
+
+#: .\templates\account\messages\email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr "Bevestigings e-mail verstuurd naar %(email)s."
+
+#: .\templates\account\messages\email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr "U heeft %(email)s bevestigd."
+
+#: .\templates\account\messages\email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr "E-mailadres %(email)s verwijderd."
+
+#: .\templates\account\messages\logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr "Aangemeld als %(name)s."
+
+#: .\templates\account\messages\logged_out.txt:2
+msgid "You have signed out."
+msgstr "U bent afgemeld."
+
+#: .\templates\account\messages\password_changed.txt:2
+msgid "Password successfully changed."
+msgstr "Wachtwoord succesvol gewijzigd."
+
+#: .\templates\account\messages\password_set.txt:2
+msgid "Password successfully set."
+msgstr "Wachtwoord succesvol ingesteld."
+
+#: .\templates\account\messages\primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr "Primaire e-mailadres ingesteld."
+
+#: .\templates\account\messages\unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr "Uw primaire e-mailadres moet worden geverifieerd."
+
+#: .\templates\account\password_change.html:5
+#: .\templates\account\password_change.html:8
+#: .\templates\account\password_change.html:13
+#: .\templates\account\password_reset_from_key.html:4
+#: .\templates\account\password_reset_from_key.html:7
+#: .\templates\account\password_reset_from_key_done.html:4
+#: .\templates\account\password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr "Wijzig Wachtwoord"
+
+#: .\templates\account\password_reset.html:6
+#: .\templates\account\password_reset.html:10
+#: .\templates\account\password_reset_done.html:6
+#: .\templates\account\password_reset_done.html:9
+msgid "Password Reset"
+msgstr "Wachtwoordreset"
+
+#: .\templates\account\password_reset.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+"Uw wachtwoord vergeten? Voer hieronder uw e-mailadres in, en we sturen u een "
+"e-mail waarmee u het kunt resetten."
+
+#: .\templates\account\password_reset.html:20
+msgid "Reset My Password"
+msgstr "Reset Mijn Wachtwoord"
+
+#: .\templates\account\password_reset.html:23
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Neem alstublieft contact met ons op als u problemen heeft met het resetten van uw wachtwoord."
+
+#: .\templates\account\password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. If you have not received it please check your "
+"spam folder. Otherwise contact us if you do not receive it in a few minutes."
+msgstr ""
+"We hebben u een e-mail gestuurd. Als u deze niet heeft ontvangen, controleer "
+"dan uw spammap. Neem anders contact met ons op als u deze niet binnen enkele "
+"minuten ontvangt."
+
+#: .\templates\account\password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr "Ongeldige Token"
+
+#: .\templates\account\password_reset_from_key.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"De wachtwoordresetlink was ongeldig, mogelijk omdat deze al is gebruikt. "
+"Vraag alstublieft een <a href=\"%(passwd_reset_url)s\">nieuwe "
+"wachtwoordreset</a> aan."
+
+#: .\templates\account\password_reset_from_key.html:16
+msgid "change password"
+msgstr "wijzig wachtwoord"
+
+#: .\templates\account\password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr "Uw wachtwoord is nu gewijzigd."
+
+#: .\templates\account\password_set.html:5
+#: .\templates\account\password_set.html:8
+#: .\templates\account\password_set.html:13
+msgid "Set Password"
+msgstr "Stel Wachtwoord In"
+
+#: .\templates\account\signup.html:5 .\templates\socialaccount\signup.html:4
+msgid "Signup"
+msgstr "Registreren"
+
+#: .\templates\account\signup.html:8 .\templates\account\signup.html:18
+#: .\templates\socialaccount\signup.html:7
+#: .\templates\socialaccount\signup.html:18
+msgid "Sign Up"
+msgstr "Aanmelden"
+
+#: .\templates\account\signup.html:10
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Heeft u al een account? Meld u dan alstublieft <a href=\"%(login_url)s\">aan</a>."
+
+#: .\templates\account\signup_closed.html:5
+#: .\templates\account\signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "Registratie Gesloten"
+
+#: .\templates\account\signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Het spijt ons, maar de registratie is momenteel gesloten."
+
+#: .\templates\account\snippets\already_logged_in.html:5
+msgid "Note"
+msgstr "Opmerking"
+
+#: .\templates\account\snippets\already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr "u bent al aangemeld als %(user_display)s."
+
+#: .\templates\account\verification_sent.html:5
+#: .\templates\account\verification_sent.html:8
+#: .\templates\account\verified_email_required.html:5
+#: .\templates\account\verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "Verifieer Uw E-mailadres"
+
+#: .\templates\account\verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. If you do not see the verification e-mail in "
+"your main inbox, check your spam folder. Please contact us if you do not "
+"receive the verification e-mail within a few minutes."
+msgstr ""
+"We hebben een e-mail naar u verstuurd ter verificatie. Volg de verstrekte "
+"link om het registratieproces af te ronden. Als u de verificatie-e-mail niet "
+"in uw hoofdpostvak ziet, controleer dan uw spammap. Neem alstublieft "
+"contact met ons op als u de verificatie-e-mail niet binnen enkele minuten "
+"ontvangt."
+
+#: .\templates\account\verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Dit deel van de site vereist dat we verifiëren dat\n"
+"u bent wie u beweert te zijn. Hiervoor vereisen we dat u\n"
+"eigendom van uw e-mailadres verifieert."
+
+#: .\templates\account\verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside that e-mail. If you do not see "
+"the verification e-mail in your main inbox, check your spam folder. "
+"Otherwise\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"We hebben een e-mail naar u verstuurd ter\n"
+"verificatie. Klik alstublieft op de link in die e-mail. Als u de "
+"verificatie-e-mail niet in uw hoofdpostvak ziet, controleer dan uw spammap. "
+"Neem anders\n"
+"contact met ons op als u deze niet binnen enkele minuten ontvangt."
+
+#: .\templates\account\verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Opmerking:</strong> u kunt nog steeds <a href=\"%(email_url)s\">uw "
+"e-mailadres wijzigen</a>."
+
+#: .\templates\first_payment.html:23 .\templates\second_payment.html:48
+msgid "Country or region"
+msgstr "Land of regio"
+
+#: .\templates\first_payment.html:222 .\templates\second_payment.html:256
+msgid "City"
+msgstr "Stad"
+
+#: .\templates\first_payment.html:223
+msgid "Region"
+msgstr "Regio"
+
+#: .\templates\first_payment.html:224
+msgid "Find your ZIP code"
+msgstr "Vind uw postcode"
+
+#: .\templates\first_payment.html:225 .\templates\second_payment.html:258
+msgid "ZIP Code"
+msgstr "Postcode"
+
+#: .\templates\first_payment.html:226
+msgid "Address"
+msgstr "Adres"
+
+#: .\templates\first_payment.html:227
+msgid "Additional information (optional)"
+msgstr "Extra informatie (optioneel)"
+
+#: .\templates\first_payment.html:228
+msgid "Phone number"
+msgstr "Telefoonnummer"
+
+#: .\templates\first_payment.html:230
+msgid "Go to checkout"
+msgstr "Ga naar de kassa"
+
+#: .\templates\header.html:9
+msgid "Daiy Deals"
+msgstr "Dagelijkse Aanbiedingen"
+
+#: .\templates\header.html:27
+msgid "SignOut"
+msgstr "Afmelden"
+
+#: .\templates\header.html:30
+msgid "SignIn"
+msgstr "Aanmelden"
+
+#: .\templates\header.html:34 .\templates\second_payment.html:44
+#: .\templates\second_payment.html:274
+msgid "Ship to"
+msgstr "Verzenden naar"
+
+#: .\templates\header.html:36
+msgid "Sell"
+msgstr "Verkopen"
+
+#: .\templates\header.html:37
+msgid "Watchlist"
+msgstr "Volglijst"
+
+#: .\templates\header.html:38
+msgid "My eBay"
+msgstr "Mijn eBay"
+
+#: .\templates\index.html:18
+msgid "eBay Auctions"
+msgstr "eBay Veilingen"
+
+#: .\templates\index.html:19
+msgid "Fast, safe, profitable trade"
+msgstr "Snel, veilig, winstgevende handel"
+
+#: .\templates\index.html:21
+msgid "Promocode"
+msgstr "Promocode"
+
+#: .\templates\index.html:22 .\templates\index.html:27
+#: .\templates\index.html:33
+msgid "Ok"
+msgstr "Oké"
+
+#: .\templates\index.html:26
+msgid "You have successfully applied the promo code for 2€!"
+msgstr "U heeft de promocode voor 2€ succesvol toegepast!"
+
+#: .\templates\index.html:32
+msgid "This promo code does not exist or has already expired"
+msgstr "Deze promocode bestaat niet of is al verlopen"
+
+#: .\templates\index.html:42
+msgid "Active auctions"
+msgstr "Actieve veilingen"
+
+#: .\templates\index.html:43
+msgid "Completed auctions"
+msgstr "Voltooide veilingen"
+
+#: .\templates\index.html:59 .\templates\index.html:62
+#: .\templates\index.html:95
+msgid "Remaining time:"
+msgstr "Resterende tijd:"
+
+#: .\templates\index.html:60 .\templates\index.html:96
+msgid "Last bid by"
+msgstr "Laatste bod door"
+
+#: .\templates\index.html:64
+msgid "Last bid by -"
+msgstr "Laatste bod door -"
+
+#: .\templates\index.html:71 .\templates\index.html:73
+msgid "Highest bid:"
+msgstr "Hoogste bod:"
+
+#: .\templates\index.html:75
+msgid "Increment"
+msgstr "Toename"
+
+#: .\templates\index.html:76 .\templates\product.html:94
+msgid "Bid"
+msgstr "Bod"
+
+#: .\templates\index.html:101
+msgid "Sale has ended"
+msgstr "Verkoop is beëindigd"
+
+#: .\templates\openid\login.html:9
+msgid "OpenID Sign In"
+msgstr "OpenID Aanmelden"
+
+#: .\templates\product.html:35 .\templates\product.html:51
+msgid "Image"
+msgstr "Afbeelding"
+
+#: .\templates\product.html:63
+msgid "Other auctions"
+msgstr "Andere veilingen"
+
+#: .\templates\product.html:64
+msgid "Sponsered"
+msgstr "Gesponsord"
+
+#: .\templates\product.html:73
+msgid "New"
+msgstr "Nieuw"
+
+#: .\templates\product.html:75
+msgid "shipping"
+msgstr "verzending"
+
+#: .\templates\product.html:87
+msgid "Condition:"
+msgstr "Conditie:"
+
+#: .\templates\product.html:89 .\templates\product.html:91
+msgid "Remaining time -"
+msgstr "Resterende tijd -"
+
+#: .\templates\product.html:95
+msgid "Add to watchlist"
+msgstr "Toevoegen aan volglijst"
+
+#: .\templates\product.html:99
+msgid "Shipping:"
+msgstr "Verzending:"
+
+#: .\templates\product.html:101
+msgid "Free SpeedPAK Standard. See details"
+msgstr "Gratis SpeedPAK Standaard. Zie details"
+
+#: .\templates\product.html:102
+msgid ""
+"International shipment of items may be subject to customs processing and "
+"additional charges."
+msgstr ""
+"Internationale verzending van items kan onderhevig zijn aan douaneafhandeling "
+"en extra kosten."
+
+#: .\templates\product.html:103
+msgid "Located in: {City, Country}"
+msgstr "Gelegen in: {Stad, Land}"
+
+#: .\templates\product.html:107
+msgid "Delivery:"
+msgstr "Levering:"
+
+#: .\templates\product.html:109
+msgid "Estimated between Thu, May 16 and Mon, Jun 3"
+msgstr "Geschat tussen Do, 16 Mei en Ma, 3 Jun"
+
+#: .\templates\product.html:110
+msgid "to 568745"
+msgstr "naar 568745"
+
+#: .\templates\product.html:111
+msgid "Please note the delivery estimate is greater than 15 business days."
+msgstr "Houd er rekening mee dat de geschatte levering meer dan 15 werkdagen bedraagt."
+
+#: .\templates\product.html:112
+msgid ""
+"Please allow additional time if international delivery is subject to customs "
+"processing."
+msgstr ""
+"Houd er rekening mee dat er extra tijd nodig is als internationale levering "
+"onderhevig is aan douaneafhandeling."
+
+#: .\templates\product.html:116
+msgid "Returns:"
+msgstr "Retourneren:"
+
+#: .\templates\product.html:118
+msgid "Seller does not accept returns. See details"
+msgstr "Verkoper accepteert geen retouren. Zie details"
+
+#: .\templates\product.html:122
+msgid "Payments:"
+msgstr "Betalingen:"
+
+#: .\templates\product.html:124
+msgid "cards"
+msgstr "kaarten"
+
+#: .\templates\product.html:131
+msgid "About this item"
+msgstr "Over dit item"
+
+#: .\templates\product.html:134
+msgid "Seller assumes all responsibility for this listing."
+msgstr "Verkoper neemt alle verantwoordelijkheid voor deze vermelding."
+
+#: .\templates\product.html:135
+msgid "Last updated on"
+msgstr "Laatst bijgewerkt op"
+
+#: .\templates\product.html:135
+msgid "View all revisions"
+msgstr "Bekijk alle revisies"
+
+#: .\templates\product.html:137
+msgid "Item specifics"
+msgstr "Item specificaties"
+
+#: .\templates\registration\login.html:12
+#: .\templates\registration\register.html:12
+msgid "Hi"
+msgstr "Hallo"
+
+#: .\templates\registration\login.html:14
+msgid "Sign in to eBay Auctions or"
+msgstr "Meld u aan bij eBay Veilingen of"
+
+#: .\templates\registration\login.html:14
+msgid "create an account"
+msgstr "maak een account aan"
+
+#: .\templates\registration\login.html:21
+msgid "Login"
+msgstr "Aanmelden"
+
+#: .\templates\registration\login.html:23
+#: .\templates\registration\register.html:23
+msgid "Continue with Google"
+msgstr "Doorgaan met Google"
+
+#: .\templates\registration\register.html:14
+msgid "Register on eBay Auctions or"
+msgstr "Registreren op eBay Veilingen of"
+
+#: .\templates\registration\register.html:14
+msgid "log in to your account"
+msgstr "meld u aan bij uw account"
+
+#: .\templates\registration\register.html:21
+msgid "Registration"
+msgstr "Registratie"
+
+#: .\templates\second_payment.html:248
+msgid "First name"
+msgstr "Voornaam"
+
+#: .\templates\second_payment.html:249
+msgid "Last name"
+msgstr "Achternaam"
+
+#: .\templates\second_payment.html:252
+msgid "Street address"
+msgstr "Straatnaam en huisnummer"
+
+#: .\templates\second_payment.html:253
+msgid "Street address 2 (optional)"
+msgstr "Straatnaam 2 (optioneel)"
+
+#: .\templates\second_payment.html:257
+msgid "State/Province/Re..."
+msgstr "Staat/Provincie/Re..."
+
+#: .\templates\second_payment.html:261
+msgid "Email"
+msgstr "E-mail"
+
+#: .\templates\second_payment.html:262
+msgid "Confirm email"
+msgstr "Bevestig e-mail"
+
+#: .\templates\second_payment.html:265
+msgid "Country Code"
+msgstr "Landcode"
+
+#: .\templates\second_payment.html:266
+msgid "Phone number (required)"
+msgstr "Telefoonnummer (verplicht)"
+
+#: .\templates\second_payment.html:269
+msgid "Done"
+msgstr "Klaar"
+
+#: .\templates\second_payment.html:276
+msgid "first"
+msgstr "voornaam"
+
+#: .\templates\second_payment.html:277
+msgid "last"
+msgstr "achternaam"
+
+#: .\templates\second_payment.html:280
+msgid "street"
+msgstr "straat"
+
+#: .\templates\second_payment.html:281
+msgid "street 2"
+msgstr "straat 2"
+
+#: .\templates\second_payment.html:284
+msgid "city"
+msgstr "stad"
+
+#: .\templates\second_payment.html:285
+msgid "state"
+msgstr "staat"
+
+#: .\templates\second_payment.html:286
+msgid "zip"
+msgstr "postcode"
+
+#: .\templates\second_payment.html:289
+msgid "country"
+msgstr "land"
+
+#: .\templates\second_payment.html:292
+msgid "email"
+msgstr "e-mail"
+
+#: .\templates\second_payment.html:295
+msgid "phone"
+msgstr "telefoon"
+
+#: .\templates\second_payment.html:297
+msgid "change"
+msgstr "wijzigen"
+
+#: .\templates\second_payment.html:300
+msgid "Pay with"
+msgstr "Betalen met"
+
+#: .\templates\second_payment.html:305
+msgid "Add new card"
+msgstr "Nieuwe kaart toevoegen"
+
+#: .\templates\second_payment.html:316 .\templates\second_payment.html:321
+msgid "Not working due to technical reasons"
+msgstr "Werkt niet vanwege technische redenen"
+
+#: .\templates\second_payment.html:328
+msgid "Item (1)"
+msgstr "Item (1)"
+
+#: .\templates\second_payment.html:332
+msgid "Shipping"
+msgstr "Verzending"
+
+#: .\templates\second_payment.html:336
+msgid "VAT"
+msgstr "BTW"
+
+#: .\templates\second_payment.html:340
+msgid "Duties"
+msgstr "Douanerechten"
+
+#: .\templates\second_payment.html:345
+msgid "Order total"
+msgstr "Totaalbedrag bestelling"
+
+#: .\templates\second_payment.html:349
+msgid "Confirm and pay"
+msgstr "Bevestigen en betalen"
+
+#: .\templates\second_payment.html:350
+msgid "Enter shipping address"
+msgstr "Voer verzendadres in"
+
+#: .\templates\socialaccount\authentication_error.html:5
+#: .\templates\socialaccount\authentication_error.html:8
+msgid "Social Network Login Failure"
+msgstr "Fout bij inloggen via sociaal netwerk"
+
+#: .\templates\socialaccount\authentication_error.html:10
+msgid ""
+"Er is een fout opgetreden bij het proberen in te loggen via uw sociaal "
+"netwerkaccount."
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:5
+#: .\templates\socialaccount\connections.html:8
+msgid "Account Connections"
+msgstr "Accountverbindingen"
+
+#: .\templates\socialaccount\connections.html:11
+msgid ""
+"U kunt inloggen op uw account met een van de volgende accounts van derden:"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:43
+msgid ""
+"U heeft momenteel geen sociale netwerkaccounts verbonden met dit account."
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:46
+msgid "Voeg een account van een derde partij toe"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:11
+#, python-format
+msgid "Verbinden met %(provider)s"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:13
+#, python-format
+msgid ""
+"U staat op het punt om een nieuw account van een derde partij te verbinden "
+"van %(provider)s."
+msgstr ""
+
+#: .\templates\socialaccount\login.html:15
+#, python-format
+msgid "Inloggen via %(provider)s"
+msgstr ""
+
+#: .\templates\socialaccount\login.html:17
+#, python-format
+msgid ""
+"U staat op het punt om in te loggen met een account van een derde partij van "
+"%(provider)s."
+msgstr ""
+
+#: .\templates\socialaccount\login.html:22
+msgid "Doorgaan"
+msgstr ""
+
+#: .\templates\socialaccount\login_cancelled.html:5
+#: .\templates\socialaccount\login_cancelled.html:9
+msgid "Inloggen geannuleerd"
+msgstr ""
+
+#: .\templates\socialaccount\login_cancelled.html:13
+#, python-format
+msgid ""
+"U heeft besloten om het inloggen op onze site met een van uw bestaande "
+"accounts te annuleren. Als dit een fout was, ga dan verder naar <a "
+"href=\"%(login_url)s\">inloggen</a>."
+msgstr ""
+
+#: .\templates\socialaccount\messages\account_connected.txt:2
+msgid "Het sociale account is verbonden."
+msgstr ""
+
+#: .\templates\socialaccount\messages\account_connected_other.txt:2
+msgid "Het sociale account is al verbonden met een ander account."
+msgstr ""
+
+#: .\templates\socialaccount\messages\account_disconnected.txt:2
+msgid "Het sociale account is losgekoppeld."
+msgstr ""
+
+#: .\templates\socialaccount\signup.html:9
+#, python-format
+msgid ""
+"U staat op het punt om uw %(provider_name)s-account te gebruiken om in te "
+"loggen op\n"
+"%(site_name)s. Als laatste stap, vul alstublieft het volgende formulier in:"
+msgstr ""

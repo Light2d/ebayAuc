@@ -175,6 +175,24 @@
                                 } else if (currentLanguage === 'el'){
                                     productElement.find(".productDetail__time").text("Υψηλότερη προσφορά - " + product.remaining_time + 's');
                                     productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Προσφορά " + product.bid + ' €');
+                                } else if (currentLanguage === 'de'){
+                                    productElement.find(".productDetail__time").text("Verbleibende Zeit - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Bieten " + product.bid + ' €');
+                                } else if (currentLanguage === 'fr'){
+                                    productElement.find(".productDetail__time").text("Temps restant - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Enchère " + product.bid + ' €');
+                                } else if (currentLanguage === 'pt'){
+                                    productElement.find(".productDetail__time").text("Temps restant - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Lance " + product.bid + ' €');
+                                } else if (currentLanguage === 'nl'){
+                                    productElement.find(".productDetail__time").text("Resterende tijd - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Bod " + product.bid + ' €');
+                                } else if (currentLanguage === 'sk'){
+                                    productElement.find(".productDetail__time").text("Zostávajúci čas - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Ponuka " + product.bid + ' €');
+                                } else if (currentLanguage === 'lb'){
+                                    productElement.find(".productDetail__time").text("Restzäit - " + product.remaining_time + 's');
+                                    productElement.find(".productDetail__btns .productDetail__btn:first-child").text("Gebot " + product.bid + ' €');
                                 }
             
                                 updateUserTime(productId, product);
@@ -198,6 +216,18 @@
                         productElement.find(".productDetail__time").text("Remaining time - " + user_remaining_time + 's');
                     } else if (currentLanguage === 'el'){
                         productElement.find(".productDetail__time").text("Υψηλότερη προσφορά - " + user_remaining_time + 's');
+                    } else if (currentLanguage === 'de'){
+                        productElement.find(".productDetail__time").text("Verbleibende Zeit - " + user_remaining_time + 's');
+                    } else if (currentLanguage === 'fr'){
+                        productElement.find(".productDetail__time").text("Temps restant - " + user_remaining_time + 's');
+                    } else if (currentLanguage === 'pt'){
+                        productElement.find(".productDetail__time").text("Tempo restante - " + user_remaining_time + 's');
+                    } else if (currentLanguage === 'nl'){
+                        productElement.find(".productDetail__time").text("Resterende tijd - " + user_remaining_time + 's');
+                    }  else if (currentLanguage === 'sk'){
+                        productElement.find(".productDetail__time").text("Zostávajúci čas - " + user_remaining_time + 's');
+                    }  else if (currentLanguage === 'lb'){
+                        productElement.find(".productDetail__time").text("Restzäit - " + user_remaining_time + 's');
                     }
                 }
             }
@@ -214,7 +244,6 @@
             var productId = $(this).closest('.productDetail').find('input[type="hidden"]').attr('id');
 
               var forBot = $(this).data('forbot'); // Получаем информацию о том, что продукт предназначен для бота
-              console.log(forBot);
   
               // Проверяем, является ли продукт предназначенным для бота
               if (forBot == "True") {
@@ -222,7 +251,8 @@
                   alert('Недостаточно средств');
                   return false; // Возвращаем false, чтобы предотвратить выполнение действия по умолчанию для кнопки
               }
-  
+              document.getElementById("product-btn-"+productId).style.background = "#ccc"
+              document.getElementById("product-btn-"+productId).style.borderColor = "#ccc"
               // Отправляем AJAX-запрос для установки remaining_time и получения значения forPeople
               $.ajax({
                   url: "{% url 'set_remaining_time' %}",

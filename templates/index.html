@@ -115,10 +115,21 @@
     <script>
         var currentLanguage = "{{ LANGUAGE_CODE }}";lastBid
         if (currentLanguage === 'en') {
-           document.getElementById("lastBid").innerText = "Last bid by you"
+           document.getElementById("lastBid").innerText = "Last bid by"
         } else if (currentLanguage === 'el') {
             document.getElementById("lastBid").innerText = "Τελευταία προσφορά από"
-
+        } else if (currentLanguage === 'de') {
+            document.getElementById("lastBid").innerText = "Letztes Gebot von"
+        } else if (currentLanguage === 'fr') {
+            document.getElementById("lastBid").innerText = "Dernière enchère à partir de"
+        } else if (currentLanguage === 'pt') {
+            document.getElementById("lastBid").innerText = "Última puja por"
+        } else if (currentLanguage === 'nl') {
+            document.getElementById("lastBid").innerText = "Laatste bod door"
+        } else if (currentLanguage === 'sk') {
+            document.getElementById("lastBid").innerText = "Najnovšia ponuka od"
+        } else if (currentLanguage === 'lb') {
+            document.getElementById("lastBid").innerText = "Leschte Gebot vun"
         }
         $(document).ready(function() {
             // Отправляем AJAX-запрос каждую секунду
@@ -187,9 +198,21 @@
                 if (forBotValue == "False"){
                     
                     if (currentLanguage === 'en') {
-                        userTimeElement.textContent = "Remaining time: - " + user_remaining_time + 's';
+                        userTimeElement.textContent = "Remaining time - " + user_remaining_time + 's';
                     } else if (currentLanguage === 'el') {
-                        userTimeElement.textContent = "Υπολειπόμενος χρόνος: - " + user_remaining_time + 's';
+                        userTimeElement.textContent = "Υπολειπόμενος χρόνος - " + user_remaining_time + 's';
+                    } else if (currentLanguage === 'de') {
+                        userTimeElement.textContent = "Verbleibende Zeit - " + user_remaining_time + 's';
+                    } else if (currentLanguage === 'fr') {
+                        userTimeElement.textContent = "Temps restant - " + user_remaining_time + 's';
+                    } else if (currentLanguage === 'pt') {
+                        userTimeElement.textContent = "Tempo restante - " + user_remaining_time + 's';
+                    } else if (currentLanguage === 'nl') {
+                        userTimeElement.textContent = "Resterende tijd - " + user_remaining_time + 's';
+                    } else if (currentLanguage === 'sk') {
+                        userTimeElement.textContent = "Zostávajúci čas - " + user_remaining_time + 's';
+                    } else if (currentLanguage === 'lb') {
+                        userTimeElement.textContent = "Restzäit - " + user_remaining_time + 's';
                     }
                 }
 
@@ -204,24 +227,87 @@
                 var user_remaining_time = product ? user_remaining_time : null;
                 if (forBotValue == "True"){
                     if (currentLanguage === 'en'){
-                        producTimeElement.text("Remaining time: - " + product.remaining_time + 's');
-
+                        producTimeElement.text("Remaining time - " + product.remaining_time + 's');
                         productElement.find(".product__lastBid").text("Last bid by " + product.last_bid);
-                        productElement.find(".product__highBid-active").text("Highest bid: - " + product.highest_bid + '€');
+                        productElement.find(".product__highBid-active").text("Highest bid - " + product.highest_bid + '€');
                         productElement.find(".product__btn").text("Bid " + product.bid + ' €');
+
                     } else if (currentLanguage === 'el'){
-                        producTimeElement.text("Υπολειπόμενος χρόνος: - " + product.remaining_time + 's');
+                        producTimeElement.text("Υπολειπόμενος χρόνος - " + product.remaining_time + 's');
                         productElement.find(".product__lastBid").text("Τελευταία προσφορά από " + product.last_bid);
-                        productElement.find(".product__highBid-active").text("Υψηλότερη προσφορά: - " + product.highest_bid + '€');
+                        productElement.find(".product__highBid-active").text("Υψηλότερη προσφορά - " + product.highest_bid + '€');
                         productElement.find(".product__btn").text("Προσφορά " + product.bid + ' €');
+
+                    } else if (currentLanguage === 'de'){
+                        producTimeElement.text("Verbleibende Zeit - " + product.remaining_time + 's');
+                        productElement.find(".product__lastBid").text("ΤLetztes Gebot von Ihnen " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("ΥHöchstgebot - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Bieten " + product.bid + ' €');
+
+                    } else if (currentLanguage === 'fr'){
+                        producTimeElement.text("Temps restant - " + product.remaining_time + 's');
+                        productElement.find(".product__lastBid").text("Dernière enchère par " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("Enchère la plus élevée - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Enchère " + product.bid + ' €');
+
+                    } else if (currentLanguage === 'pt'){
+                        producTimeElement.text("Tempo restante - " + product.remaining_time + 's');
+                        productElement.find(".product__lastBid").text("Último lance por " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("Maior lance - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Lance " + product.bid + ' €');
+
+                    } else if (currentLanguage === 'nl'){
+                        producTimeElement.text("Resterende tijd - " + product.remaining_time + 's');
+                        productElement.find(".product__lastBid").text("Laatste bod door " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("Hoogste bod - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Bod " + product.bid + ' €');
+                    } else if (currentLanguage === 'sk'){
+                        producTimeElement.text("Zostávajúci čas - " + product.remaining_time + 's');
+                        productElement.find(".product__lastBid").text("Najnovšia ponuka od " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("Najvyššia ponuka - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Ponuka " + product.bid + ' €');
+                    } else if (currentLanguage === 'lb'){
+                        producTimeElement.text("Restzäit - " + product.remaining_time + 's');
+                        productElement.find(".product__lastBid").text("Leschte Gebot vun " + product.last_bid);
+                        productElement.find(".product__highBid-active").text("Héchst Gebot - " + product.highest_bid + '€');
+                        productElement.find(".product__btn").text("Gebot " + product.bid + ' €');
                     }
                 } else {
                     if (currentLanguage === 'en'){
-                        userTimeElement.text("Remaining time: - " + user_remaining_time + 's');
+                        userTimeElement.text("Remaining time - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Bid " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Highest bid - " + product.highest_bid + '€');
                        
                     } else if (currentLanguage === 'el'){
-                        userTimeElement.text("Υπολειπόμενος χρόνος: - " + user_remaining_time + 's');
+                        userTimeElement.text("Υπολειπόμενος χρόνος - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Προσφορά " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Υψηλότερη προσφορά - " + product.highest_bid + '€');
 
+                    } else if (currentLanguage === 'de'){
+                        userTimeElement.text("Verbleibende Zeit - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Bieten " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Höchstgebot - " + product.highest_bid + '€');
+
+                    } else if (currentLanguage === 'fr'){
+                        userTimeElement.text("Temps restant - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Enchère " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Enchère la plus élevée - " + product.highest_bid + '€');
+                    } else if (currentLanguage === 'pt'){
+                        userTimeElement.text("Tempo restante - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Lance " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Maior lance - " + product.highest_bid + '€');
+                    } else if (currentLanguage === 'nl'){
+                        userTimeElement.text("Resterende tijd - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Bod " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Hoogste bod - " + product.highest_bid + '€');
+                    } else if (currentLanguage === 'sk'){
+                        userTimeElement.text("Zostávajúci čas - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Ponuka " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Najvyššia ponuka - " + product.highest_bid + '€');
+                    } else if (currentLanguage === 'lb'){
+                        userTimeElement.text("Restzäit - " + user_remaining_time + 's');
+                        productElement.find(".product__btn").text("Gebot " + product.bid + ' €');
+                        productElement.find(".product__highBid-active").text("Héchst Gebot - " + product.highest_bid + '€');
                     }
                 }
 
@@ -270,17 +356,36 @@
                 var $productElement = $('#product-' + productId);
                 var $remainingTimeElement = $productElement.find('.product__time');
 
-                $remainingTimeElement.text("Remaining time: - " + remainingTime + 's');
+                $remainingTimeElement.text("Remaining time - " + remainingTime + 's');
 
                 if (currentLanguage === 'en'){
-                    $remainingTimeElement.text("Remaining time: - " + remainingTime + 's');
-                    $productElement.find(".product__lastBid").text("Τελευταία προσφορά από you");
-
+                    $remainingTimeElement.text("Remaining time - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Last bid by you");
 
                 } else if (currentLanguage === 'el'){
-                    $remainingTimeElement.text("Υπολειπόμενος χρόνος: - " + remainingTime + 's');
+                    $remainingTimeElement.text("Υπολειπόμενος χρόνος - " + remainingTime + 's');
                     $productElement.find(".product__lastBid").text("Τελευταία προσφορά από εσάς");
+                   
+                } else if (currentLanguage === 'de'){
+                    $remainingTimeElement.text("Verbleibende Zeit - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Letztes Gebot von Ihnen");
 
+                } else if (currentLanguage === 'fr'){
+                    $remainingTimeElement.text("Temps restant - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Dernière enchère de votre part");
+
+                } else if (currentLanguage === 'pt'){
+                    $remainingTimeElement.text("Tempo restante - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Último lance por si");
+                } else if (currentLanguage === 'nl'){
+                    $remainingTimeElement.text("Resterende tijd - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Laatste bod door u");
+                } else if (currentLanguage === 'sk'){
+                    $remainingTimeElement.text("Zostávajúci čas - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Najnovšia ponuka od vás");
+                } else if (currentLanguage === 'lb'){
+                    $remainingTimeElement.text("Restzäit - " + remainingTime + 's');
+                    $productElement.find(".product__lastBid").text("Lescht Offer Vun Hinnen");
                 }
             }
     

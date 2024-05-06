@@ -1,0 +1,996 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-06 16:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\ebay\settings.py:111
+msgid "German"
+msgstr "Däitsch"
+
+#: .\ebay\settings.py:112 .\templates\header.html:35
+msgid "English"
+msgstr "Englesch"
+
+#: .\ebay\settings.py:113
+msgid "French"
+msgstr "Franséisch"
+
+#: .\ebay\settings.py:114
+msgid "Portuguese"
+msgstr "Portugisesch"
+
+#: .\ebay\settings.py:115
+msgid "Greek"
+msgstr "Griichesch"
+
+#: .\ebay\settings.py:116
+msgid "Dutch"
+msgstr "Hollännesch"
+
+#: .\ebay\settings.py:117
+msgid "Slovak"
+msgstr "Slovakesch"
+
+#: .\ebay\settings.py:118
+msgid "Luxembourgish"
+msgstr "Lëtzebuergesch"
+
+#: .\templates\account\account_inactive.html:5
+#: .\templates\account\account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Kont Inaktiv"
+
+#: .\templates\account\account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Dëst Kont ass inaktiv."
+
+#: .\templates\account\email.html:5 .\templates\account\email.html:8
+msgid "E-mail Addresses"
+msgstr "E-Mail Adressen"
+
+#: .\templates\account\email.html:10
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "D'folgend E-Mail-Adressen sinn mat ärer Rechnung verbonnen:"
+
+#: .\templates\account\email.html:24
+msgid "Verified"
+msgstr "Verifizéiert"
+
+#: .\templates\account\email.html:26
+msgid "Unverified"
+msgstr "Onverifizéiert"
+
+#: .\templates\account\email.html:28
+msgid "Primary"
+msgstr "Haapt"
+
+#: .\templates\account\email.html:34
+msgid "Make Primary"
+msgstr "Haapt maachen"
+
+#: .\templates\account\email.html:35
+msgid "Re-send Verification"
+msgstr "Verifikatioun erëm schécken"
+
+#: .\templates\account\email.html:36
+#: .\templates\socialaccount\connections.html:35
+msgid "Remove"
+msgstr "Ewech huelen"
+
+#: .\templates\account\email.html:43
+msgid "Warning:"
+msgstr "Warnung:"
+
+#: .\templates\account\email.html:43
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Dir hutt aktuell keng E-Mail-Adress agestallt. Dir sollt wirklech eng E-Mail-Adress derbäisetzen, fir Benotzermeldungen ze kreien, Äert Passwuert ze erënnern, etc."
+
+#: .\templates\account\email.html:48
+msgid "Add E-mail Address"
+msgstr "E-Mail-Adress derbäisetzen"
+
+#: .\templates\account\email.html:53
+msgid "Add E-mail"
+msgstr "E-Mail derbäisetzen"
+
+#: .\templates\account\email.html:63
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Wëllt dir wirklech déi ausgewielte E-Mail-Adress ewech huelen?"
+
+#: .\templates\account\email\base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr "Hallo vun %(site_name)s!"
+
+#: .\templates\account\email\base_message.txt:5
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"Merci fir d'Benotzen vun %(site_name)s!\n"
+"%(site_domain)s"
+
+#: .\templates\account\email\email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"You're receiving this e-mail because user %(user_display)s has given your e-"
+"mail address to register an account on %(site_domain)s.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s"
+msgstr ""
+"Dir krutt dëse Mail, well de Benotzer %(user_display)s däi E-Mail-Adress ginn huet, fir sech op %(site_domain)s ze registréieren.\n"
+"\n"
+"Zur Bestätegung, datt dat richteg ass, gitt op %(activate_url)s"
+
+#: .\templates\account\email\email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr "Bestätegt w.e.g. Är E-Mail-Adress"
+
+#: .\templates\account\email\password_reset_key_message.txt:4
+msgid ""
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+"Dir kritt dëse Mail well dir oder een anere gefrot huet, en Passwuert fir Är Benotzerkont ze kreien.\n"
+"Et kann sécher ignoriert ginn, wann dir keng Passwuertzrécksetzung gefrot hutt. Klickt op de Link ënnen drënner fir Äert Passwuert zréckzefänken."
+
+#: .\templates\account\email\password_reset_key_message.txt:9
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr "Falls Dir et vergiess hutt, Ären Benotzernumm ass %(username)s."
+
+#: .\templates\account\email\password_reset_key_subject.txt:3
+#: .\templates\account\email\unknown_account_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr "Passwuertzrécksetzung E-Mail"
+
+#: .\templates\account\email\unknown_account_message.txt:4
+#, python-format
+msgid ""
+"You are receiving this e-mail because you or someone else has requested a\n"
+"password for your user account. However, we do not have any record of a "
+"user\n"
+"with email %(email)s in our database.\n"
+"\n"
+"This mail can be safely ignored if you did not request a password reset.\n"
+"\n"
+"If it was you, you can sign up for an account using the link below."
+msgstr ""
+"Dir krutt dëse Mail well dir oder een anere gefrot huet, en Passwuert fir Är Benotzerkont ze kreien. Allerdéngs hunn mir kee Record vu engem Benotzer mat der E-Mail-Adress %(email)s an eiser Datebank.\n"
+"\n"
+"Dëse Mail kann sécher ignoriert ginn, wann Dir keng Passwuertzrécksetzung gefrot hutt.\n"
+"\n"
+"Wann et Dir wort, kënnt Dir iech mat engem Benotzerkont iwwer de Link ënnen drënner agestallt."
+
+#: .\templates\account\email_confirm.html:6
+#: .\templates\account\email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "Bestätegt w.e.g. Är E-Mail-Adress"
+
+#: .\templates\account\email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Bestätegt w.e.g. datt <a href=\"mailto:%(email)s\">%(email)s</a> eng E-Mail-Adress fir de Benotzer %(user_display)s ass."
+
+#: .\templates\account\email_confirm.html:20
+msgid "Confirm"
+msgstr "Bestätegen"
+
+#: .\templates\account\email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Dëse Link fir d'E-Mail-Bestätegung ass ofgelaf oder ungëlteg. W.e.g. <a href="
+"\"%(email_url)s\">e neit Ufro fir d'E-Mail-Bestätegung ze kreien</a>."
+
+#: .\templates\account\login.html:5 .\templates\account\login.html:9
+#: .\templates\account\login.html:42
+msgid "Sign In"
+msgstr "Umellen"
+
+#: .\templates\account\login.html:14
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+"Meldech w.e.g. mat enger vun äre bestehende Konten un. Oder, <a href=\"%(signup_url)s\">mell dech un</a> fir e(n) %(site_name)s-Konto unzemaachen an deem dir iech hei unt meldt:"
+
+#: .\templates\account\login.html:24
+msgid "or"
+msgstr "oder"
+
+#: .\templates\account\login.html:31
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+"Wann Dir nach keng Rechnung agestallt hutt, da <a href=\"%(signup_url)s\">mellt iech un</a> éischten."
+
+#: .\templates\account\login.html:41
+#: .\templates\account\password_change.html:14
+msgid "Forgot Password?"
+msgstr "Passwuert vergiess?"
+
+#: .\templates\account\logout.html:5 .\templates\account\logout.html:8
+#: .\templates\account\logout.html:18
+msgid "Sign Out"
+msgstr "Ausloggen"
+
+#: .\templates\account\logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr "Sidd Dir sécher datt Dir auslogge wëllt?"
+
+#: .\templates\account\messages\cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr "Dir kënnt Är Haapt-E-Mail-Adress (%(email)s) net ewech huelen."
+
+#: .\templates\account\messages\email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr "Bestätegungsmail un %(email)s geschéckt."
+
+#: .\templates\account\messages\email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr "Dir hutt %(email)s bestätegt."
+
+#: .\templates\account\messages\email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr "E-Mail-Adress %(email)s ewech geholl."
+
+#: .\templates\account\messages\logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr "Erfollegräich umellt als %(name)s."
+
+#: .\templates\account\messages\logged_out.txt:2
+msgid "You have signed out."
+msgstr "Dir hutt iech ausgeloggt."
+
+#: .\templates\account\messages\password_changed.txt:2
+msgid "Password successfully changed."
+msgstr "Passwuert erfollegräich geännert."
+
+#: .\templates\account\messages\password_set.txt:2
+msgid "Password successfully set."
+msgstr "Passwuert erfollegräich agestallt."
+
+#: .\templates\account\messages\primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr "Haapt-E-Mail-Adress agestallt."
+
+#: .\templates\account\messages\unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr "Är Haapt-E-Mail-Adress muss verifizéiert ginn."
+
+#: .\templates\account\password_change.html:5
+#: .\templates\account\password_change.html:8
+#: .\templates\account\password_change.html:13
+#: .\templates\account\password_reset_from_key.html:4
+#: .\templates\account\password_reset_from_key.html:7
+#: .\templates\account\password_reset_from_key_done.html:4
+#: .\templates\account\password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr "Passwuert änneren"
+
+#: .\templates\account\password_reset.html:6
+#: .\templates\account\password_reset.html:10
+#: .\templates\account\password_reset_done.html:6
+#: .\templates\account\password_reset_done.html:9
+msgid "Password Reset"
+msgstr "Passwuertzrécksetzung"
+
+#: .\templates\account\password_reset.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr "Hutt Dir Äert Passwuert vergiess? Gitt Är E-Mail-Adress hei ënnen an mir schécken Iech eng E-Mail, déi et Iech erlabt Äert Passwuert zréckzefänken."
+
+#: .\templates\account\password_reset.html:20
+msgid "Reset My Password"
+msgstr "Setzt mäi Passwuert zréck"
+
+#: .\templates\account\password_reset.html:23
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "W.e.g. kontaktéiert eis, wann Dir e Probleem beim Zrécksetzen vum Passwuert hutt."
+
+#: .\templates\account\password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. If you have not received it please check your "
+"spam folder. Otherwise contact us if you do not receive it in a few minutes."
+msgstr "Mir hunn Iech eng E-Mail geschéckt. Falls dir se net kritt hutt, kuckt w.e.g. an är Spam-Ordner. Aneres kontaktéiert eis wann Dir se net an eng puer Minutten kritt."
+
+#: .\templates\account\password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr "Schlecht Token"
+
+#: .\templates\account\password_reset_from_key.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"Dëse Link fir d'Passwuert zréckzefänken ass ungëlteg, wahrscheinlech well en schonn benotzt gouf. W.e.g. fuerter <a href=\"%(passwd_reset_url)s\">e neien Link fir d'Passwuert zréckzefänken</a> ufroen."
+
+#: .\templates\account\password_reset_from_key.html:16
+msgid "change password"
+msgstr "Passwuert änneren"
+
+#: .\templates\account\password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr "Äert Passwuert ass elo geännert."
+
+
+#: .\templates\account\password_set.html:5
+#: .\templates\account\password_set.html:8
+#: .\templates\account\password_set.html:13
+msgid "Set Password"
+msgstr "Setzt Passwuert"
+
+#: .\templates\account\signup.html:5 .\templates\socialaccount\signup.html:4
+msgid "Signup"
+msgstr "Aloggen"
+
+#: .\templates\account\signup.html:8 .\templates\account\signup.html:18
+#: .\templates\socialaccount\signup.html:7
+#: .\templates\socialaccount\signup.html:18
+msgid "Sign Up"
+msgstr "Umellen"
+
+#: .\templates\account\signup.html:10
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Hutt scho e Konto? Da <a href=\"%(login_url)s\">mellt Iech un</a>."
+
+#: .\templates\account\signup_closed.html:5
+#: .\templates\account\signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "Aloggen zu"
+ 
+#: .\templates\account\signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Mir entschëllegen eis, mä den Aloggen ass aktuell zou."
+
+#: .\templates\account\snippets\already_logged_in.html:5
+msgid "Note"
+msgstr "Bemierkung"
+
+#: .\templates\account\snippets\already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr "Dir sidd schonn als %(user_display)s ageloggt."
+
+#: .\templates\account\verification_sent.html:5
+#: .\templates\account\verification_sent.html:8
+#: .\templates\account\verified_email_required.html:5
+#: .\templates\account\verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "Verifizéiert Är E-Mail-Adress"
+
+#: .\templates\account\verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. If you do not see the verification e-mail in "
+"your main inbox, check your spam folder. Please contact us if you do not "
+"receive the verification e-mail within a few minutes."
+msgstr ""
+"Mir hunn Iech eng E-Mail fir d'Verifizéierung geschéckt. Follegt dem Link "
+"fir de Prozess vun der Umeldung ofzeschléissen. Falls Dir d'Verifizéierungsmail "
+"net am Haaptpostfach fannt, kuckt an är Spam-Mappen. W.e.g. kontaktéiert eis, "
+"wann Dir d'Verifizéierungsmail net a wéinege Minutten krutt."
+
+#: .\templates\account\verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Dës Deel vum Site verlaangt vu eis Är Identitéit ze verifizéieren, fir sécherzestellen "
+"datt Dir wierklech déi Persoun sidd déi Dir vorgebt ze sinn. Fir dat ze maachen, muss "
+"Ihr Äert E-Mail-Eegentum verifizéieren."
+
+#: .\templates\account\verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside that e-mail. If you do not see "
+"the verification e-mail in your main inbox, check your spam folder. "
+"Otherwise\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Mir hunn Iech eng E-Mail fir d'Verifizéierung geschéckt. Klickt w.e.g. op de Link a "
+"dëser E-Mail. Falls Dir d'Verifizéierungsmail net am Haaptpostfach fannt, kuckt an är "
+"Spam-Mappen. Anerwäerts kontaktéiert eis, wann Dir se net an e puer Minutten krutt."
+
+#: .\templates\account\verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Opgepasst:</strong> Dir kënnt nach ëmmer <a href=\"%(email_url)s\">Är E-Mail-Adress</a> änneren."
+
+#: .\templates\first_payment.html:23 .\templates\second_payment.html:48
+msgid "Country or region"
+msgstr "Land oder Regioun"
+
+#: .\templates\first_payment.html:222 .\templates\second_payment.html:256
+msgid "City"
+msgstr "Stad"
+
+#: .\templates\first_payment.html:223
+msgid "Region"
+msgstr "Regioun"
+
+#: .\templates\first_payment.html:224
+msgid "Find your ZIP code"
+msgstr "Fannen Ären ZIP-Code"
+
+#: .\templates\first_payment.html:225 .\templates\second_payment.html:258
+msgid "ZIP Code"
+msgstr "ZIP-Code"
+
+#: .\templates\first_payment.html:226
+msgid "Address"
+msgstr "Adress"
+
+#: .\templates\first_payment.html:227
+msgid "Additional information (optional)"
+msgstr "Zousätzlech Informatiounen (fakultativ)"
+
+#: .\templates\first_payment.html:228
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#: .\templates\first_payment.html:230
+msgid "Go to checkout"
+msgstr "Gitt zum Checkout"
+
+#: .\templates\footer.html:8
+msgid "About eBay"
+msgstr "Iwwer eBay"
+
+#: .\templates\footer.html:9
+msgid "Announcements"
+msgstr "Annoncen"
+
+#: .\templates\footer.html:10
+msgid "Community"
+msgstr "Gemeng"
+
+#: .\templates\footer.html:11
+msgid "Security information"
+msgstr "Sécherheetsinformatiounen"
+
+#: .\templates\footer.html:12
+msgid "Seller information center"
+msgstr "Verkafs-Informationszentrum"
+
+#: .\templates\footer.html:13
+msgid "Policies"
+msgstr "Richtlinnen"
+
+#: .\templates\footer.html:14
+msgid "Affiliates"
+msgstr "Affiliéierte"
+
+#: .\templates\footer.html:15 .\templates\header.html:10
+msgid "Help & Contact"
+msgstr "Hëllef & Kontakt"
+
+#: .\templates\footer.html:16
+msgid "Site Map"
+msgstr "Sitemap"
+
+#: .\templates\footer.html:20
+msgid "Copyright © 1995-2024 eBay Inc. All Rights Reserved."
+msgstr "Copyright © 1995-2024 eBay Inc. All Rechter virbehalen."
+
+#: .\templates\footer.html:21
+msgid "User Agreement,"
+msgstr "Benotzer-Agree,"
+ 
+#: .\templates\footer.html:22
+msgid "Privacy,"
+msgstr "Privatsphär,"
+
+#: .\templates\footer.html:23
+msgid "Payments Terms of Use,"
+msgstr "Bezuelungsnutzungskonditioune,"
+
+#: .\templates\footer.html:24
+msgid "Cookies and AdChoice"
+msgstr "Cookies a Wahl vun Annoncen"
+
+#: .\templates\header.html:9
+msgid "Daiy Deals"
+msgstr "Dagesaktiounen"
+
+#: .\templates\header.html:27
+msgid "SignOut"
+msgstr "Ofmellen"
+
+#: .\templates\header.html:30
+msgid "SignIn"
+msgstr "Ageloggte"
+
+#: .\templates\header.html:34 .\templates\second_payment.html:44
+#: .\templates\second_payment.html:274
+msgid "Ship to"
+msgstr "Versank"
+
+#: .\templates\header.html:36
+msgid "Sell"
+msgstr "Verkafen"
+
+#: .\templates\header.html:37
+msgid "Watchlist"
+msgstr "Watchlist"
+
+#: .\templates\header.html:38
+msgid "My eBay"
+msgstr "Mäin eBay"
+
+#: .\templates\index.html:18
+msgid "eBay Auctions"
+msgstr "eBay Auktiounen"
+
+#: .\templates\index.html:19
+msgid "Fast, safe, profitable trade"
+msgstr "Schnell, sécher, profitabel Handel"
+
+#: .\templates\index.html:21
+msgid "Promocode"
+msgstr "Promocode"
+
+#: .\templates\index.html:22 .\templates\index.html:27
+#: .\templates\index.html:33
+msgid "Ok"
+msgstr "OK"
+
+#: .\templates\index.html:26
+msgid "You have successfully applied the promo code for 2€!"
+msgstr "Dir hutt de Promocode erfollegraich fir 2€ applizéiert!"
+
+#: .\templates\index.html:32
+msgid "This promo code does not exist or has already expired"
+msgstr "Dëse Promocode existéiert net oder ass schonn ofgelaf"
+
+#: .\templates\index.html:42
+msgid "Active auctions"
+msgstr "Aktiv Auktiounen"
+
+#: .\templates\index.html:43
+msgid "Completed auctions"
+msgstr "Ofgeschlossene Auktiounen"
+
+#: .\templates\index.html:59 .\templates\index.html:62
+#: .\templates\index.html:95
+msgid "Remaining time:"
+msgstr "Restzäit:"
+
+#: .\templates\index.html:60 .\templates\index.html:96
+msgid "Last bid by"
+msgstr "Leschte Gebot vun"
+
+#: .\templates\index.html:64
+msgid "Last bid by -"
+msgstr "Leschte Gebot vun -"
+
+#: .\templates\index.html:71 .\templates\index.html:73
+msgid "Highest bid:"
+msgstr "Héchst Gebot:"
+
+#: .\templates\index.html:75
+msgid "Increment"
+msgstr "Erhéijung"
+
+#: .\templates\index.html:76 .\templates\product.html:94
+msgid "Bid"
+msgstr "Gebot"
+
+#: .\templates\index.html:101
+msgid "Sale has ended"
+msgstr "Verkaf ass ofgeschloss"
+
+#: .\templates\openid\login.html:9
+msgid "OpenID Sign In"
+msgstr "OpenID Ageloggt"
+
+#: .\templates\product.html:35 .\templates\product.html:51
+msgid "Image"
+msgstr "Bild"
+
+#: .\templates\product.html:63
+msgid "Other auctions"
+msgstr "Anner Auktiounen"
+
+#: .\templates\product.html:64
+msgid "Sponsered"
+msgstr "Gesponsert"
+
+#: .\templates\product.html:73
+msgid "New"
+msgstr "Nei"
+
+#: .\templates\product.html:75
+msgid "shipping"
+msgstr "Versand"
+
+#: .\templates\product.html:87
+msgid "Condition:"
+msgstr "Zoustand:"
+
+#: .\templates\product.html:89 .\templates\product.html:91
+msgid "Remaining time -"
+msgstr "Restzäit -"
+
+#: .\templates\product.html:95
+msgid "Add to watchlist"
+msgstr "Zur Watchlist dobäisetzen"
+
+#: .\templates\product.html:99
+msgid "Shipping:"
+msgstr "Versand:"
+
+#: .\templates\product.html:101
+msgid "Free SpeedPAK Standard. See details"
+msgstr "Gratis SpeedPAK Standard. Details kucken"
+
+#: .\templates\product.html:102
+msgid ""
+"International shipment of items may be subject to customs processing and "
+"additional charges."
+msgstr ""
+"International Versand vun Artikelen kann Zollbearbeitung a zousätzlech "
+"Käschte ënnerluecht ginn."
+
+#: .\templates\product.html:103
+msgid "Located in: {City, Country}"
+msgstr "Geluecht zu: {Stad, Land}"
+
+#: .\templates\product.html:107
+msgid "Delivery:"
+msgstr "Leverung:"
+
+#: .\templates\product.html:109
+msgid "Estimated between Thu, May 16 and Mon, Jun 3"
+msgstr "Geschätz tëscht Don, 16. Mee an Mon, 3. Jun"
+
+#: .\templates\product.html:110
+msgid "to 568745"
+msgstr "zu 568745"
+
+#: .\templates\product.html:111
+msgid "Please note the delivery estimate is greater than 15 business days."
+msgstr "W.e.g. bemarkt datt d'Leverungsgeschätz méi wéi 15 Geschäftsdag ass."
+
+#: .\templates\product.html:112
+msgid ""
+"Please allow additional time if international delivery is subject to customs "
+"processing."
+msgstr ""
+"W.e.g. gebt zousätzlech Zäit wann de internationale Versand Zollbearbeitung ënnerléit."
+
+#: .\templates\product.html:116
+msgid "Returns:"
+msgstr "Zréckgirof:"
+
+#: .\templates\product.html:118
+msgid "Seller does not accept returns. See details"
+msgstr "Verkäufer akzeptéiert keng Zréckgirof. Detailen kucken"
+
+#: .\templates\product.html:122
+msgid "Payments:"
+msgstr "Zuelungen:"
+
+#: .\templates\product.html:124
+msgid "cards"
+msgstr "Käerten"
+
+#: .\templates\product.html:131
+msgid "About this item"
+msgstr "Iwwer dësen Artikel"
+
+#: .\templates\product.html:134
+msgid "Seller assumes all responsibility for this listing."
+msgstr "De Verkäufer hëlt all Verantwortung fir dës Lëschtung."
+
+#: .\templates\product.html:135
+msgid "Last updated on"
+msgstr "Lëtzt aktualiséiert den"
+
+#: .\templates\product.html:135
+msgid "View all revisions"
+msgstr "All Ännerungen kucken"
+
+#: .\templates\product.html:137
+msgid "Item specifics"
+msgstr "Artikel spezifesch"
+
+#: .\templates\registration\login.html:12
+#: .\templates\registration\register.html:12
+msgid "Hi"
+msgstr "Hallo"
+
+#: .\templates\registration\login.html:14
+msgid "Sign in to eBay Auctions or"
+msgstr "Ageloggt bei eBay Auktiounen oder"
+
+#: .\templates\registration\login.html:14
+msgid "create an account"
+msgstr "en Account creéieren"
+
+#: .\templates\registration\login.html:21
+msgid "Login"
+msgstr "Ageloggt"
+
+
+msgid "Continue with Google"
+msgstr "Weider mam Google"
+
+#: .\templates\registration\register.html:14
+msgid "Register on eBay Auctions or"
+msgstr "Registréiert Iech op eBay Auktiounen oder"
+
+#: .\templates\registration\register.html:14
+msgid "log in to your account"
+msgstr "mellt Iech op ärem Kont un"
+
+#: .\templates\registration\register.html:21
+msgid "Registration"
+msgstr "Registréierung"
+
+#: .\templates\second_payment.html:248
+msgid "First name"
+msgstr "Virnumm"
+
+#: .\templates\second_payment.html:249
+msgid "Last name"
+msgstr "Numm"
+
+#: .\templates\second_payment.html:252
+msgid "Street address"
+msgstr "Strooss Adress"
+
+#: .\templates\second_payment.html:253
+msgid "Street address 2 (optional)"
+msgstr "Strooss Adress 2 (fakultativ)"
+
+#: .\templates\second_payment.html:257
+msgid "State/Province/Re..."
+msgstr "Staat/Provinz/Re..."
+
+#: .\templates\second_payment.html:261
+msgid "Email"
+msgstr "E-Mail"
+
+#: .\templates\second_payment.html:262
+msgid "Confirm email"
+msgstr "E-Mail bestätegen"
+
+#: .\templates\second_payment.html:265
+msgid "Country Code"
+msgstr "Landescode"
+
+#: .\templates\second_payment.html:266
+msgid "Phone number (required)"
+msgstr "Telefonnummer (néideg)"
+
+#: .\templates\second_payment.html:269
+msgid "Done"
+msgstr "Fäerdeg"
+
+#: .\templates\second_payment.html:276
+msgid "first"
+msgstr "éischt"
+
+#: .\templates\second_payment.html:277
+msgid "last"
+msgstr "läscht"
+
+#: .\templates\second_payment.html:280
+msgid "street"
+msgstr "Strooss"
+
+#: .\templates\second_payment.html:281
+msgid "street 2"
+msgstr "Strooss 2"
+
+#: .\templates\second_payment.html:284
+msgid "city"
+msgstr "Stad"
+
+#: .\templates\second_payment.html:285
+msgid "state"
+msgstr "Staat"
+
+#: .\templates\second_payment.html:286
+msgid "zip"
+msgstr "ZIP"
+
+#: .\templates\second_payment.html:289
+msgid "country"
+msgstr "Land"
+
+#: .\templates\second_payment.html:292
+msgid "email"
+msgstr "E-Mail"
+
+#: .\templates\second_payment.html:295
+msgid "phone"
+msgstr "Telefon"
+
+#: .\templates\second_payment.html:297
+msgid "change"
+msgstr "änneren"
+
+#: .\templates\second_payment.html:300
+msgid "Pay with"
+msgstr "Bezuelen mam"
+
+#: .\templates\second_payment.html:305
+msgid "Add new card"
+msgstr "Nei Kaart derbäisetzen"
+
+#: .\templates\second_payment.html:316 .\templates\second_payment.html:321
+msgid "Not working due to technical reasons"
+msgstr "Net schaffen wéinst technescher Grënn"
+
+#: .\templates\second_payment.html:328
+msgid "Item (1)"
+msgstr "Artikel (1)"
+
+#: .\templates\second_payment.html:332
+msgid "Shipping"
+msgstr "Versand"
+
+#: .\templates\second_payment.html:336
+msgid "VAT"
+msgstr "MwSt"
+
+#: .\templates\second_payment.html:340
+msgid "Duties"
+msgstr "Zëllen"
+
+#: .\templates\second_payment.html:345
+msgid "Order total"
+msgstr "Bestellung total"
+
+#: .\templates\second_payment.html:349
+msgid "Confirm and pay"
+msgstr "Bestätegen an zuelen"
+
+#: .\templates\second_payment.html:350
+msgid "Enter shipping address"
+msgstr "Gitt d'Versandadress an"
+
+#: .\templates\socialaccount\authentication_error.html:5
+#: .\templates\socialaccount\authentication_error.html:8
+msgid "Social Network Login Failure"
+msgstr "Sosialt Netzwierk Login Fehler"
+
+#: .\templates\socialaccount\authentication_error.html:10
+msgid ""
+"An error occurred while attempting to login via your social network account."
+msgstr ""
+"E Feeler ass opgetrueden während Dir versicht hutt Iech mat ärer sozialer "
+"Netzwierkskont ageloggt."
+
+#: .\templates\socialaccount\connections.html:5
+#: .\templates\socialaccount\connections.html:8
+msgid "Account Connections"
+msgstr "Kont Verbindungen"
+
+#: .\templates\socialaccount\connections.html:11
+msgid ""
+"You can sign in to your account using any of the following third party "
+"accounts:"
+msgstr ""
+"Dir kënnt Iech op Ärem Kont ageloggt mat enger vun den folgenden dritte "
+"Party Konten:"
+
+#: .\templates\socialaccount\connections.html:43
+msgid ""
+"You currently have no social network accounts connected to this account."
+msgstr ""
+"Ir hutt aktuell kee sozialt Netzwierk Kont mat dësem Kont verbonnen."
+
+#: .\templates\socialaccount\connections.html:46
+msgid "Add a 3rd Party Account"
+msgstr "Eng 3. Party Kont derbäisetzen"
+
+#: .\templates\socialaccount\login.html:11
+#, python-format
+msgid "Connect %(provider)s"
+msgstr "Verbinden %(provider)s"
+
+#: .\templates\socialaccount\login.html:13
+#, python-format
+msgid "You are about to connect a new third party account from %(provider)s."
+msgstr "Dir sidd derbäi e neit 3. Party Kont vu %(provider)s ze verbinden."
+
+#: .\templates\socialaccount\login.html:15
+#, python-format
+msgid "Sign In Via %(provider)s"
+msgstr "Mellt Iech via %(provider)s un"
+
+#: .\templates\socialaccount\login.html:17
+#, python-format
+msgid "You are about to sign in using a third party account from %(provider)s."
+msgstr "Dir sidd derbäi Iech mat engem 3. Party Kont vu %(provider)s unzemellen."
+
+#: .\templates\socialaccount\login.html:22
+msgid "Continue"
+msgstr "Weider"
+
+#: .\templates\socialaccount\login_cancelled.html:5
+#: .\templates\socialaccount\login_cancelled.html:9
+msgid "Login Cancelled"
+msgstr "Ageloggt ofbriechen"
+
+#: .\templates\socialaccount\login_cancelled.html:13
+#, python-format
+msgid ""
+"You decided to cancel logging in to our site using one of your existing "
+"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
+"\">sign in</a>."
+msgstr ""
+"Dir hutt decidéiert d'Ageloggt ofzebriechen op eisem Site mat enger vun "
+"Äre bestoende Konten. Falls dat en Irrtum war, gitt w.e.g. op <a href=\""
+"%(login_url)s\">ageloggt</a>."
+
+#: .\templates\socialaccount\messages\account_connected.txt:2
+msgid "The social account has been connected."
+msgstr "D'Sozial Kont gouf verbonnen."
+
+#: .\templates\socialaccount\messages\account_connected_other.txt:2
+msgid "The social account is already connected to a different account."
+msgstr "D'Sozial Kont ass schonn mat engem anere Kont verbonnen."
+
+#: .\templates\socialaccount\messages\account_disconnected.txt:2
+msgid "The social account has been disconnected."
+msgstr "D'Sozial Kont gouf ofverbonnen."
+
+#: .\templates\socialaccount\signup.html:9
+#, python-format
+msgid ""
+"You are about to use your %(provider_name)s account to login to\n"
+"%(site_name)s. As a final step, please complete the following form:"
+msgstr ""
+"Ihr sidd drun Ären %(provider_name)s Kont ze benotzen fir Iech op\n"
+"%(site_name)s ageloggt. Als leschten Schrëtt, komplettéiert w.e.g. d'folgend Formular:"

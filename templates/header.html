@@ -9,19 +9,6 @@
                     <a href="#" class="header__link header-link">{% trans 'Daiy Deals' %}</a>
                     <a href="#" class="header__link header-link">{% trans 'Help & Contact' %}</a>
                     
-                    <form action="{% url 'set_language' %}" method="post">
-                        {% csrf_token %}
-                        <input name="next" type="hidden" value="{{ redirect_to }}" />
-                        <select name="language">
-                            {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
-                                    {{ language.name_local }} ({{ language.code }})
-                                </option>
-                            {% endfor %}
-                        </select>
-                        <button type="submit">Выбрать</button>
-                    </form>
 
                     {% if user.is_authenticated %}
                         <a class="header__link" href="{% url 'logout' %}">{% trans 'SignOut' %}</a>
@@ -32,7 +19,21 @@
                 </div>
                 <div class="header__item">
                     <a href="#" class="header__link">{% trans 'Ship to' %}</a>
-                    <a href="#" class="header__link header__lang">{% trans 'English' %}</a>
+                    
+                    <form id="languageForm" action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}" />
+                        <select id="languageSelect" name="language">
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                    
+                    
                     <a href="#" class="header__link">{% trans 'Sell' %}</a>
                     <a href="#" class="header__link">{% trans 'Watchlist' %}</a>
                     <a href="#" class="header__link">{% trans 'My eBay' %}</a>
@@ -55,3 +56,8 @@
         </a>
     </div>
 </div>
+<script>
+    document.getElementById('languageSelect').addEventListener('change', function() {
+        document.getElementById('languageForm').submit();
+    });
+</script>
