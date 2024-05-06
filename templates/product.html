@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="otherItem__title">{{otherProduct.name}}</div>
                                 <div class="otherItem__own">{% trans 'New' %}</div>
-                                <div class="otherItem__price">Eur {{otherProduct.price}} €</div>
+                                <div class="otherItem__price">Eur {{otherProduct.displayedPrice}} €</div>
                                 <div class="otherItem__deliery">+2€ {% trans 'shipping' %}</div>
                             </div>
                         </a>
@@ -83,7 +83,7 @@
                 <input class="product__id" type="hidden" name="" id="{{ product.id }}">
                 <div class="productDetail__title" id="productTitle-{{ product.id }}">{{ product }}</div>
     
-                <div class="productDetail__price">{{product.price}} €</div>
+                <div class="productDetail__price">{{product.displayedPrice}} €</div>
                 <div class="productDetail__condition">{% trans 'Condition:' %} {{product.condition}} </div>
                 {% if product.forBot %}
                 <div class="productDetail__time product__time">{% trans 'Remaining time -' %} {{ product.remaining_time }}s </div>

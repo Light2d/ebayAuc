@@ -1,1 +1,222 @@
-[{"model": "ebay_app.product", "pk": 3, "fields": {"name": "Tiffany & Co. Paper Flowers Diamond Bracelet Platinum 6.5 Inches", "price": 3450, "condition": "New without tags", "active": false, "waiting": false, "completed": true, "remaining_time": 20, "last_bid": "James", "highest_bid": 200, "increment": 200, "bid": 200, "forPeople": false, "forBot": true}}, {"model": "ebay_app.product", "pk": 5, "fields": {"name": "New Rolex Cosmograph Daytona Oystersteel Black Dial", "price": 36000, "condition": "New without tags", "active": false, "waiting": false, "completed": true, "remaining_time": 20, "last_bid": "William", "highest_bid": 750, "increment": 750, "bid": 750, "forPeople": false, "forBot": true}}, {"model": "ebay_app.product", "pk": 6, "fields": {"name": "Jordan 4 Retro Mid White Oreo", "price": 0, "condition": "New", "active": true, "waiting": false, "completed": false, "remaining_time": 20, "last_bid": "Sophia", "highest_bid": 0, "increment": 0, "bid": 0, "forPeople": true, "forBot": false}}, {"model": "ebay_app.product", "pk": 7, "fields": {"name": "Basis 2 Full Mountain Bike Dual Suspension MTB", "price": 1000, "condition": "New", "active": true, "waiting": false, "completed": false, "remaining_time": 20, "last_bid": "alex", "highest_bid": 0, "increment": 0, "bid": 0, "forPeople": true, "forBot": false}}, {"model": "ebay_app.product", "pk": 8, "fields": {"name": "Lenovo Legion Pro 7 16\" Gaming Laptop 240Hz i9-13900HX 16GB RAM 1TB SSD RTX 4080", "price": 2000, "condition": "New", "active": false, "waiting": false, "completed": true, "remaining_time": 20, "last_bid": "Alice", "highest_bid": 150, "increment": 150, "bid": 150, "forPeople": false, "forBot": true}}, {"model": "ebay_app.product", "pk": 9, "fields": {"name": "Red Bull Energy Drink, 8.4 Fl Oz 24 Pack", "price": 45, "condition": "New", "active": true, "waiting": false, "completed": false, "remaining_time": 20, "last_bid": "Luis", "highest_bid": 5, "increment": 5, "bid": 5, "forPeople": true, "forBot": false}}, {"model": "ebay_app.product", "pk": 10, "fields": {"name": "Louis Vuitton Hina PM Magnolia Small Tote Crossbody Perforated Monogram Cream", "price": 1850, "condition": "New", "active": true, "waiting": false, "completed": false, "remaining_time": 20, "last_bid": "John", "highest_bid": 1650, "increment": 150, "bid": 1800, "forPeople": false, "forBot": true}}, {"model": "ebay_app.product", "pk": 11, "fields": {"name": "Sony PS5 Blu-Ray Edition Console Spider-Man 2 Limited Edition Bundle", "price": 75, "condition": "New", "active": false, "waiting": false, "completed": true, "remaining_time": 20, "last_bid": "William", "highest_bid": 15, "increment": 15, "bid": 15, "forPeople": false, "forBot": true}}, {"model": "ebay_app.product", "pk": 12, "fields": {"name": "High Quality Musical instruments Acoustic 41 Inch Guitar", "price": 115, "condition": "New", "active": false, "waiting": false, "completed": true, "remaining_time": 20, "last_bid": "Alice", "highest_bid": 15, "increment": 15, "bid": 15, "forPeople": false, "forBot": true}}, {"model": "ebay_app.product", "pk": 13, "fields": {"name": "Adidas Gazelle 85 Blue Bird Men's Shoes Sneakers FZ5593 - NEW", "price": 70, "condition": "New", "active": false, "waiting": false, "completed": true, "remaining_time": 20, "last_bid": "William", "highest_bid": 10, "increment": 10, "bid": 10, "forPeople": false, "forBot": true}}, {"model": "ebay_app.product", "pk": 14, "fields": {"name": "Samsung 40 Inch Smart TV Full HD HDR LED UE40T5300AEXXU", "price": 100, "condition": "New", "active": true, "waiting": false, "completed": false, "remaining_time": 20, "last_bid": "Sophia", "highest_bid": 0, "increment": 0, "bid": 0, "forPeople": true, "forBot": false}}]
+[
+    {
+        "model": "ebay_app.product",
+        "pk": 3,
+        "fields": {
+            "name": "Tiffany & Co. Paper Flowers Diamond Bracelet Platinum 6.5 Inches",
+            "price": 3450,
+            "displayedPrice":0,
+            "condition": "New without tags",
+            "active": false,
+            "waiting": false,
+            "completed": true,
+            "remaining_time": 20,
+            "last_bid": "James",
+            "highest_bid": 200,
+            "increment": 200,
+            "bid": 200,
+            "forPeople": false,
+            "forBot": true
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 5,
+        "fields": {
+            "name": "New Rolex Cosmograph Daytona Oystersteel Black Dial",
+            "price": 36000,
+             "displayedPrice":0,
+            "condition": "New without tags",
+            "active": false,
+            "waiting": false,
+            "completed": true,
+            "remaining_time": 20,
+            "last_bid": "William",
+            "highest_bid": 750,
+            "increment": 750,
+            "bid": 750,
+            "forPeople": false,
+            "forBot": true
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 6,
+        "fields": {
+            "name": "Jordan 4 Retro Mid White Oreo",
+            "price": 0,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": true,
+            "waiting": false,
+            "completed": false,
+            "remaining_time": 20,
+            "last_bid": "Sophia",
+            "highest_bid": 0,
+            "increment": 0,
+            "bid": 0,
+            "forPeople": true,
+            "forBot": false
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 7,
+        "fields": {
+            "name": "Basis 2 Full Mountain Bike Dual Suspension MTB",
+            "price": 1000,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": true,
+            "waiting": false,
+            "completed": false,
+            "remaining_time": 20,
+            "last_bid": "alex",
+            "highest_bid": 0,
+            "increment": 0,
+            "bid": 0,
+            "forPeople": true,
+            "forBot": false
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 8,
+        "fields": {
+            "name": "Lenovo Legion Pro 7 16\" Gaming Laptop 240Hz i9-13900HX 16GB RAM 1TB SSD RTX 4080",
+            "price": 2000,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": false,
+            "waiting": false,
+            "completed": true,
+            "remaining_time": 20,
+            "last_bid": "Alice",
+            "highest_bid": 150,
+            "increment": 150,
+            "bid": 150,
+            "forPeople": false,
+            "forBot": true
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 9,
+        "fields": {
+            "name": "Red Bull Energy Drink, 8.4 Fl Oz 24 Pack",
+            "price": 45,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": true,
+            "waiting": false,
+            "completed": false,
+            "remaining_time": 20,
+            "last_bid": "Luis",
+            "highest_bid": 5,
+            "increment": 5,
+            "bid": 5,
+            "forPeople": true,
+            "forBot": false
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 10,
+        "fields": {
+            "name": "Louis Vuitton Hina PM Magnolia Small Tote Crossbody Perforated Monogram Cream",
+            "price": 1850,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": true,
+            "waiting": false,
+            "completed": false,
+            "remaining_time": 20,
+            "last_bid": "John",
+            "highest_bid": 1650,
+            "increment": 150,
+            "bid": 1800,
+            "forPeople": false,
+            "forBot": true
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 11,
+        "fields": {
+            "name": "Sony PS5 Blu-Ray Edition Console Spider-Man 2 Limited Edition Bundle",
+            "price": 75,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": false,
+            "waiting": false,
+            "completed": true,
+            "remaining_time": 20,
+            "last_bid": "William",
+            "highest_bid": 15,
+            "increment": 15,
+            "bid": 15,
+            "forPeople": false,
+            "forBot": true
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 12,
+        "fields": {
+            "name": "High Quality Musical instruments Acoustic 41 Inch Guitar",
+            "price": 115,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": false,
+            "waiting": false,
+            "completed": true,
+            "remaining_time": 20,
+            "last_bid": "Alice",
+            "highest_bid": 15,
+            "increment": 15,
+            "bid": 15,
+            "forPeople": false,
+            "forBot": true
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 13,
+        "fields": {
+            "name": "Adidas Gazelle 85 Blue Bird Men's Shoes Sneakers FZ5593 - NEW",
+            "price": 70,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": false,
+            "waiting": false,
+            "completed": true,
+            "remaining_time": 20,
+            "last_bid": "William",
+            "highest_bid": 10,
+            "increment": 10,
+            "bid": 10,
+            "forPeople": false,
+            "forBot": true
+        }
+    },
+    {
+        "model": "ebay_app.product",
+        "pk": 14,
+        "fields": {
+            "name": "Samsung 40 Inch Smart TV Full HD HDR LED UE40T5300AEXXU",
+            "price": 100,
+            "displayedPrice":0,
+            "condition": "New",
+            "active": true,
+            "waiting": false,
+            "completed": false,
+            "remaining_time": 20,
+            "last_bid": "Sophia",
+            "highest_bid": 0,
+            "increment": 0,
+            "bid": 0,
+            "forPeople": true,
+            "forBot": false
+        }
+    }
+]

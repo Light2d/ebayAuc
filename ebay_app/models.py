@@ -5,6 +5,7 @@ from django.contrib.auth.models import AbstractUser, Permission, Group
 class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
+    displayedPrice = models.IntegerField(default=0)
     condition = models.TextField()
     #category = models.CharField(max_length=50)
     active = models.BooleanField(default=True)
