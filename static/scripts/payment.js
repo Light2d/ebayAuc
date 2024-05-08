@@ -73,17 +73,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-    var radioCard = document.getElementById("radioCard");
-    var orderBtn = document.getElementById("orderBtn");
-
-    radioCard.addEventListener("change", function() {
-        var formInfoTwo = document.querySelector('.form__infoTwo');
-        if (this.checked && !formInfoTwo.classList.contains('hidden')) {
-            orderBtn.disabled = false;
-            orderBtn.style.background = '#3665F3';
-        }
-    });
+ 
+  
+    
 });
+var formInfo = document.querySelector('.form__infoTwo');
+var radioCard = document.getElementById("radioCard");
+var orderBtn = document.getElementById("orderBtn");
+
+// Функция для проверки условий и включения/выключения кнопки заказа
+function checkConditions() {
+    if (radioCard.checked) {
+        orderBtn.disabled = false;
+        orderBtn.style.backgroundColor = '#3665F3';
+    } else {
+        orderBtn.disabled = true;
+        orderBtn.style.backgroundColor = '#ccc';
+    }
+}
+
+// Добавляем слушатель события на изменения состояния радиокнопки
+radioCard.addEventListener("change", checkConditions);
+
+
 var orderBtn = document.getElementById("orderBtn");
 
 orderBtn.addEventListener("click", function() {

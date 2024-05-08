@@ -3,6 +3,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "Teachers", sans-serif;
 }
 .container{
     max-width: 1720px;
@@ -168,6 +169,7 @@ header {
 .banner__title {
     margin-bottom: 10px;
     font-size: 62px;
+    font-weight: 500;
 }
 .banner__subtitle {
     margin-bottom: 20px;
@@ -194,6 +196,15 @@ header {
     cursor: pointer;
     border: 1px solid #3665F3;
     transition: all .2s ease;
+ }
+ @media (max-width: 490px) {
+    .banner__input{
+        display: flex;
+    }
+    .banner__input input{
+        width: 40%;
+        margin-right: 5px;
+    }
  }
 .banner__input button:hover{
     background: #fff;
@@ -385,13 +396,24 @@ header {
         display: flex;
         align-items: center;
     }
+    .footer__item:first-child{
+        padding-bottom: 20px;
+        border-bottom: 1px solid #000;
+        margin-bottom: 20px;
+    }
+    .footer__links{
+        display: none;
+    }
     .footer__link{
         flex: 0 0 25%;
     }
-    .footer__linkTwo{
+    .footer__copy{
+        text-align: center;
+    }
+    /* .footer__linkTwo{
         flex: 0 0 50%;
         margin-bottom: 5px;
-    }
+    } */
 }
 @media (max-width: 600px) {
     .footer__link{
@@ -419,8 +441,18 @@ header {
 @media (max-width: 992px) {
     .tablink {
         margin-bottom: 20px;
+        font-size: 18px;
     }
 }  
+@media (max-width: 500px) {
+    .tabs {
+        text-align: left;
+    }
+    .tablink {
+        margin-right: 0 !important;
+        font-size: 20px;
+    }
+} 
 .tablink:first-child{
     margin-right: 20px;
 }
@@ -695,8 +727,19 @@ header {
         display: flex;
         flex-wrap: wrap;
     }
-    @media (max-width:992) {
-        
+    .otherTwo{
+        display: none;
+    }
+    @media (max-width:992px) {
+        .otherOne{
+            display: none;
+        }
+        .otherTwo{
+            display: block;
+        }
+        .other__items{
+            justify-content: center;
+        }
     }
     .other__items a{
         text-decoration: none;

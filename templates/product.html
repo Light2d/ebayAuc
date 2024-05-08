@@ -59,7 +59,7 @@
                     </div>
                 </section>
     
-                <div class="other">
+                <div class="other otherOne">
                     <div class="other__title">{% trans 'Other auctions' %}</div>
                     <div class="other__subtitle">{% trans 'Sponsered' %}</div>
                     <div class="other__items">
@@ -125,6 +125,25 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="other otherTwo container">
+            <div class="other__title">{% trans 'Other auctions' %}</div>
+            <div class="other__subtitle">{% trans 'Sponsered' %}</div>
+            <div class="other__items">
+                {% for otherProduct in active_products %}
+                <a href="{% url 'product' product_id=otherProduct.id %}">
+                    <div class="other__item otherItem">
+                        <div class="otherItem__img">
+                            <img src="{{ otherProduct.images.first.image.url }}" alt="{{otherProduct.name}}" class="">
+                        </div>
+                        <div class="otherItem__title">{{otherProduct.name}}</div>
+                        <div class="otherItem__own">{% trans 'New' %}</div>
+                        <div class="otherItem__price">Eur {{otherProduct.displayedPrice}} €</div>
+                        <div class="otherItem__deliery">+2€ {% trans 'shipping' %}</div>
+                    </div>
+                </a>
+                {% endfor %}
             </div>
         </div>
         <div class="specifics container">
